@@ -1,0 +1,92 @@
+#!/bin/python
+
+import logging
+import os
+import sys
+
+bindir = os.path.dirname(__file__)
+libdir = os.path.join(bindir, "lib")
+sys.path.append(libdir)
+
+logging.basicConfig(format='%(asctime)s %(module)s.%(funcName)s:%(lineno)d %(levelname)s %(message)s', datefmt='%H:%M:%S', level=logging.DEBUG)
+
+logging.warning("foo")
+
+import gui
+gui = gui.GUI()
+gui.mainloop()
+
+#root = tk.Tk()
+#label = tk.Label(root, text="J'adore Python !").pack()
+#bouton = tk.Button(racine, text="Quitter", fg="red",
+#...                    command=racine.destroy)
+#label.pack()
+#bouton.pack()
+#bouton = tk.Button(root, text="Quitter", command=root.quit)
+#bouton["fg"] = "red"
+#bouton["bg"] = "green"
+#bouton.pack()
+#root.mainloop()
+
+#
+#import json
+#
+#import abbrev
+#
+#jsondir = os.path.join(bindir, "json")
+#
+#
+#
+#aliases = {
+#    "cl":    "Corsair Leader",
+#    "iafl":  "Csraeli Air Force Leader",
+#    "hlcao": "Hornet Leader",
+#    "pld":   "Phantom Leader",
+#    "zl":    "Zero Leader",
+#}
+#
+#abbrev.abbrev(aliases.values())
+#
+#for filename in os.listdir(jsondir):
+#    json_path = os.path.join(jsondir, filename)
+#    f = open(json_path)
+#    data = json.load(f)
+#    
+#    if data['Name'] == "Zero Leader":
+#        planes = data['AircraftTypes']
+#        aircrafts = {}
+#        for p in planes:
+#            aircrafts[p['Designation']] = f"{p['Name']},{p['Type']},{p['StartYear']},{p['EndYear']}"
+#            aircrafts[p['Designation']] = "{p['Name']},{p['Type']},{p['StartYear'},{p['EndYear']}"
+#
+#        pilots = data['Pilots']
+#        for p in pilots:
+#            name     = p['Name']
+#            aircraft = p['Aircraft']
+#            print(f"{name},{aircraft},{aircrafts[aircraft]}")
+#
+#
+#        idx=0
+#        for c in data['Campaigns']:
+#            idx += 1
+#            name = c['Name']
+#            year = c['Year']
+#            diff = c['DifficultyDescription']
+#            print(f'{idx}: {name} -{year} ({diff})')
+#        idx = int(input('Enter campaign: '))
+#        c = data['Campaigns'][idx]
+#
+#        idx = 0
+#        for co in c['CampaignOptions']:
+#            idx += 1
+#            print(f"{idx}: {co['LengthDescription']}")
+#        idx = int(input('Enter campaign length: '))
+#        l = ['Campaigns'][idx]
+#        co = c[idx]
+#
+#        idx = 0
+#        sm = co['SquadronMakeup']
+#        for r in sm:
+#            print(f"{r['RankDescription']}={r['Count']} ", end='')
+#        print()
+#

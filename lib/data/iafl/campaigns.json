@@ -1,0 +1,149 @@
+[
+    {
+        "name":"1948 - War of Independence",
+        "year":1948,
+        "set":"core",
+        "level":3,
+        "aircrafts":[ "P-51D", "Avia S.199", "Spitfire Mk.IX", "B-17" ],
+        "lengths":[
+            { "days":"4", "so":13 },
+            { "days":"8", "so":26 },
+            { "days":"12", "so":39 }
+        ]
+    },
+    {
+        "name":"1948 - War of Independence (First Phase:  Galilee)",
+        "year":1948,
+        "set":"core",
+        "level":3,
+        "aircrafts":[ "P-51D", "Avia S.199", "Spitfire Mk.IX", "B-17" ],
+        "lengths":[
+            { "days":"2", "so":10 },
+            { "days":"4", "so":20 },
+            { "days":"6", "so":30 }
+        ]
+    },
+    {
+        "name":"1956 - The Suez Crisis",
+        "year":1956,
+        "set":"core",
+        "level":2,
+        "aircrafts":[ "P-51D (1956)", "B-17", "Meteor Mk.XIII", "Mosquito Mk.VI", "Myst\u00e8re Mk.IV", "Ouragan", "Magister", "Mirage IIIC" ],
+        "lengths":[
+            { "days":"5", "so":23 },
+            { "days":"10", "so":45 },
+            { "days":"15", "so":67 }
+        ]
+    },
+    {
+        "name":"1956 - The Suez Crisis (First Phase)",
+        "year":1956,
+        "set":"core",
+        "level":2,
+        "aircrafts":[ "P-51D (1956)", "B-17", "Meteor Mk.XIII", "Mosquito Mk.VI", "Myst\u00e8re Mk.IV", "Ouragan", "Magister", "Mirage IIIC" ],
+        "lengths":[
+            { "days":"5", "so":23 },
+            { "days":"10", "so":45 },
+            { "days":"15", "so":67 }
+        ]
+    },
+    {
+        "name":"1967 - The Six Day War",
+        "year":1967,
+        "set":"core",
+        "level":1,
+        "aircrafts":[ "Myst\u00e8re Mk.IV (1967)", "Magister", "Ouragan (1967)", "Mirage IIIC", "Super Myst\u00e8re", "Vautour", "A-4" ],
+        "lengths":[
+            { "days":"3", "so":5 },
+            { "days":"6", "so":10 },
+            { "days":"9", "so":16 }
+        ]
+    },
+    {
+        "name":"1967 - The Six Day War (West Bank)",
+        "year":1967,
+        "set":"core",
+        "level":3,
+        "aircrafts":[ "Myst\u00e8re Mk.IV (1967)", "Magister", "Ouragan (1967)", "Mirage IIIC", "Super Myst\u00e8re", "Vautour", "A-4" ],
+        "lengths":[
+            { "days":"3", "so":20 }
+        ]
+    },
+    {
+        "name":"1973 - Yom Kippur War",
+        "year":1973,
+        "set":"core",
+        "level":4,
+        "aircrafts":[ "Mirage IIIC (1973)", "Nesher (1973)", "Super Myst\u00e8re (1973)", "A-4 (1973)", "F-4" ],
+        "lengths":[
+            { "days":"3", "so":5 },
+            { "days":"6", "so":10 },
+            { "days":"9", "so":16 }
+        ]
+    },
+    {
+        "name":"1973 - Yom Kippur War (Battles of Mount Hermon)",
+        "year":1973,
+        "set":"core",
+        "level":4,
+        "aircrafts":[ "Mirage IIIC (1973)", "Nesher (1973)", "Super Myst\u00e8re (1973)", "A-4 (1973)", "F-4" ],
+        "lengths":[
+            { "days":"5", "so":20 }
+        ]
+    },
+    {
+        "name":"1981- Operation Babylon",
+        "year":1981,
+        "set":"core",
+        "level":3,
+        "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1981)", "F-4 (1981)" ],
+        "lengths":[
+            { "days":"7", "so":30 }
+        ]
+    },
+    {
+        "name":"1982 - Lebanon I",
+        "year":1982,
+        "set":"core",
+        "level":2,
+        "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1982+)", "F-4" ],
+        "lengths":[
+            { "days":"4", "so":15 },
+            { "days":"8", "so":29 },
+            { "days":"12", "so":42 }
+        ]
+    },
+    {
+        "name":"1991 - Desert Storm",
+        "year":1991,
+        "set":"core",
+        "level":1,
+        "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1982+)", "F-4" ],
+        "lengths":[
+            { "days":"3", "so":22 },
+            { "days":"6", "so":44 },
+            { "days":"9", "so":66 }
+        ]
+    },
+    {
+        "name":"2006 - Lebanon II",
+        "year":2006,
+        "set":"core",
+        "level":3,
+        "aircrafts":[ "F-16", "A-4 (1982+)", "F-15E" ],
+        "lengths":[
+            { "days":"3", "so":22 },
+            { "days":"6", "so":44 }
+        ]
+    },
+    {
+        "name":"2022 - Armageddon",
+        "year":2022,
+        "set":"core",
+        "level":4,
+        "aircrafts":[ "F-16 (2022)", "F-15A (2022)", "F-35", "F-15E" ],
+        "lengths":[
+            { "days":"7", "so":45 }
+        ]
+    }
+]

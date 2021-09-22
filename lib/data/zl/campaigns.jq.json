@@ -1,0 +1,194 @@
+[
+    {
+        "name": "Midway",
+        "year": 1942,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N"],
+        "options": [
+            {"days": 2, "SO": 12},
+            {"days": 3, "SO": 18},
+            {"days": 4, "SO": 24}
+        ]
+    },
+    {
+        "name": "Guadalcanal",
+        "year": 1942,
+        "level": 2,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N", "KI-43"],
+        "options": [
+            {"days": 4, "SO": 20},
+            {"days": 7, "SO": 25},
+            {"days": 10, "SO": 30}
+        ]
+    },
+    {
+        "name": "Battle of Santa Cruz",
+        "year": 1942,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N"],
+        "options": [
+            {"days": 2, "SO": 10},
+            {"days": 3, "SO": 13},
+            {"days": 4, "SO": 16}
+        ]
+    },
+    {
+        "name": "Port Moresby/Lae",
+        "year": 1942,
+        "level": 2,
+        "set": "core",
+        "aircrafts": ["A6M2", "KI-27", "G3M", "G4M", "KI-48", "KI-51", "KI-43"],
+        "options": [
+            {"days": 4, "SO": 18},
+            {"days": 6, "SO": 22},
+            {"days": 9, "SO": 27}
+        ]
+    },
+    {
+        "name": "Pearl Harbor",
+        "year": 1941,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["A6M2", "B5N", "D3A"],
+        "options": [
+            {"days": 2, "SO": 8},
+            {"days": 3, "SO": 12},
+            {"days": 4, "SO": 15}
+        ]
+    },
+    {
+        "name": "Philippines",
+        "year": 1941,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["KI-43", "KI-51", "A6M2", "B5N", "D3A", "G3M", "G4M"],
+        "options": [
+            {"days": 3, "SO": 15},
+            {"days": 6, "SO": 22},
+            {"days": 9, "SO": 29}
+        ]
+    },
+    {
+        "name": "Wake Island",
+        "year": 1941,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N", "G3M"],
+        "options": [
+            {"days": 3, "SO": 15},
+            {"days": 6, "SO": 24},
+            {"days": 9, "SO": 32}
+        ]
+    },
+    {
+        "name": "Leyte Gulf",
+        "year": 1944,
+        "level": 3,
+        "set": "core",
+        "aircrafts": ["A6M2", "A6M5", "KI-43", "KI-61", "KI-84", "NIKJ", "B6N", "B5N", "D3A", "G4M"],
+        "options": [
+            {"days": 3, "SO": 15},
+            {"days": 6, "SO": 22},
+            {"days": 9, "SO": 30}
+        ]
+    },
+    {
+        "name": "Luzon",
+        "year": 1945,
+        "level": 4,
+        "set": "core",
+        "aircrafts": ["A6M2", "A6M5", "KI-43", "KI-61", "KI-84", "NIKJ", "B6N", "D3A", "G4M", "H8K"],
+        "options": [
+            {"days": 3, "SO": 15},
+            {"days": 6, "SO": 24},
+            {"days": 9, "SO": 30}
+        ]
+    },
+    {
+        "name": "Okinawa",
+        "year": 1945,
+        "level": 4,
+        "set": "core",
+        "aircrafts": ["A6M5", "NIKJ", "J2M", "KI-61", "KI-84", "B6N", "D3A", "G4M", "H8K"],
+        "options": [
+            {"days": 4, "SO": 16},
+            {"days": 6, "SO": 24},
+            {"days": 8, "SO": 27}
+        ]
+    },
+    {
+        "name": "New Georgia",
+        "year": 1943,
+        "level": 2,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N", "KI-43", "KI-44", "J2M", "KI-61", "KI-51", "G4M", "H8K"],
+        "options": [
+            {"days": 4, "SO": 20},
+            {"days": 8, "SO": 32},
+            {"days": 12, "SO": 36}
+        ]
+    },
+    {
+        "name": "New Britain",
+        "year": 1943,
+        "level": 2,
+        "set": "core",
+        "aircrafts": ["A6M2", "KI-43", "KI-44", "KI-61", "H8K"],
+        "options": [
+            {"days": 3, "SO": 15},
+            {"days": 6, "SO": 20},
+            {"days": 9, "SO": 25}
+        ]
+    },
+    {
+        "name": "Rabaul",
+        "year": 1944,
+        "level": 3,
+        "set": "core",
+        "aircrafts": ["A6M2", "KI-43", "KI-61", "KI-84", "NIKJ", "A6M5", "B5N", "D3A", "G4M", "H8K"],
+        "options": [
+            {"days": 4, "SO": 20},
+            {"days": 8, "SO": 32},
+            {"days": 12, "SO": 40}
+        ]
+    },
+    {
+        "name": "Coral Sea",
+        "year": 1942,
+        "level": 1,
+        "set": "core",
+        "aircrafts": ["A6M2", "D3A", "B5N"],
+        "options": [
+            {"days": 2, "SO": 10},
+            {"days": 3, "SO": 13},
+            {"days": 4, "SO": 16}
+        ]
+    },
+    {
+        "name": "Home Island Defense",
+        "year": 1945,
+        "level": 4,
+        "set": "core",
+        "aircrafts": ["A6M2", "KI-61", "KI-84", "A6M5", "J2M", "NIKJ", "B6N", "G4M", "H8K"],
+        "options": [
+            {"days": 6, "SO": 30},
+            {"days": 9, "SO": 35},
+            {"days": 12, "SO": 40}
+        ]
+    },
+    {
+        "name": "Singapore",
+        "year": 1942,
+        "level": 2,
+        "set": "china",
+        "aircrafts": ["A6M2", "KI-27", "G3M", "G4M", "KI-48", "KI-51", "KI-43"],
+        "options": [
+            {"days": 2, "SO": 7},
+            {"days": 3, "SO": 18},
+            {"days": 4, "SO": 24}
+        ]
+    }
+]
