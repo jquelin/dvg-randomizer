@@ -56,15 +56,12 @@ class GUI(Tk):
         f = Frame(self, bg='red')
         Label(f, text="Select your campaign",
               anchor=W).pack(fill=X)
-        tv = Treeview(f, columns=headers, show='headings')
+        tv = Treeview(f, columns=headers, height=20, show='headings')
         for col, longest in zip(headers, longest):
             tv.heading(col, text=col)
-#                command=lambda c=col: sortby(self.tree, c, 0))
             # adjust the column's width to the header string
             width = font.nametofont('TkHeadingFont').measure(longest)+10
             tv.column(col, width=width)
-
-
         tv.pack(side=LEFT, fill=Y)
         vsb = Scrollbar(f, orient="vertical", command=tv.yview)
         vsb.pack(side=LEFT, fill=Y)
