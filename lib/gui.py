@@ -25,19 +25,19 @@ class GUI(Tk):
         self.minsize(self.winfo_width(), self.winfo_height())
 
         self.v['boardgame'].set(self.boardgames[0].name)
-        self.boardgame_selected()
+        self.select_boardgame()
 
     # -- gui creation
 
     def _create_boardgames(self):
         lf = LabelFrame(self, text='Board game')
         self.v['boardgame'] = StringVar()
-		
+
         for bg in self.boardgames:
             rb = Radiobutton(
                 lf, text=bg.name, value=bg.name,
                 variable=self.v['boardgame'],
-                command=self.boardgame_selected
+                command=self.select_boardgame
             )
             rb.pack(side=LEFT)
         lf.pack(padx=20, pady=20)
@@ -84,7 +84,10 @@ class GUI(Tk):
         
     # -- events
 
-    def boardgame_selected(self):
+    def close(self, event):
+        self.destroy()
+
+    def select_boardgame(self):
         logging.debug(f"new boardgame selected: {self.v['boardgame'].get()}")
         self.cur_boardgame = next(bg for bg in self.boardgames if
                                   bg.name == self.v['boardgame'].get())
@@ -94,8 +97,5 @@ class GUI(Tk):
         for c in self.cur_boardgame.campaigns:
             tv.insert('', END, values=[c.name, c.year, "*"*c.level])
 #        logging.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
-
-    def close(self, event):
-        self.destroy()
 
 
