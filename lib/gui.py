@@ -55,7 +55,8 @@ class GUI(Tk):
         f = Frame(self, bg='red')
         Label(f, text="Select your campaign",
               anchor=W).pack(fill=X)
-        tv = Treeview(f, columns=headers, height=20, show='headings')
+        tv = Treeview(f, columns=headers, height=20, show='headings',
+                      selectmode=BROWSE)
         for col, longest in zip(headers, longest):
             tv.heading(col, text=col, command=lambda c=col:
                        self.sort_campaigns(c, 0))
