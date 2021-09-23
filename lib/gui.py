@@ -52,13 +52,13 @@ class GUI(Tk):
         logging.debug(f"longest campaign name: {longestc}")
         longest = [longestc, '0000', '****']
 
-
         f = Frame(self, bg='red')
         Label(f, text="Select your campaign",
               anchor=W).pack(fill=X)
         tv = Treeview(f, columns=headers, height=20, show='headings')
         for col, longest in zip(headers, longest):
-            tv.heading(col, text=col)
+            tv.heading(col, text=col, command=lambda c=col:
+                       self.sort_campaigns(c, 0))
             # adjust the column's width to the header string
             width = font.nametofont('TkHeadingFont').measure(longest)+10
             tv.column(col, width=width)
@@ -99,3 +99,19 @@ class GUI(Tk):
 #        logging.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
 
+
+    def sort_campaigns(self, col, descending):
+        """Sort campaigns tree contents when a column header is clicked on."""
+        logging.debug(f"sorting campaigns by {col}")
+        tv = self.w['campaigns']
+
+        # grab values to sort
+        data = [(tv.set(child, col), child) for child in tv.get_children('')]
+        # if the data to be sorted is numeric change to float
+        #data =  change_numeric(data)
+        # now sort the data in place
+        data.sort(reverse=descending)
+        for ix, item in enumerate(data):
+            tv.move(item[1], '', ix)
+        # switch the heading so it will sort in the opposite direction
+        tv.heading(col, command=lambda col=col: self.sort_campaigns(col, int(not descending)))
