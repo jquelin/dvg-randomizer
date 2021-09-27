@@ -11,14 +11,16 @@ def load_campaigns(filepath):
         data = json.load(ifp)
     for c in data:
         logging.debug(f"- found {c['name']} - ({c['year']})")
-        newc = Campaign(name=c['name'], year=c['year'], level=c['level'])
+        newc = Campaign(name=c['name'], year=c['year'],
+                        level=c['level'], lengths=c['lengths'])
         campaigns.append(newc)
     logging.info(f"found {len(campaigns)} campaigns")
     return campaigns
 
 
 class Campaign:
-    def __init__(self, name:str, year:int, level:int):
+    def __init__(self, name:str, year:int, level:int, lengths):
         self.name  = name
         self.year  = year
         self.level = level
+        self.lengths = lengths
