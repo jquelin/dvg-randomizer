@@ -27,3 +27,7 @@ class Boardgame:
         filepath = pkg_resources.resource_filename(f'data.{self.alias}', 'campaigns.json')
         self.campaigns = campaign.load_campaigns(filepath)
 
+    def find_campaign(self, name, year):
+        for c in self.campaigns:
+            if c.name == name and c.year == year:
+                return c

@@ -21,6 +21,7 @@ class GUI(Tk):
 
         self._create_boardgames()
         self._create_campaigns()
+        self._create_campaign_length()
         self.update()
         self.minsize(self.winfo_width(), self.winfo_height())
 
@@ -42,6 +43,24 @@ class GUI(Tk):
             rb.pack(side=LEFT)
         lf.pack(padx=20, pady=20)
 
+    def _create_campaign_length(self):
+        f = self.w['f_campaigns']
+
+        lf = LabelFrame(f, text='Campaign length')
+        self.v['campaign_length'] = StringVar()
+        for length in ['short', 'medium', 'long']:
+            rb = Radiobutton(
+                lf, text=length, value=length,
+                variable=self.v['campaign_length'],
+                state=DISABLED
+            )
+            rb.pack(side=LEFT)
+
+        lf.pack(side=TOP, fill=X, padx=5, pady=5)
+        self.w['lf_campaign_length'] = lf
+        self.v['campaign_length'].set('short')
+
+
     def _create_campaigns(self):
         headers = ['Name', 'Year', 'Difficulty']
         longestc = ''
@@ -57,6 +76,7 @@ class GUI(Tk):
               anchor=W).pack(fill=X)
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
+        tv.bind('<<TreeviewSelect>>', self.select_campaign)
         for col, longest in zip(headers, longest):
             tv.heading(col, text=col, command=lambda c=col:
                        self.sort_campaigns(c, 0))
@@ -68,6 +88,7 @@ class GUI(Tk):
         vsb.pack(side=LEFT, fill=Y)
         tv.configure(yscrollcommand=vsb.set)
 
+        self.w['f_campaigns'] = f
         self.w['campaigns'] = tv
 
 #        campaign = [g.name for g in self.boardgames]
@@ -99,7 +120,44 @@ class GUI(Tk):
             tv.insert('', END, values=[c.name, c.year, "*"*c.level])
 #        logging.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
+        for c in self.w['lf_campaign_length'].winfo_children():
+            c.config(state=DISABLED)
 
+
+    def select_campaign(self, ev):
+        tv = self.w['campaigns']
+        curitem = tv.focus()
+        if curitem == "":
+            # no item selected - we get there if campaign is selected
+            # then a new boardgame is selected
+            self.cur_campaign = None
+            return
+        (name, year, diff) = tv.item(curitem)['values']
+        logging.debug(f"campaign {name} - {year} selected)")
+
+        self.cur_campaign = self.cur_boardgame.find_campaign(name, year)
+
+        lf = self.w['lf_campaign_length']
+        for child in lf.winfo_children():
+            child.destroy()
+
+        labels  = ['short', 'medium', 'long']
+        lengths = self.cur_campaign.lengths
+        for label, length in zip(labels, lengths):
+            days = length['days']
+            so   = length['so']
+            rb = Radiobutton(
+                lf, text=f"{label}\n{days} days, {so} SO", value=label,
+                justify=LEFT,
+                variable=self.v['campaign_length'],
+            )
+            rb.pack(side=LEFT)
+
+
+    def select_campaign_length(self):
+        if self.campaign is None:
+            return
+        pass
 
     def sort_campaigns(self, col, descending):
         """Sort campaigns tree contents when a column header is clicked on."""
