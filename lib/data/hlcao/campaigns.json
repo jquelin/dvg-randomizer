@@ -6,9 +6,9 @@
         "level":1,
         "aircrafts":[ "A-6", "A-7", "E-2C", "EA-6B", "OV-10", "F/A-18C" ],
         "lengths":[
-            { "days":"3", "so":12, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"5", "so":23, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"8", "so":39, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":12, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"5", "so":23, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"8", "so":39, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -18,9 +18,9 @@
         "level":1,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"3", "so":12, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"5", "so":23, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"8", "so":39, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":12, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"5", "so":23, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"8", "so":39, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -30,9 +30,9 @@
         "level":1,
         "aircrafts":[ "A-6", "A-7", "E-2C", "EA-6B", "F-14", "F/A-18C", "OV-10" ],
         "lengths":[
-            { "days":"3", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":45, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":68, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":45, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":68, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -42,9 +42,9 @@
         "level":1,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"3", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":45, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":68, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":45, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":68, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -54,9 +54,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F", "MQ-47B" ],
         "lengths":[
-            { "days":"3", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":38, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":18, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":38, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -66,9 +66,9 @@
         "level":2,
         "aircrafts":[ "AV-8B", "F-35A/C" ],
         "lengths":[
-            { "days":"3", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":38, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":18, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":38, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -78,9 +78,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"3", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":38, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":18, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":38, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -90,9 +90,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"3", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":38, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":18, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":38, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -102,9 +102,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-6B", "EA-18G", "F-14", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"4", "so":24, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":42, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"10", "so":69, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":24, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":42, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"10", "so":69, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -114,9 +114,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"4", "so":24, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":42, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"10", "so":69, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":24, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":42, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"10", "so":69, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -126,9 +126,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-6B", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"3", "so":21, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":49, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"11", "so":77, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":21, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":49, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"11", "so":77, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -138,9 +138,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"3", "so":21, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":49, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"11", "so":77, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":21, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":49, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"11", "so":77, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -150,9 +150,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"5", "so":36, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":52, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":70, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":36, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":52, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":70, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -162,9 +162,9 @@
         "level":2,
         "aircrafts":[ "AV-8B", "F-35A/C" ],
         "lengths":[
-            { "days":"5", "so":36, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":52, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":70, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":36, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":52, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":70, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -174,9 +174,9 @@
         "level":2,
         "aircrafts":[ "A-6", "A-7", "E-2C", "EA-6B", "OV-10", "F/A-18C" ],
         "lengths":[
-            { "days":"4", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":30, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"8", "so":40, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":20, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":30, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"8", "so":40, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -186,9 +186,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"4", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":30, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"8", "so":40, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":20, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":30, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"8", "so":40, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -198,7 +198,7 @@
         "level":2,
         "aircrafts":[ "A-6", "A-7", "E-2C", "EA-6B", "OV-10", "F/A-18C" ],
         "lengths":[
-            { "days":"1", "so":5, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] }
+            { "days":"1", "so":5, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] }
         ]
     },
     {
@@ -208,7 +208,7 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"1", "so":5, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] }
+            { "days":"1", "so":5, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] }
         ]
     },
     {
@@ -218,9 +218,9 @@
         "level":2,
         "aircrafts":[ "A-6", "A-7", "E-2C", "EA-6B", "OV-10", "F/A-18C" ],
         "lengths":[
-            { "days":"4", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":30, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":45, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":15, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":30, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":45, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -230,9 +230,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"4", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":30, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":45, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":15, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":30, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":45, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -242,9 +242,9 @@
         "level":3,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"3", "so":28, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"5", "so":44, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"7", "so":56, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":28, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"5", "so":44, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"7", "so":56, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -254,9 +254,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"3", "so":28, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"5", "so":44, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"7", "so":56, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":28, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"5", "so":44, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"7", "so":56, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -266,9 +266,9 @@
         "level":3,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"4", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":40, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"10", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":40, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"10", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -278,9 +278,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"4", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"7", "so":40, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"10", "so":58, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":40, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"10", "so":58, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -290,9 +290,9 @@
         "level":3,
         "aircrafts":[ "F-14", "E-2C", "EA-6B", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"4", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":40, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":60, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":20, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":40, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":60, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -302,9 +302,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"4", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":40, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":60, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":20, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":40, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":60, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -314,9 +314,9 @@
         "level":3,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F" ],
         "lengths":[
-            { "days":"5", "so":25, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":52, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":80, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":25, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":52, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":80, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -326,9 +326,9 @@
         "level":3,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"5", "so":25, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":52, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":80, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":25, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":52, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":80, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -338,9 +338,9 @@
         "level":4,
         "aircrafts":[ "E-2C", "A-6", "A-7", "F-14", "OV-10" ],
         "lengths":[
-            { "days":"5", "so":9, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":18, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":27, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":9, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":18, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":27, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -350,9 +350,9 @@
         "level":4,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"5", "so":9, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":18, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":27, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":9, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":18, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":27, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -362,9 +362,9 @@
         "level":3,
         "aircrafts":[ "E-2C", "A-6", "A-7", "F-14", "F/A-18C", "OV-10" ],
         "lengths":[
-            { "days":"5", "so":9, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":18, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":27, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":9, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":18, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":27, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -374,9 +374,9 @@
         "level":2,
         "aircrafts":[ "AV-8B" ],
         "lengths":[
-            { "days":"5", "so":9, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":18, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":27, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":9, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":18, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":27, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -386,9 +386,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F", "MQ-47B" ],
         "lengths":[
-            { "days":"3", "so":21, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":42, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":63, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":21, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":42, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":63, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -398,9 +398,9 @@
         "level":2,
         "aircrafts":[ "AV-8B", "F-35A/C" ],
         "lengths":[
-            { "days":"4", "so":24, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":50, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":76, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":24, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":50, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":76, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -410,9 +410,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F", "MQ-47B" ],
         "lengths":[
-            { "days":"2", "so":12, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"4", "so":24, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"6", "so":76, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"2", "so":12, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"4", "so":24, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"6", "so":76, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -422,9 +422,9 @@
         "level":3,
         "aircrafts":[ "AV-8B", "F-35A/C" ],
         "lengths":[
-            { "days":"2", "so":12, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"4", "so":24, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"6", "so":76, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"2", "so":12, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"4", "so":24, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"6", "so":76, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -434,9 +434,9 @@
         "level":2,
         "aircrafts":[ "E-2C", "EA-18G", "F/A-18C", "F/A-18E", "F/A-18F", "MQ-47B" ],
         "lengths":[
-            { "days":"5", "so":30, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":60, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"90", "so":76, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":30, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":60, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"90", "so":76, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -446,9 +446,9 @@
         "level":3,
         "aircrafts":[ "AV-8B", "F-35A/C" ],
         "lengths":[
-            { "days":"5", "so":30, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":60, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"90", "so":76, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":30, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":60, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"90", "so":76, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     }
 ]

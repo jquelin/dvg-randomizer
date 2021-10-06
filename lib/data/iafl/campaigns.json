@@ -6,9 +6,9 @@
         "level":3,
         "aircrafts":[ "P-51D", "Avia S.199", "Spitfire Mk.IX", "B-17" ],
         "lengths":[
-            { "days":"4", "so":13, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":26, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":39, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":13, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":26, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":39, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -18,9 +18,9 @@
         "level":3,
         "aircrafts":[ "P-51D", "Avia S.199", "Spitfire Mk.IX", "B-17" ],
         "lengths":[
-            { "days":"2", "so":10, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"4", "so":20, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"6", "so":30, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"2", "so":10, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"4", "so":20, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"6", "so":30, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -30,9 +30,9 @@
         "level":2,
         "aircrafts":[ "P-51D (1956)", "B-17", "Meteor Mk.XIII", "Mosquito Mk.VI", "Myst\u00e8re Mk.IV", "Ouragan", "Magister", "Mirage IIIC" ],
         "lengths":[
-            { "days":"5", "so":23, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":45, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":67, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":23, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":45, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":67, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -42,9 +42,9 @@
         "level":2,
         "aircrafts":[ "P-51D (1956)", "B-17", "Meteor Mk.XIII", "Mosquito Mk.VI", "Myst\u00e8re Mk.IV", "Ouragan", "Magister", "Mirage IIIC" ],
         "lengths":[
-            { "days":"5", "so":23, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"10", "so":45, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"15", "so":67, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"5", "so":23, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"10", "so":45, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"15", "so":67, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -54,9 +54,9 @@
         "level":1,
         "aircrafts":[ "Myst\u00e8re Mk.IV (1967)", "Magister", "Ouragan (1967)", "Mirage IIIC", "Super Myst\u00e8re", "Vautour", "A-4" ],
         "lengths":[
-            { "days":"3", "so":5, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":10, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":16, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":5, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":10, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":16, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -66,7 +66,7 @@
         "level":3,
         "aircrafts":[ "Myst\u00e8re Mk.IV (1967)", "Magister", "Ouragan (1967)", "Mirage IIIC", "Super Myst\u00e8re", "Vautour", "A-4" ],
         "lengths":[
-            { "days":"3", "so":20, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
+            { "days":"3", "so":20, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
         ]
     },
     {
@@ -76,9 +76,9 @@
         "level":4,
         "aircrafts":[ "Mirage IIIC (1973)", "Nesher (1973)", "Super Myst\u00e8re (1973)", "A-4 (1973)", "F-4" ],
         "lengths":[
-            { "days":"3", "so":5, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":10, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":16, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":5, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":10, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":16, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -88,7 +88,7 @@
         "level":4,
         "aircrafts":[ "Mirage IIIC (1973)", "Nesher (1973)", "Super Myst\u00e8re (1973)", "A-4 (1973)", "F-4" ],
         "lengths":[
-            { "days":"5", "so":20, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
+            { "days":"5", "so":20, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
         ]
     },
     {
@@ -98,7 +98,7 @@
         "level":3,
         "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1981)", "F-4 (1981)" ],
         "lengths":[
-            { "days":"7", "so":30, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
+            { "days":"7", "so":30, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
         ]
     },
     {
@@ -108,9 +108,9 @@
         "level":2,
         "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1982+)", "F-4" ],
         "lengths":[
-            { "days":"4", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"8", "so":29, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"12", "so":42, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"4", "so":15, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":29, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":42, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -120,9 +120,9 @@
         "level":1,
         "aircrafts":[ "F-15A", "F-16", "C.2", "A-4 (1982+)", "F-4" ],
         "lengths":[
-            { "days":"3", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":44, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
-            { "days":"9", "so":66, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
+            { "days":"3", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":44, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":66, "label":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
@@ -132,8 +132,8 @@
         "level":3,
         "aircrafts":[ "F-16", "A-4 (1982+)", "F-15E" ],
         "lengths":[
-            { "days":"3", "so":22, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
-            { "days":"6", "so":44, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
+            { "days":"3", "so":22, "label":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":44, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
         ]
     },
     {
@@ -143,7 +143,7 @@
         "level":4,
         "aircrafts":[ "F-16 (2022)", "F-15A (2022)", "F-35", "F-15E" ],
         "lengths":[
-            { "days":"7", "so":45, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
+            { "days":"7", "so":45, "label":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] }
         ]
     }
 ]

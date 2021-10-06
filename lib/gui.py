@@ -22,6 +22,7 @@ class GUI(Tk):
         self._create_boardgames()
         self._create_campaigns()
         self._create_campaign_length()
+        self._create_button()
         self.update()
         self.minsize(self.winfo_width(), self.winfo_height())
 
@@ -42,6 +43,11 @@ class GUI(Tk):
             )
             rb.pack(side=LEFT)
         lf.pack(padx=20, pady=20)
+
+    def _create_button(self):
+        f = self.w['f_campaigns']
+        b = Button(f, text="Create random squad")
+        b.pack(side=TOP, fill=X)
 
     def _create_campaign_length(self):
         f = self.w['f_campaigns']
@@ -71,7 +77,7 @@ class GUI(Tk):
         logging.debug(f"longest campaign name: {longestc}")
         longest = [longestc, '0000', '****']
 
-        f = Frame(self, bg='red')
+        f = Frame(self)#, bg='red')
         Label(f, text="Select your campaign",
               anchor=W).pack(fill=X)
         tv = Treeview(f, columns=headers, height=20, show='headings',
@@ -141,11 +147,10 @@ class GUI(Tk):
         for child in lf.winfo_children():
             child.destroy()
 
-        labels  = ['short', 'medium', 'long']
-        lengths = self.cur_campaign.lengths
-        for label, length in zip(labels, lengths):
-            days = length['days']
-            so   = length['so']
+        for length in self.cur_campaign.lengths:
+            days  = length.days
+            so    = length.so
+            label = length.label
             rb = Radiobutton(
                 lf, text=f"{label}\n{days} days, {so} SO", value=label,
                 justify=LEFT,
