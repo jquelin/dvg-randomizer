@@ -1,0 +1,15 @@
+[
+    [ "A-6", "Intruder", "Attack", 1963, 1997 ],
+    [ "A-7", "Corsair II", "Attack", 1967, 1993 ],
+    [ "AV-8B", "Harrier II", "Attack", 1985, 2050 ],
+    [ "E-2C", "Hawkeye", "AWACS", 1964, 2050 ],
+    [ "EA-6B", "Prowler", "Electronic Warfare", 1972, 2011 ],
+    [ "EA-18G", "Growler", "Electronic Warfare", 2011, 2050 ],
+    [ "F-14", "Tomcat", "Fighter", 1972, 2006 ],
+    [ "F/A-18C", "Hornet", "Fighter-Bomber", 1983, 2050 ],
+    [ "F/A-18E", "Super Hornet", "Fighter-Bomber", 2000, 2050 ],
+    [ "F/A-18F", "Super Hornet", "Fighter-Bomber", 2001, 2050 ],
+    [ "MQ-47B", "UAV", "UAV", 2015, 2050 ],
+    [ "F-35A/C", "Lightning II", "Fighter", 2014, 2050 ],
+    [ "OV-10", "Bronco", "Observation", 1969, 1995 ]
+]

@@ -1,0 +1,18 @@
+[
+    [ "P-38", "Lightning", "Fighter", 1943, 1945 ],
+    [ "P-40 (41-42)", "Warhawk", "Fighter", 1941, 1942 ],
+    [ "P-40 (1943+)", "Warhawk", "Fighter", 1943, 1945 ],
+    [ "B-25G", "Mitchell", "Bomber", 1943, 1945 ],
+    [ "B-25", "Mitchell", "Bomber", 1943, 1945 ],
+    [ "F2A", "Buffalo", "Fighter", 1941, 1942 ],
+    [ "F4F (41-42)", "Wildcat", "Fighter", 1941, 1942 ],
+    [ "F4F (1943+)", "Wildcat", "Fighter", 1943, 1945 ],
+    [ "F4U", "Corsair", "Fighter", 1943, 1945 ],
+    [ "F6F", "Hellcat", "Fighter", 1943, 1945 ],
+    [ "SB2C", "Helldiver", "Dive Bomber", 1943, 1945 ],
+    [ "SBD", "Dauntless", "Dive Bomber", 1941, 1944 ],
+    [ "TBD", "Devastator", "Torpedo Bomber", 1941, 1942 ],
+    [ "TBF", "Avenger", "Torpedo Bomber", 1942, 1945 ],
+    [ "SB2U", "Vindicator", "Dive Bomber", 1941, 1942 ],
+    [ "F4U (UK-FAA)", "Corsair", "Fighter", 1943, 1945 ]
+]
