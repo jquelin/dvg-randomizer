@@ -14,7 +14,7 @@ def load_campaigns(filepath):
         year = c['year']
         level   = c['level']
         lengths = c['lengths']
-        logging.debug(f"- found {name} - ({year})")
+        logging.debug(f"- found campaign: {name} - ({year})")
         newc = Campaign(name=name, year=year,
                         level=level, lengths=lengths)
         campaigns.append(newc)

@@ -4,6 +4,7 @@ import logging
 import os
 import pkg_resources
 
+import aircraft
 import campaign
 
 
@@ -15,8 +16,8 @@ def all_boardgames():
         reader = csv.reader(fp)
         next(reader, None)  # skip the headers
         for alias, name in reader:
+            logging.debug(f"- found boardgame {name} ({alias})")
             boardgames.append(Boardgame(alias=alias, name=name))
-            logging.debug(f"- found {name} ({alias})")
         logging.info(f"found {len(boardgames)} boardgames")
         return boardgames
 
@@ -26,6 +27,8 @@ class Boardgame:
         self.name  = name
         filepath = pkg_resources.resource_filename(f'data.{self.alias}', 'campaigns.json')
         self.campaigns = campaign.load_campaigns(filepath)
+        filepath = pkg_resources.resource_filename(f'data.{self.alias}', 'aircrafts.json')
+        self.aircrafts = aircraft.load_aircrafts(filepath)
 
     def find_campaign(self, name, year):
         for c in self.campaigns:
