@@ -2,143 +2,143 @@
     {
         "name":"Battle of Midway - US Marines",
         "year":1942,
-        "set":"core",
+        "box":"core",
         "level":4,
         "aircrafts":[ "F4F (41-42)", "F2A", "TBF", "SBD", "TBD", "SB2U" ],
         "lengths":[
-            { "days":"2", "so":12 },
-            { "days":"3", "so":19 },
-            { "days":"4", "so":24 }
+            { "days":"2", "so":12, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"3", "so":19, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"4", "so":24, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Battle of Midway - US Navy",
         "year":1942,
-        "set":"core",
+        "box":"core",
         "level":4,
         "aircrafts":[ "F4F (41-42)", "SBD", "TBD" ],
         "lengths":[
-            { "days":"2", "so":15 },
-            { "days":"3", "so":24 },
-            { "days":"4", "so":33 }
+            { "days":"2", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"3", "so":24, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"4", "so":33, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Battle of the Coral Sea - US Navy",
         "year":1942,
-        "set":"core",
+        "box":"core",
         "level":3,
         "aircrafts":[ "F4F (41-42)", "SBD", "TBD" ],
         "lengths":[
-            { "days":"2", "so":15 },
-            { "days":"3", "so":24 },
-            { "days":"4", "so":33 }
+            { "days":"2", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"3", "so":24, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"4", "so":33, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Guadalcanal - US Marines",
         "year":1942,
-        "set":"core",
+        "box":"core",
         "level":3,
         "aircrafts":[ "F4F (41-42)", "SBD", "TBF" ],
         "lengths":[
-            { "days":"4", "so":14 },
-            { "days":"7", "so":22 },
-            { "days":"10", "so":29 }
+            { "days":"4", "so":14, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"7", "so":22, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"10", "so":29, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Black Sheep Squadron - US Marines",
         "year":1943,
-        "set":"core",
+        "box":"core",
         "level":4,
         "aircrafts":[ "F4U" ],
         "lengths":[
-            { "days":"8", "so":10 }
+            { "days":"8", "so":10, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"New Britain - USAAF",
         "year":1943,
-        "set":"core",
+        "box":"core",
         "level":2,
         "aircrafts":[ "P-38", "B-25" ],
         "lengths":[
-            { "days":"3", "so":20 },
-            { "days":"6", "so":35 },
-            { "days":"9", "so":50 }
+            { "days":"3", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":35, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":50, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"New Georgia - US Marines",
         "year":1943,
-        "set":"core",
+        "box":"core",
         "level":3,
         "aircrafts":[ "F4F (1943+)", "SBD", "F4U", "TBF" ],
         "lengths":[
-            { "days":"4", "so":15 },
-            { "days":"8", "so":25 },
-            { "days":"12", "so":35 }
+            { "days":"4", "so":15, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":25, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":35, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Battle of Leyte Gulf - US Navy",
         "year":1944,
-        "set":"core",
+        "box":"core",
         "level":2,
         "aircrafts":[ "F6F", "SB2C", "TBF" ],
         "lengths":[
-            { "days":"3", "so":20 },
-            { "days":"6", "so":35 },
-            { "days":"9", "so":50 }
+            { "days":"3", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":35, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":50, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Rabaul - US Marines",
         "year":1944,
-        "set":"core",
+        "box":"core",
         "level":2,
         "aircrafts":[ "SBD", "F4U", "B-25", "TBF" ],
         "lengths":[
-            { "days":"4", "so":25 },
-            { "days":"8", "so":40 },
-            { "days":"12", "so":60 }
+            { "days":"4", "so":25, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"8", "so":40, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"12", "so":60, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Sumatra - UK-FAA",
         "year":1944,
-        "set":"core",
+        "box":"core",
         "level":2,
         "aircrafts":[ "F4U (UK-FAA)" ],
         "lengths":[
-            { "days":"3", "so":18 },
-            { "days":"6", "so":32 },
-            { "days":"9", "so":44 }
+            { "days":"3", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":32, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":44, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Luzon - US Marines",
         "year":1944,
-        "set":"core",
+        "box":"core",
         "level":1,
         "aircrafts":[ "SBD", "F4U", "TBF", "B-25" ],
         "lengths":[
-            { "days":"3", "so":20 },
-            { "days":"6", "so":35 },
-            { "days":"9", "so":50 }
+            { "days":"3", "so":20, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":35, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"9", "so":50, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     },
     {
         "name":"Okinawa - US Navy & UK-FAA",
         "year":1945,
-        "set":"core",
+        "box":"core",
         "level":2,
         "aircrafts":[ "F4U", "F4U (UK-FAA)", "F6F", "SB2C", "TBF" ],
         "lengths":[
-            { "days":"4", "so":18 },
-            { "days":"6", "so":25 },
-            { "days":"8", "so":30 }
+            { "days":"4", "so":18, "length":"short", "squad":[ 1, 2, 4, 1, 0, 0 ] },
+            { "days":"6", "so":25, "length":"medium", "squad":[ 1, 2, 5, 1, 1, 0 ] },
+            { "days":"8", "so":30, "length":"long", "squad":[ 1, 2, 6, 2, 1, 0 ] }
         ]
     }
 ]
