@@ -4,67 +4,75 @@ from tkinter.ttk import *
 from tkinter import *
 from tkinter import font
 #import tkinter.font as tkFont
+import types
 
 
 import boardgame
 
 class GUI(Tk):
     def __init__(self):
-        Tk.__init__(self)
-        logging.debug("create root window")
-        self.title('DVG air leader')
-        self.bind('<Escape>', self.close)
+        # load boardgames data
         self.boardgames = boardgame.all_boardgames()
 
-        self.w = {} # widgets
-        self.v = {} # variables
+        # a convenient way to store our vars
+        self.vars    = types.SimpleNamespace() # gui vars (StringVar)
+        self.widgets = types.SimpleNamespace() # widgets
 
+        # gui creation
+        logging.debug("create root window")
+        Tk.__init__(self)
+        self.title('DVG air leader')
+        self.bind('<Escape>', self.close)
         self._create_boardgames()
         self._create_campaigns()
         self._create_campaign_length()
         self._create_button()
+
+        # set minimum window size
         self.update()
         self.minsize(self.winfo_width(), self.winfo_height())
 
-        self.v['boardgame'].set(self.boardgames[0].name)
+        # initialize gui with the first boardgame, and update gui
+        # accordingly
+        self.vars.boardgame.set(self.boardgames[0].name)
         self.select_boardgame()
 
     # -- gui creation
 
     def _create_boardgames(self):
         lf = LabelFrame(self, text='Board game')
-        self.v['boardgame'] = StringVar()
+        self.vars.boardgame = StringVar()
 
         for bg in self.boardgames:
             rb = Radiobutton(
                 lf, text=bg.name, value=bg.name,
-                variable=self.v['boardgame'],
+                variable=self.vars.boardgame,
                 command=self.select_boardgame
             )
             rb.pack(side=LEFT)
         lf.pack(padx=20, pady=20)
 
     def _create_button(self):
-        f = self.w['f_campaigns']
+        f = self.widgets.f_campaigns
         b = Button(f, text="Create random squad")
         b.pack(side=TOP, fill=X)
 
     def _create_campaign_length(self):
-        f = self.w['f_campaigns']
+        f = self.widgets.f_campaigns
 
         lf = LabelFrame(f, text='Campaign length')
-        self.v['campaign_length'] = StringVar()
+        self.vars.campaign_length = StringVar()
         for length in ['short', 'medium', 'long']:
             rb = Radiobutton(
                 lf, text=length, value=length,
-                variable=self.v['campaign_length'],
+                variable=self.vars.campaign_length,
                 state=DISABLED
             )
             rb.pack(side=LEFT)
 
         lf.pack(side=TOP, fill=X, padx=5, pady=5)
-        self.w['lf_campaign_length'] = lf
-        self.v['campaign_length'].set('short')
+        self.widgets.lf_campaign_length = lf
+        self.vars.campaign_length.set('short')
 
 
     def _create_campaigns(self):
@@ -94,8 +102,8 @@ class GUI(Tk):
         vsb.pack(side=LEFT, fill=Y)
         tv.configure(yscrollcommand=vsb.set)
 
-        self.w['f_campaigns'] = f
-        self.w['campaigns'] = tv
+        self.widgets.f_campaigns = f
+        self.widgets.tv_campaigns = tv
 
 #        campaign = [g.name for g in self.boardgames]
 #        vgames = StringVar(value=games)
@@ -116,22 +124,22 @@ class GUI(Tk):
         self.destroy()
 
     def select_boardgame(self):
-        logging.debug(f"new boardgame selected: {self.v['boardgame'].get()}")
+        logging.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
         self.cur_boardgame = next(bg for bg in self.boardgames if
-                                  bg.name == self.v['boardgame'].get())
+                                  bg.name == self.vars.boardgame.get())
 
-        tv = self.w['campaigns']
+        tv = self.widgets.tv_campaigns
         tv.delete(*tv.get_children())
         for c in self.cur_boardgame.campaigns:
             tv.insert('', END, values=[c.name, c.year, "*"*c.level])
 #        logging.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
-        for c in self.w['lf_campaign_length'].winfo_children():
+        for c in self.widgets.lf_campaign_length.winfo_children():
             c.config(state=DISABLED)
 
 
     def select_campaign(self, ev):
-        tv = self.w['campaigns']
+        tv = self.widgets.tv_campaigns
         curitem = tv.focus()
         if curitem == "":
             # no item selected - we get there if campaign is selected
@@ -143,7 +151,7 @@ class GUI(Tk):
 
         self.cur_campaign = self.cur_boardgame.find_campaign(name, year)
 
-        lf = self.w['lf_campaign_length']
+        lf = self.widgets.lf_campaign_length
         for child in lf.winfo_children():
             child.destroy()
 
@@ -154,7 +162,7 @@ class GUI(Tk):
             rb = Radiobutton(
                 lf, text=f"{label}\n{days} days, {so} SO", value=label,
                 justify=LEFT,
-                variable=self.v['campaign_length'],
+                variable=self.vars.campaign_length,
             )
             rb.pack(side=LEFT)
 
@@ -167,7 +175,7 @@ class GUI(Tk):
     def sort_campaigns(self, col, descending):
         """Sort campaigns tree contents when a column header is clicked on."""
         logging.debug(f"sorting campaigns by {col}")
-        tv = self.w['campaigns']
+        tv = self.widgets.tv_campaigns
 
         # grab values to sort
         data = [(tv.set(child, col), child) for child in tv.get_children('')]
