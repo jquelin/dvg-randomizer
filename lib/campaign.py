@@ -1,25 +1,5 @@
 
-import json
 import logging
-import pkg_resources
-
-
-def load_campaigns(filepath):
-    logging.info(f"reading {filepath}")
-    campaigns = []
-    with open(filepath) as ifp:
-        data = json.load(ifp)
-    for c in data:
-        name = c['name']
-        year = c['year']
-        level   = c['level']
-        lengths = c['lengths']
-        logging.debug(f"- found campaign: {name} - ({year})")
-        newc = Campaign(name=name, year=year,
-                        level=level, lengths=lengths)
-        campaigns.append(newc)
-    logging.info(f"found {len(campaigns)} campaigns")
-    return campaigns
 
 class CampaignLength:
     def __init__(self, days:int, so:int, label:str, squad:list):
