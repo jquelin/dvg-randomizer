@@ -1,6 +1,5 @@
 #!/bin/python
 
-import logging
 import os
 import sys
 
@@ -8,11 +7,9 @@ bindir = os.path.dirname(__file__)
 libdir = os.path.join(bindir, "lib")
 sys.path.append(libdir)
 
-logging.basicConfig(format='%(asctime)s %(module)s.%(funcName)s:%(lineno)d %(levelname)s %(message)s', datefmt='%H:%M:%S', level=logging.DEBUG)
-
-logging.warning("foo")
-
+from log import logger
 import gui
+
 gui = gui.GUI()
 gui.mainloop()
 

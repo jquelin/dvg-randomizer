@@ -1,5 +1,5 @@
 
-import logging
+from log import logger
 from tkinter.ttk import *
 from tkinter import *
 from tkinter import font
@@ -19,7 +19,7 @@ class GUI(Tk):
         self.widgets = types.SimpleNamespace() # widgets
 
         # gui creation
-        logging.debug("create root window")
+        logger.debug("create root window")
         Tk.__init__(self)
         self.title('DVG air leader')
         self.bind('<Escape>', self.close)
@@ -82,7 +82,7 @@ class GUI(Tk):
             for c in bg.campaigns:
                 if len(c.name) > len(longestc):
                     longestc = c.name
-        logging.debug(f"longest campaign name: {longestc}")
+        logger.debug(f"longest campaign name: {longestc}")
         longest = [longestc, '0000', '****']
 
         f = Frame(self)#, bg='red')
@@ -124,7 +124,7 @@ class GUI(Tk):
         self.destroy()
 
     def select_boardgame(self):
-        logging.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
+        logger.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
         self.cur_boardgame = next(bg for bg in self.boardgames if
                                   bg.name == self.vars.boardgame.get())
 
@@ -132,7 +132,7 @@ class GUI(Tk):
         tv.delete(*tv.get_children())
         for c in self.cur_boardgame.campaigns:
             tv.insert('', END, values=[c.name, c.year, "*"*c.level])
-#        logging.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
+#        logger.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
         for c in self.widgets.lf_campaign_length.winfo_children():
             c.config(state=DISABLED)
@@ -147,7 +147,7 @@ class GUI(Tk):
             self.cur_campaign = None
             return
         (name, year, diff) = tv.item(curitem)['values']
-        logging.debug(f"campaign {name} - {year} selected)")
+        logger.debug(f"campaign {name} - {year} selected)")
 
         self.cur_campaign = self.cur_boardgame.find_campaign(name, year)
 
@@ -174,7 +174,7 @@ class GUI(Tk):
 
     def sort_campaigns(self, col, descending):
         """Sort campaigns tree contents when a column header is clicked on."""
-        logging.debug(f"sorting campaigns by {col}")
+        logger.debug(f"sorting campaigns by {col}")
         tv = self.widgets.tv_campaigns
 
         # grab values to sort

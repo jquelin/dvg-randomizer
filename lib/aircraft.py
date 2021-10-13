@@ -1,5 +1,5 @@
 
-import logging
+from log import logger
 
 class Aircraft:
     def __init__(self, code:str, name:str, role:str, year_start:int, year_end:int, costs:list):

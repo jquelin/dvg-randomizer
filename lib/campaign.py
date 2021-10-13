@@ -1,5 +1,5 @@
 
-import logging
+from log import logger
 
 class CampaignLength:
     def __init__(self, days:int, so:int, label:str, squad:list):

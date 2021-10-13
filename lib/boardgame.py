@@ -1,26 +1,26 @@
 
 import csv
 import json
-import logging
 import os
 from pkg_resources import resource_filename
 
 from aircraft import Aircraft
 from campaign import Campaign
+from log      import logger
 from pilot    import Pilot
 
 
 def all_boardgames():
     boardgames = []
     filepath = resource_filename('data', 'games.csv')
-    logging.info(f"reading {filepath}")
+    logger.info(f"reading {filepath}")
     with open(filepath) as fp:
         reader = csv.reader(fp)
         next(reader, None)  # skip the headers
         for alias, name in reader:
-            logging.debug(f"- found boardgame {name} ({alias})")
+            logger.debug(f"- found boardgame {name} ({alias})")
             boardgames.append(Boardgame(alias=alias, name=name))
-        logging.info(f"found {len(boardgames)} boardgames")
+        logger.info(f"found {len(boardgames)} boardgames")
         return boardgames
 
 class Boardgame:
@@ -34,55 +34,67 @@ class Boardgame:
     # -- loading data
 
     def load_aircrafts(self):
-        filepath = resource_filename(f'data.{self.alias}', 'aircrafts.json')
-        logging.info(f"reading {filepath}")
-        aircrafts = []
+        filepath = resource_filename(f'data.{self.alias}', 'aircrafts.csv')
+        logger.info(f"reading {filepath}")
+        all_aircrafts = []
         with open(filepath) as ifp:
-            data = json.load(ifp)
-        for a in data:
-            (code, name, role, ystart, yend, costs) = list(a)
-            logging.debug(f"- found aircraft: {code} {name} ({role}) [{ystart}-{yend}] {costs}")
-            newa = Aircraft(code=code, name=name, role=role,
-                            year_start=ystart, year_end=yend, costs=costs)
-            aircrafts.append(newa)
-        logging.info(f"found {len(aircrafts)} aircrafts")
-        self.aircrafts = aircrafts
+            reader = csv.reader(ifp)
+            next(reader, None)  # skip the headers
+            for model, name, role, y_in, y_out, so1, so2, so3 in reader:
+                logger.debug(f"- found aircraft {model} {name} ({role}) [{y_in}-{y_out}] [{so1},{so2},{so3}]")
+                aircraft = Aircraft(model=model, name=name, role=role,
+                                    year_in=y_in, year_out=y_out,
+                                    costs=[int(so1), int(so2), int(so3)])
+                all_aircrafts.append(aircraft)
+        logger.info(f"found {len(all_aircrafts)} aircrafts")
+        self.aircrafts = all_aircrafts
 
     def load_campaigns(self):
         filepath = resource_filename(f'data.{self.alias}', 'campaigns.json')
-        logging.info(f"reading {filepath}")
+        logger.info(f"reading {filepath}")
         campaigns = []
         with open(filepath) as ifp:
             data = json.load(ifp)
         for c in data:
             name = c['name']
             year = c['year']
-            level   = c['level']
-            lengths = c['lengths']
-            logging.debug(f"- found campaign: {name} - ({year})")
-            newc = Campaign(name=name, year=year,
-                            level=level, lengths=lengths)
+            ac_codes = c['aircrafts']
+            level    = c['level']
+            lengths  = c['lengths']
+            logger.debug(f"- found campaign: {name} - ({year})")
+            newc = Campaign(name=name, year=year, level=level, lengths=lengths)
+            available_pilots = []
+#            for pilot in self.pilots:
+#                print(f"{self.name} {pilot.name} {pilot.aircraft}")
+#                if pilot.aircraft.code is None:
+#                    print("FOO")
+#                    exit
+#                if pilot.aircraft.code in ac_codes:
+#                    print(pilot.name)
+
+#            print(self.pilots)
+#            pilots = [p for p in self.pilots if p.aircraft.code in ac_codes]
             campaigns.append(newc)
-        logging.info(f"found {len(campaigns)} campaigns")
+        logger.info(f"found {len(campaigns)} campaigns")
         self.campaigns = campaigns
 
     def load_pilots(self):
-        filepath = resource_filename(f'data.{self.alias}', 'pilots.json')
-        logging.info(f"reading {filepath}")
+        filepath = resource_filename(f'data.{self.alias}', 'pilots.csv')
+        logger.info(f"reading {filepath}")
         all_pilots = []
         with open(filepath) as ifp:
-            data = json.load(ifp)
-        for pilot in data:
-            (name, ac_name) = pilot
-            logging.debug(f"- found pilot: {name} ({ac_name})")
-            aircraft = self.find_aircraft(ac_name)
-            if aircraft == None:
-                logging.error(f"non-existing aircraft {ac_name} for pilot {name}")
-            newp = Pilot(name=name, aircraft=aircraft)
-            all_pilots.append(newp)
-        logging.info(f"found {len(all_pilots)} pilots")
+            reader = csv.reader(ifp)
+            next(reader, None)  # skip the headers
+            for box, name, model in reader:
+                logger.debug(f"- found pilot {name} {model} [{box}]")
+                aircraft = self.find_aircraft(model)
+                if aircraft == None:
+                    logger.error(f"non-existing aircraft {model} for pilot {name}")
+                else:
+                    pilot = Pilot(name=name, aircraft=aircraft, box=box)
+                    all_pilots.append(pilot)
+        logger.info(f"found {len(all_pilots)} pilots")
         self.pilots = all_pilots
-
 
     # -- methods
 
