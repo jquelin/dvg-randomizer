@@ -12,7 +12,7 @@ import boardgame
 class GUI(Tk):
     def __init__(self):
         # load boardgames data
-        self.boardgames = boardgame.all_boardgames()
+#        self.boardgames = boardgame.all_boardgames()
 
         # a convenient way to store our vars
         self.vars    = types.SimpleNamespace() # gui vars (StringVar)

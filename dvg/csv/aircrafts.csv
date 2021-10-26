@@ -1,0 +1,97 @@
+boardgame,box,service,aircraft,year in,year out,cost,role
+CL,core,Pearl Harbor,A-6 Intruder,1941,1997,0,attack
+CL,core,Pearl Harbor,A-7 Corsair II,1941,1991,0,attack
+CL,core,USMC+USN,B-25 Mitchell,1943,1945,4,bomber
+CL,core,USAAF,B-25C Mitchell,1943,1945,5,bomber
+CL,core,Pearl Harbor,E-2C Hawkeye,1941,,0,AWACS
+CL,core,Pearl Harbor,F-14 Tomcat,1941,2006,0,fighter
+CL,core,USMC+USN,F2A Buffalo,1941,1942,-3,fighter
+CL,core,USMC+USN,F4F Wildcat,1941,1942,0,fighter
+CL,core,USMC+USN,F4F Wildcat,1943,,-2,fighter
+CL,core,USMC+USN,F4U Corsair,1943,1945,0,fighter
+CL,core,UK-FAA,F4U Corsair,1943,1945,0,fighter
+CL,core,USMC+USN,F6F Hellcat,1943,1945,,fighter
+CL,core,USAAF,P-38 Lightning,1943,1945,0,fighter
+CL,core,USAAF,P-40 Warhawk,1941,1942,0,fighter
+CL,core,USAAF,P-40 Warhawk,1943,,-2,fighter
+CL,core,USMC+USN,SB2C Helldiver,1943,1945,0,dive bomber
+CL,core,USMC+USN,SB2U Vindicator,1941,1942,-3,dive bomber
+CL,core,USMC+USN,SBD Dauntless,1941,1944,0,dive bomber
+CL,core,USMC+USN,TBD Devastator,1941,1942,-2,torpedo bomber
+CL,core,USMC+USN,TBF Avenger,1942,1945,0,torpedo bomber
+HLCAO,core,USN,A-6 Intruder,1963,1997,0,attack
+HLCAO,core,USN,A-7 Corsair II,1967,1993,-4,attack
+HLCAO,core,USMC,AV-8B Harrier II,1985,,-4,attack
+HLCAO,core,USN,E-2C Hawkeye,1964,,0,AWACS
+HLCAO,core,USN,EA-18G Hornet,2011,,2,electronic warfare
+HLCAO,core,USN,EA-6B Prowler,1972,2011,0,electronic warfare
+HLCAO,core,USN,F-14 Tomcat,1972,2006,0,fighter
+HLCAO,core,USMC+USN,F-35B/C Lightning II,2014,,3,fighter
+HLCAO,core,USN,F/A-18C Hornet,1983,,0,fighter-bomber
+HLCAO,core,USN,F/A-18E Hornet,2000,,2,fighter-bomber
+HLCAO,core,USN,F/A-18F Hornet,2001,,3,fighter-bomber
+HLCAO,Cthulhu,USN,MQ-47a,2015,,0,UAV
+HLCAO,exp1,USN,KC-130 Hercules,1962,2007,4,transport
+HLCAO,exp1,USN,M9-4C Triton,2018,,2,AWACS
+HLCAO,exp1,USN,OV-10 Aronco,1969,1995,-2,observation
+IAFL,core,Israel,A-4 Skyhawk,1966,2008,0,fighter
+IAFL,core,Israel,Avia S.199,1948,1949,0,fighter
+IAFL,core,Israel,B-17 Flying fortress,1948,1958,0,bomber
+IAFL,core,Israel,C.2 KFIR,1976,1996,0,fighter
+IAFL,core,Israel,F-15A Eagle,1976,,0,fighter
+IAFL,core,Israel,F-16 Fighting Falcon,1980,,0,fighter
+IAFL,core,Israel,F-35 Lightning II,2017,,0,fighter
+IAFL,core,Israel,F-4 Phantom II,1969,2004,0,fighter
+IAFL,core,Israel,Magister,1967,1967,0,fighter
+IAFL,core,Israel,Meteor MK.XIII,1956,1956,0,fighter
+IAFL,core,Israel,Mirage IIIC,1962,1973,0,fighter
+IAFL,core,Israel,MK.IX Spitfire,1948,1949,0,fighter
+IAFL,core,Israel,Mosquito MK.VI,1956,1956,0,fighter
+IAFL,core,Israel,Mystere MK.IV,1956,1967,0,fighter-bomber
+IAFL,core,Israel,Nesher,1972,1977,0,fighter
+IAFL,core,Israel,Ouragan,1956,1967,0,fighter-bomber
+IAFL,core,Israel,P-51D Mustang,1948,1956,0,fighter
+IAFL,core,Israel,Super Mystere,1958,1973,0,fighter-bomber
+IAFL,core,Israel,Vautour,1958,1972,0,fighter-bomber
+IAFL,exp1,Israel,F-15I Strike Eagle,1994,,0,fighter-bomber
+PL,core,USN,A-3 Skywarrior,1956,1991,-3,bomber
+PL,core,USN,A-4 Skyhawk,1956,2003,-3,attack
+PL,core,USN,A-6 Intruder,1963,1997,0,attack
+PL,core,USAF,A-7 Corsair II,1972,1991,0,attack
+PL,core,USN,A-7 Corsair II,1967,1993,0,attack
+PL,core,USN,E-1 Tracer,1956,1977,0,AWACS
+PL,core,USN,E-2 Hawkeye,1961,1986,2,AWACS
+PL,core,USN,EA-6A Electric Intruder,1966,1972,0,electronic warfare
+PL,core,USAF,EB-66 Destroyer,1956,1973,0,electronic warfare
+PL,core,USAF,F-100 Super Sabre,1954,1979,-3,fighter
+PL,core,USAF,F-101 Voodoo,1957,1966,-5,fighter
+PL,core,USAF,F-102 Delta Dagger,1956,1976,-4,fighter
+PL,core,USAF,F-104 Starfighter,1954,1975,-4,fighter
+PL,core,USAF,F-105 Thunderchief,1958,1984,-2,fighter
+PL,core,USAF,F-105 Wild Weasel,1966,1973,-2,strike
+PL,core,USAF,F-4 Phantom II,1962,1990,0,fighter
+PL,core,USN,F-4 Phantom II,1961,1986,0,fighter
+PL,core,USAF,F-5 Freedom Fighter,1962,1990,-3,fighter
+PL,core,USN,F-8 Crusader,1957,1976,-3,fighter
+PL,exp1,USAF,A-1 Skyraider,1945,1985,-3,attack
+PL,exp1,USAF,A-37 Dragonfly,1962,1990,-4,attack
+PL,exp1,USN,A-5 Vigilante,1961,1979,-1,bomber
+PL,exp1,USAF,F-106 Delta Dart,1959,1988,-6,fighter
+ZL,china,IJN,A5M Claude,1939,1943,0,fighter
+ZL,china,IJN,KI-48 Lily,1940,1942,0,bomber
+ZL,core,IJN,A6M2 Zero,1940,1945,0,fighter
+ZL,core,IJN,A6M5 Zeke,1941,1945,1,fighter
+ZL,core,IJN,B5N2 Kate,1939,1945,0,torpedo bomber
+ZL,core,IJN,B6N Jill,1944,1945,1,torpedo bomber
+ZL,core,IJN,D3A1 Val,1940,1945,0,dive bomber
+ZL,core,IJN,G3M Nell,1940,1943,-1,bomber
+ZL,core,IJN,G4M Betty,1941,1945,1,bomber
+ZL,core,IJN,H8K Emily,1942,1945,2,patrol
+ZL,core,IJN,J2M Jack,1943,1945,0,fighter
+ZL,core,IJN,KI-43 Oscar,1939,1945,0,fighter
+ZL,core,IJN,KI-44 Tojo,1941,1945,0,fighter
+ZL,core,IJN,KI-51 Sonia,1939,1945,0,bomber
+ZL,core,IJN,KI-61 Tony,1943,1945,1,fighter
+ZL,core,IJN,KI-84 Frank,1944,1945,1,fighter
+ZL,core,IJN,NIKJ George,1944,1945,2,fighter
+ZL,core+china,IJN,KI-27 Nate,1939,1943,-1,fighter

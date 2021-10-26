@@ -4,14 +4,19 @@ import os
 import sys
 
 bindir = os.path.dirname(__file__)
-libdir = os.path.join(bindir, "lib")
-sys.path.append(libdir)
+#libdir = os.path.join(bindir, "lib")
+sys.path.append(bindir)
 
-from log import logger
-import gui
+from dvg.logger import log
+#import gui
 
-gui = gui.GUI()
-gui.mainloop()
+from dvg import data
+
+#import boardgame
+#boardgames = boardgame.all_boardgames()
+
+#gui = gui.GUI()
+#gui.mainloop()
 
 #root = tk.Tk()
 #label = tk.Label(root, text="J'adore Python !").pack()

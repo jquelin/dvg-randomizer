@@ -1,0 +1,28 @@
+boardgame,box,campaign,service,aircraft,cost
+IAFL,core,Armaggedon,Israel,F-15A Eagle,-2
+IAFL,core,Armaggedon,Israel,F-16 Fighting Falcon,-2
+IAFL,core,Desert Storm,Israel,A-4 Skyhawk,-1
+IAFL,core,Lebanon I,Israel,A-4 Skyhawk,-1
+IAFL,core,Lebanon II,Israel,A-4 Skyhawk,-1
+IAFL,core,Operation Babylon,Israel,A-4 Skyhawk,-4
+IAFL,core,Operation Babylon,Israel,C.2 KFIR,-4
+IAFL,core,Operation Babylon,Israel,F-4 Phantom II,-2
+IAFL,core,The 6 day war,Israel,Magister,-2
+IAFL,core,The 6 day war,Israel,Mystere MK.IV,-1.5
+IAFL,core,The 6 day war,Israel,Ouragan,-1
+IAFL,core,The Suez crisis,Israel,P-51D Mustang,-2
+IAFL,core,Yom Kippur war,Israel,A-4 Skyhawk,-1
+IAFL,core,Yom Kippur war,Israel,Mirage IIIC,-3
+IAFL,core,Yom Kippur war,Israel,Nesher,-3
+IAFL,core,Yom Kippur war,Israel,Super Mystere,-3
+IAFL,exp1,The 6 day war: West Bank,Israel,Magister,-2
+IAFL,exp1,The 6 day war: West Bank,Israel,Mystere MK.IV,-1.5
+IAFL,exp1,The 6 day war: West Bank,Israel,Ouragan,-1
+IAFL,exp1,Yom Kippur war: Battles of Mount Hermon,Israel,A-4 Skyhawk,-1
+IAFL,exp1,Yom Kippur war: Battles of Mount Hermon,Israel,Mirage IIIC,-3
+IAFL,exp1,Yom Kippur war: Battles of Mount Hermon,Israel,Nesher,-3
+IAFL,exp1,Yom Kippur war: Battles of Mount Hermon,Israel,Super Mystere,-3
+PL,core,War in the south,USN,A-6 Intruder,2
+PL,exp1,Hunting weasels,USAF,F-105 Thunderchief,0
+PL,exp1,Hunting weasels,USAF,F-105 Wild Weasel,0
+PL,exp1,Milk run 66,USN,A-4 Skyhawk,0
