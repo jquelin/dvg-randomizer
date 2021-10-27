@@ -1,4 +1,4 @@
-boardgame,box,service,pilot,aircraft,Elite cost
+boardgame,box,service,pilot,aircraft,elite cost
 CL,core,USMC+USN,"""Tiny"" Cherry",SB2C Helldiver,
 CL,core,USMC+USN,"1st Lt. Derek ""12 Pack"" Case",F4U Corsair,
 CL,core,USAAF,2Lt Scott Biggar,P-38 Lightning,
@@ -440,7 +440,7 @@ ZL,china,IJN,Tsukishima,KI-48 Lily,
 ZL,china,IJN,Yamashita,A5M Claude,
 ZL,core,IJN,Agari,KI-27 Nate,
 ZL,core,IJN,Aizawa,KI-43 Oscar,
-ZL,core,IJN,Akita,KI-40 Tojo,
+ZL,core,IJN,Akita,KI-44 Tojo,
 ZL,core,IJN,Ando,B6N Jill,
 ZL,core,IJN,Aoki,B6N Jill,
 ZL,core,IJN,Arai,NIKJ George,

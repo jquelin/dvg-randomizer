@@ -36,7 +36,7 @@ HLCAO,exp1,USN,M9-4C Triton,2018,,2,AWACS
 HLCAO,exp1,USN,OV-10 Aronco,1969,1995,-2,observation
 IAFL,core,Israel,A-4 Skyhawk,1966,2008,0,fighter
 IAFL,core,Israel,Avia S.199,1948,1949,0,fighter
-IAFL,core,Israel,B-17 Flying fortress,1948,1958,0,bomber
+IAFL,core,Israel,B-17 Flying Fortress,1948,1958,0,bomber
 IAFL,core,Israel,C.2 KFIR,1976,1996,0,fighter
 IAFL,core,Israel,F-15A Eagle,1976,,0,fighter
 IAFL,core,Israel,F-16 Fighting Falcon,1980,,0,fighter
