@@ -14,8 +14,10 @@ class Aircraft:
         self.role = role
 
     def id(self):
+        # box should not be part of id, since a core aircraft can be
+        # reused from other expansions.
         id = self.boardgame.alias
-        for attribute in ['box', 'service', 'name']:
+        for attribute in ['service', 'name']:
             id = id + '-' + getattr(self, attribute)
         return id
 

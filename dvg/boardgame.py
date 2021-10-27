@@ -7,6 +7,7 @@ class Boardgame:
         self.name  = name
         self.alias = alias
         self.aircrafts = []
+        self.pilots    = []
 
     def __repr__(self):
         return f'{self.name} ({self.alias})'
@@ -16,6 +17,20 @@ class Boardgame:
     def add_aircraft(self, aircraft):
         # FIXME check if overlap
         self.aircrafts.append(aircraft)
+
+    def add_pilot(self, pilot):
+        # FIXME check if overlap
+        self.pilots.append(pilot)
+
+    # -- finders
+
+    def aircraft(self, service, name):
+        id = "-".join([self.alias, service, name])
+        return next(
+            filter(lambda a: a.id() == id, self.aircrafts),
+            None
+        )
+
 
 #
 #def all_boardgames():

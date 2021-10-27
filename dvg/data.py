@@ -6,10 +6,8 @@ import pkg_resources
 
 from dvg.aircraft  import Aircraft
 from dvg.boardgame import Boardgame
+from dvg.pilot     import Pilot
 from dvg.logger    import log
-
-print(__name__)
-
 
 # ----
 
@@ -17,6 +15,7 @@ class Data:
     def __init__(self):
         self.load_boardgames()
         self.load_aircrafts()
+        self.load_pilots()
 
     # -- data loading
 
@@ -52,6 +51,26 @@ class Data:
                 log.debug(f"- found boardgame {boardgame}")
                 self.boardgames.append(boardgame)
             log.info(f"found {len(self.boardgames)} boardgames")
+
+    def load_pilots(self):
+        log.info("loading pilots")
+        filepath = self.get_csv_path('pilots.csv')
+        log.info(f"reading {filepath}")
+        with open(filepath) as fp:
+            reader = csv.reader(fp)
+            next(reader, None)  # skip the headers
+            for bgname, box, service, name, aircraft_name, elite in reader:
+                bg = self.boardgame(bgname)
+                aircraft = bg.aircraft(service, aircraft_name)
+                if aircraft is None:
+                    log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
+                else:
+                    pilot = Pilot(bg, box, service, name, aircraft)
+                    log.debug(f'- found pilot {pilot}')
+                    bg.add_pilot(pilot)
+
+            for bg in self.boardgames:
+                log.info(f"{bg}: found {len(bg.pilots)} pilots")
 
 
     # -- finder methods
