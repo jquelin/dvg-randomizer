@@ -30,6 +30,7 @@ class Data:
             next(reader, None)  # skip the headers
             for bgname, box, service, name, year_in, year_out, cost, role in reader:
                 bg = self.boardgame(bgname)
+                # FIXME check bg
                 aircraft = Aircraft(bg, box, service, name, year_in,
                                     year_out, cost, role)
                 log.debug(f'- found aircraft {aircraft}')
@@ -69,6 +70,7 @@ class Data:
                                     sdays, sso, ssquad,
                                     mdays, mso, msquad,
                                     ldays, lso, lsquad)
+                # FIXME: check if campaign has at least one length
                 log.debug(f"- found campaign {campaign}")
                 bg.add_campaign(campaign)
 
@@ -85,6 +87,7 @@ class Data:
             next(reader, None)  # skip the headers
             for bgname, box, service, name, aircraft_name, elite in reader:
                 bg = self.boardgame(bgname)
+                # FIXME check bg
                 aircraft = bg.aircraft(service, aircraft_name)
                 if aircraft is None:
                     log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
