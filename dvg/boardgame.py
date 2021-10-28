@@ -7,6 +7,7 @@ class Boardgame:
         self.name  = name
         self.alias = alias
         self.aircrafts = []
+        self.campaigns = []
         self.pilots    = []
 
     def __repr__(self):
@@ -17,6 +18,9 @@ class Boardgame:
     def add_aircraft(self, aircraft):
         # FIXME check if overlap
         self.aircrafts.append(aircraft)
+
+    def add_campaign(self, campaign):
+        self.campaigns.append(campaign)
 
     def add_pilot(self, pilot):
         # FIXME check if overlap
