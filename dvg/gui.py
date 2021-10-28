@@ -76,14 +76,16 @@ class GUI(Tk):
 
 
     def _create_campaigns(self):
-        headers = ['Name', 'Year', 'Difficulty']
+        headers = ['Box', 'Name', 'Year', 'Difficulty']
+        longestb = ''
         longestc = ''
         for bg in data.boardgames:
             for c in bg.campaigns:
-                if len(c.name) > len(longestc):
-                    longestc = c.name
+                if len(c.name) > len(longestc): longestc = c.name
+                if len(c.box)  > len(longestb): longestb = c.box
+        log.debug(f"longest box name: {longestb}")
         log.debug(f"longest campaign name: {longestc}")
-        longest = [longestc, '0000', '****']
+        longest = [longestb, longestc, '0000', '****']
 
         f = Frame(self)#, bg='red')
         Label(f, text="Select your campaign",
@@ -131,7 +133,7 @@ class GUI(Tk):
         tv = self.widgets.tv_campaigns
         tv.delete(*tv.get_children())
         for c in self.cur_boardgame.campaigns:
-            tv.insert('', END, values=[c.name, c.year, "*"*c.level])
+            tv.insert('', END, values=[c.box, c.name, c.year, "*"*c.level])
 #        logger.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
         for c in self.widgets.lf_campaign_length.winfo_children():
@@ -146,8 +148,8 @@ class GUI(Tk):
             # then a new boardgame is selected
             self.cur_campaign = None
             return
-        (name, year, diff) = tv.item(curitem)['values']
-        log.debug(f"campaign {name} - {year} selected)")
+        (box, name, year, diff) = tv.item(curitem)['values']
+        log.debug(f"campaign {box} - {name} - {year} selected)")
 
         self.cur_campaign = self.cur_boardgame.campaign(name, year)
 
