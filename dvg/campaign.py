@@ -17,9 +17,9 @@ class Campaign:
         self.boardgame = bg
         self.box       = box
         self.name      = name
-        self.year      = year
+        self.year      = int(year)
         self.service   = service
-        self.level     = level
+        self.level     = int(level)
 
         self.lengths = []
         lengths = [
@@ -36,7 +36,7 @@ class Campaign:
                 self.lengths.append(cl)
 
     def id(self):
-        return f'{self.boardgame.alias}-{self.box}-{self.name}-{self.service}-{self.year}'
+        return f'{self.boardgame.alias}-{self.name}-{self.service}-{self.year}'
 
     def __repr__(self):
         out = '[' + ",".join([l.label for l in self.lengths]) + ']'

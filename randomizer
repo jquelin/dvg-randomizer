@@ -7,16 +7,15 @@ bindir = os.path.dirname(__file__)
 #libdir = os.path.join(bindir, "lib")
 sys.path.append(bindir)
 
-from dvg.logger import log
-#import gui
+from dvg.gui    import GUI
 
-from dvg import data
+#from dvg import data
 
 #import boardgame
 #boardgames = boardgame.all_boardgames()
 
-#gui = gui.GUI()
-#gui.mainloop()
+gui = GUI()
+gui.mainloop()
 
 #root = tk.Tk()
 #label = tk.Label(root, text="J'adore Python !").pack()

@@ -1,5 +1,4 @@
 
-from log import logger
 from tkinter.ttk import *
 from tkinter import *
 from tkinter import font
@@ -7,7 +6,8 @@ from tkinter import font
 import types
 
 
-import boardgame
+from dvg.logger import log
+from dvg.data   import data
 
 class GUI(Tk):
     def __init__(self):
@@ -19,7 +19,7 @@ class GUI(Tk):
         self.widgets = types.SimpleNamespace() # widgets
 
         # gui creation
-        logger.debug("create root window")
+        log.debug("create root window")
         Tk.__init__(self)
         self.title('DVG air leader')
         self.bind('<Escape>', self.close)
@@ -34,7 +34,7 @@ class GUI(Tk):
 
         # initialize gui with the first boardgame, and update gui
         # accordingly
-        self.vars.boardgame.set(self.boardgames[0].name)
+        self.vars.boardgame.set(data.boardgames[0].name)
         self.select_boardgame()
 
     # -- gui creation
@@ -43,7 +43,7 @@ class GUI(Tk):
         lf = LabelFrame(self, text='Board game')
         self.vars.boardgame = StringVar()
 
-        for bg in self.boardgames:
+        for bg in data.boardgames:
             rb = Radiobutton(
                 lf, text=bg.name, value=bg.name,
                 variable=self.vars.boardgame,
@@ -78,11 +78,11 @@ class GUI(Tk):
     def _create_campaigns(self):
         headers = ['Name', 'Year', 'Difficulty']
         longestc = ''
-        for bg in self.boardgames:
+        for bg in data.boardgames:
             for c in bg.campaigns:
                 if len(c.name) > len(longestc):
                     longestc = c.name
-        logger.debug(f"longest campaign name: {longestc}")
+        log.debug(f"longest campaign name: {longestc}")
         longest = [longestc, '0000', '****']
 
         f = Frame(self)#, bg='red')
@@ -124,8 +124,8 @@ class GUI(Tk):
         self.destroy()
 
     def select_boardgame(self):
-        logger.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
-        self.cur_boardgame = next(bg for bg in self.boardgames if
+        log.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
+        self.cur_boardgame = next(bg for bg in data.boardgames if
                                   bg.name == self.vars.boardgame.get())
 
         tv = self.widgets.tv_campaigns
@@ -147,9 +147,9 @@ class GUI(Tk):
             self.cur_campaign = None
             return
         (name, year, diff) = tv.item(curitem)['values']
-        logger.debug(f"campaign {name} - {year} selected)")
+        log.debug(f"campaign {name} - {year} selected)")
 
-        self.cur_campaign = self.cur_boardgame.find_campaign(name, year)
+        self.cur_campaign = self.cur_boardgame.campaign(name, year)
 
         lf = self.widgets.lf_campaign_length
         for child in lf.winfo_children():
@@ -174,7 +174,7 @@ class GUI(Tk):
 
     def sort_campaigns(self, col, descending):
         """Sort campaigns tree contents when a column header is clicked on."""
-        logger.debug(f"sorting campaigns by {col}")
+        log.debug(f"sorting campaigns by {col}")
         tv = self.widgets.tv_campaigns
 
         # grab values to sort

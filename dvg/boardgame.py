@@ -35,6 +35,12 @@ class Boardgame:
             None
         )
 
+    def campaign(self, name, year):
+        return next(
+            filter(lambda c: (c.name == name and c.year == year), self.campaigns),
+            None
+        )
+
 
 #
 #def all_boardgames():
