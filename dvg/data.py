@@ -66,13 +66,15 @@ class Data:
                     sdays, sso, ssquad, mdays, mso, msquad, ldays, lso, lsquad in reader:
                 bg = self.boardgame(bgname)
                 # FIXME check bg
-                campaign = Campaign(bg, box, name, year, service, level,
-                                    sdays, sso, ssquad,
-                                    mdays, mso, msquad,
-                                    ldays, lso, lsquad)
-                # FIXME: check if campaign has at least one length
-                log.debug(f"- found campaign {campaign}")
-                bg.add_campaign(campaign)
+                for single_service in service.split('|'):
+                    campaign = Campaign(bg, box, name, year, single_service, level,
+                                        sdays, sso, ssquad,
+                                        mdays, mso, msquad,
+                                        ldays, lso, lsquad)
+                    # FIXME: check if campaign has at least one length
+                    # FIXME: check if campaign is a duplicate
+                    log.debug(f"- found campaign {campaign}")
+                    bg.add_campaign(campaign)
 
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
