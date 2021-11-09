@@ -88,6 +88,8 @@ class GUI(Tk):
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
         tv.bind('<<TreeviewSelect>>', self.select_campaign)
+        tv.tag_configure("odd", background='#EEEEEE')
+
         for col, longest, anchor in zip(headers, longest, aligns):
             tv.heading(col, text=col, command=lambda c=col:
                        self.sort_campaigns(c, 0))
@@ -127,8 +129,15 @@ class GUI(Tk):
 
         tv = self.widgets.tv_campaigns
         tv.delete(*tv.get_children())
+        line = 1
         for c in self.cur_boardgame.campaigns:
-            tv.insert('', END, values=[c.box, c.name, c.service, c.year, "*"*c.level])
+            if line % 2 == 0:
+                tags = []
+            else:
+                tags = ['odd']
+            tv.insert('', END, values=[c.box, c.name, c.service, c.year,
+                                       "*"*c.level], tags=(tags))
+            line += 1
 #        logger.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
 
         for c in self.widgets.lf_campaign_length.winfo_children():
