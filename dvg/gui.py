@@ -26,7 +26,6 @@ class GUI(Tk):
         self._create_boardgames()
         self._create_campaigns()
         self._create_campaign_length()
-        self._create_button()
 
         # set minimum window size
         self.update()
@@ -52,27 +51,19 @@ class GUI(Tk):
             rb.pack(side=LEFT)
         lf.pack(padx=20, pady=20)
 
-    def _create_button(self):
-        f = self.widgets.f_campaigns
-        b = Button(f, text="Create random squad")
-        b.pack(side=TOP, fill=X)
-
     def _create_campaign_length(self):
         f = self.widgets.f_campaigns
 
         lf = LabelFrame(f, text='Campaign length')
-        self.vars.campaign_length = StringVar()
+        self.widgets.but_length ={}
         for length in ['short', 'medium', 'long']:
-            rb = Radiobutton(
-                lf, text=length, value=length,
-                variable=self.vars.campaign_length,
-                state=DISABLED
-            )
-            rb.pack(side=LEFT)
+            text = f'{length}\nnot available'
+            b = Button(lf, text=text, state=DISABLED)
+            b.pack(side=LEFT, padx=5, pady=5)
+            self.widgets.but_length[length] = b
 
         lf.pack(side=TOP, fill=X, padx=5, pady=5)
         self.widgets.lf_campaign_length = lf
-        self.vars.campaign_length.set('short')
 
 
     def _create_campaigns(self):
@@ -158,19 +149,17 @@ class GUI(Tk):
         self.cur_campaign = self.cur_boardgame.campaign(name, year)
 
         lf = self.widgets.lf_campaign_length
-        for child in lf.winfo_children():
-            child.destroy()
+        for length in ['short', 'medium', 'long']:
+            text = f'{length}\nnot available'
+            self.widgets.but_length[length].configure(
+                state=DISABLED, text=text)
 
         for length in self.cur_campaign.lengths:
             days  = length.days
             so    = length.so
             label = length.label
-            rb = Radiobutton(
-                lf, text=f"{label}\n{days} days, {so} SO", value=label,
-                justify=LEFT,
-                variable=self.vars.campaign_length,
-            )
-            rb.pack(side=LEFT)
+            text  = f"{label}\n{days} days, {so} SO"
+            self.widgets.but_length[label].configure(state=NORMAL, text=text)
 
 
     def select_campaign_length(self):
