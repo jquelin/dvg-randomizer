@@ -77,6 +77,7 @@ class GUI(Tk):
 
     def _create_campaigns(self):
         headers = ['Box', 'Name', 'Service', 'Year', 'Difficulty']
+        aligns  = [CENTER, W, CENTER, CENTER, CENTER]
         longestb = ''
         longestc = ''
         longests = ''
@@ -96,12 +97,12 @@ class GUI(Tk):
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
         tv.bind('<<TreeviewSelect>>', self.select_campaign)
-        for col, longest in zip(headers, longest):
+        for col, longest, anchor in zip(headers, longest, aligns):
             tv.heading(col, text=col, command=lambda c=col:
                        self.sort_campaigns(c, 0))
             # adjust the column's width to the header string
             width = font.nametofont('TkHeadingFont').measure(longest)+10
-            tv.column(col, width=width)
+            tv.column(col, width=width, anchor=anchor)
         tv.pack(side=LEFT, fill=Y)
         vsb = Scrollbar(f, orient="vertical", command=tv.yview)
         vsb.pack(side=LEFT, fill=Y)
