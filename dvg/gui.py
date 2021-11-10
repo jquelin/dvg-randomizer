@@ -26,6 +26,7 @@ class GUI(Tk):
         self._create_boardgames()
         self._create_campaigns()
         self._create_campaign_length()
+        self._create_pilots()
 
         # set minimum window size
         self.update()
@@ -59,7 +60,7 @@ class GUI(Tk):
         for length in ['short', 'medium', 'long']:
             text = f'{length}\nnot available'
             b = Button(lf, text=text, state=DISABLED)
-            b.pack(side=LEFT, padx=5, pady=5)
+            b.pack(side=LEFT, padx=5, pady=5, expand=True, fill=BOTH)
             self.widgets.but_length[length] = b
 
         lf.pack(side=TOP, fill=X, padx=5, pady=5)
@@ -83,8 +84,8 @@ class GUI(Tk):
         longest = [longestb, longestc, longests, '0000', '****']
 
         f = Frame(self)#, bg='red')
-        Label(f, text="Select your campaign",
-              anchor=W).pack(fill=X)
+        Label(f, text="Select your campaign", anchor=W).pack(fill=X)
+
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
         tv.bind('<<TreeviewSelect>>', self.select_campaign)
@@ -113,6 +114,24 @@ class GUI(Tk):
 #        lb.select_set(0)
 
         f.pack(expand=True, fill=BOTH)
+
+    def _create_pilots(self):
+        headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role']
+
+        f = self.widgets.f_campaigns
+        style = ttk.Style()
+        style.layout("custom.Treeview", [('custom.Treeview.treearea', {'sticky': 'nswe'})])
+        style.configure("custom.Treeview.Heading", relief=FLAT)
+        tv = Treeview(f, columns=headers, height=20, show='headings',
+                      selectmode=NONE, style='custom.Treeview')
+        tv.pack(side=TOP, fill=BOTH, expand=True)
+
+        for col in headers:
+            tv.heading(col, text=col)
+            # adjust the column's width to the header string
+            width = font.nametofont('TkHeadingFont').measure(col)+10
+            tv.column(col, width=width)
+
 
     # -- private methods
     
@@ -155,7 +174,7 @@ class GUI(Tk):
         (box, name, service, year, diff) = tv.item(curitem)['values']
         log.debug(f"campaign {box} - {name} - {service} - {year} selected")
 
-        self.cur_campaign = self.cur_boardgame.campaign(name, year)
+        self.cur_campaign = self.cur_boardgame.campaign(name, year, service)
 
         lf = self.widgets.lf_campaign_length
         for length in ['short', 'medium', 'long']:
