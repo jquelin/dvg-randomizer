@@ -6,6 +6,7 @@ class Pilot:
         self.boardgame = bg
         self.box       = box
         self.service   = service
+        self.services  = service.split('+')
         self.name      = name
         self.aircraft  = aircraft
 

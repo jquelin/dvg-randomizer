@@ -49,3 +49,36 @@ class Campaign:
     def __repr__(self):
         out = '[' + ",".join([l.label for l in self.lengths]) + ']'
         return f'{self.id()} level={self.level} {out}'
+
+    def pilots(self):
+        # first, find all pilots whose aircraft match the campaign year
+        pilots = list( filter(
+            lambda p: (
+                p.aircraft.year_in <= self.year
+                and self.year <= p.aircraft.year_out
+            ),
+            self.boardgame.pilots
+        ) )
+        log.debug(f'{self.id()}: found {len(pilots)} pilots matching year')
+
+        # then, check the pilot service
+        matching = []
+        for srv in self.services:
+            matching.extend(list(filter(lambda p: srv in p.services, pilots)))
+        pilots = matching
+        log.debug(f'{self.id()}: found {len(pilots)} pilots matching service')
+
+        # then, check if aircraft is allowed
+        if len(self.allowed) > 0:
+            allowed = [x[0] for x in self.allowed]
+            log.debug(f'pruning all but {allowed}')
+            pilots = list(filter(lambda p: p.aircraft.name in allowed, pilots))
+        log.debug(f'{self.id()}: found {len(pilots)} pilots after checking allowed')
+
+        # finally, check if aircraft is forbidden
+        if len(self.forbidden) > 0:
+            log.debug(f'pruning all {self.forbidden}')
+            pilots = list(filter(lambda p: p.aircraft.name not in self.forbidden, pilots))
+        log.debug(f'{self.id()}: found {len(pilots)} pilots after checking forbidden')
+
+        return pilots
