@@ -69,19 +69,12 @@ class GUI(Tk):
 
     def _create_campaigns(self):
         headers = ['Box', 'Name', 'Service', 'Year', 'Difficulty']
+        longest = [
+            *list(
+                [data.longest[k] for k in ['boxes', 'campaigns', 'services']]
+            ), '0000', '****'
+        ]
         aligns  = [CENTER, W, CENTER, CENTER, CENTER]
-        longestb = ''
-        longestc = ''
-        longests = ''
-        for bg in data.boardgames:
-            for c in bg.campaigns:
-                if len(c.name) > len(longestc): longestc = c.name
-                if len(c.box)  > len(longestb): longestb = c.box
-                if len(c.service) > len(longests): longests = c.service
-        log.debug(f"longest box name: {longestb}")
-        log.debug(f"longest campaign name: {longestc}")
-        log.debug(f"longest campaign service: {longests}")
-        longest = [longestb, longestc, longests, '0000', '****']
 
         f = Frame(self)#, bg='red')
         Label(f, text="Select your campaign", anchor=W).pack(fill=X)
@@ -117,6 +110,11 @@ class GUI(Tk):
 
     def _create_pilots(self):
         headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role']
+        longest = [
+            *list(
+                [data.longest[k] for k in ['ranks', 'pilots', 'aircrafts', 'services', 'roles']]
+            ), '0000', '****'
+        ]
 
         f = self.widgets.f_campaigns
         style = ttk.Style()
@@ -126,10 +124,10 @@ class GUI(Tk):
                       selectmode=NONE, style='custom.Treeview')
         tv.pack(side=TOP, fill=BOTH, expand=True)
 
-        for col in headers:
+        for col, longest in zip(headers, longest):
             tv.heading(col, text=col)
             # adjust the column's width to the header string
-            width = font.nametofont('TkHeadingFont').measure(col)+10
+            width = font.nametofont('TkHeadingFont').measure(longest)+10
             tv.column(col, width=width)
 
 

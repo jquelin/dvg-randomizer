@@ -14,6 +14,7 @@ from dvg.logger    import log
 
 class Data:
     def __init__(self):
+        # load csv files
         self.load_boardgames()
         self.load_aircrafts()
         self.load_pilots()
@@ -21,13 +22,15 @@ class Data:
         self.load_allowed()
         self.load_forbidden()
 
+        # find campaign pilots
         log.info('find campaign pilots')
         for bg in self.boardgames:
             for cmpgn in bg.campaigns:
                 cmpgn.compute_pilots()
                 log.info(f'{cmpgn}: found {len(cmpgn.pilots)} pilots')
 
-
+        # compute lengths for gui
+        self.find_longest()
 
     # -- data loading
 
@@ -109,7 +112,6 @@ class Data:
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
 
-
     def load_forbidden(self):
         log.info("loading forbidden aircrafts")
         filepath = self.get_csv_path('forbidden.csv')
@@ -162,6 +164,31 @@ class Data:
 
 
     # -- methods
+
+    def find_longest(self):
+        lists = {
+            'ranks'     : ['Newbie', 'Green', 'Average', 'Skilled', 'Veteran', 'Legendary'] ,
+            'boxes'     : [],
+            'pilots'    : [],
+            'services'  : [],
+            'aircrafts' : [],
+            'roles'     : [],
+            'campaigns' : [],
+        }
+
+        for bg in self.boardgames:
+            lists['pilots'].extend([p.name for p in bg.pilots])
+            lists['services'].extend([p.service for p in bg.pilots])
+            lists['aircrafts'].extend([a.name for a in bg.aircrafts])
+            lists['roles'].extend([a.role for a in bg.aircrafts])
+            lists['campaigns'].extend([c.name for c in bg.campaigns])
+            lists['boxes'].extend([c.box for c in bg.campaigns])
+
+        self.longest = {}
+        for k, v in lists.items():
+            self.longest[k] = max(v, key=len)
+            log.debug(f'longest string for {k}: {self.longest[k]}')
+
 
     def get_csv_path(self, file:str):
         return pkg_resources.resource_filename('dvg.csv', file)
