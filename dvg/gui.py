@@ -40,7 +40,7 @@ class GUI(Tk):
     # -- gui creation
 
     def _create_boardgames(self):
-        lf = LabelFrame(self, text='Board game')
+        lf = LabelFrame(self, text='Board game', labelanchor=N)
         self.vars.boardgame = StringVar()
 
         for bg in data.boardgames:
@@ -53,9 +53,10 @@ class GUI(Tk):
         lf.pack(padx=20, pady=20)
 
     def _create_campaign_length(self):
-        f = self.widgets.f_campaigns
+        f = Frame(self)
+        self.widgets.f_right = f
 
-        lf = LabelFrame(f, text='Campaign length')
+        lf = LabelFrame(f, text='Campaign length', labelanchor=N)
         self.widgets.but_length ={}
         for length in ['short', 'medium', 'long']:
             text = f'{length}\nnot available'
@@ -65,6 +66,7 @@ class GUI(Tk):
 
         lf.pack(side=TOP, fill=X, padx=5, pady=5)
         self.widgets.lf_campaign_length = lf
+        f.pack(side=LEFT, expand=True, fill=BOTH)
 
 
     def _create_campaigns(self):
@@ -76,8 +78,8 @@ class GUI(Tk):
         ]
         aligns  = [CENTER, W, CENTER, CENTER, CENTER]
 
-        f = Frame(self)#, bg='red')
-        Label(f, text="Select your campaign", anchor=W).pack(fill=X)
+        f = Frame(self)
+        Label(f, text="Select your campaign", anchor=CENTER).pack(fill=X)
 
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
@@ -95,18 +97,9 @@ class GUI(Tk):
         vsb.pack(side=LEFT, fill=Y)
         tv.configure(yscrollcommand=vsb.set)
 
-        self.widgets.f_campaigns = f
+        self.widgets.f_left = f
         self.widgets.tv_campaigns = tv
-
-#        campaign = [g.name for g in self.boardgames]
-#        vgames = StringVar(value=games)
-
-#        maxlen = max( [len(g) for g in games] )
-#        lb = Listbox(f, listvariable=vgames, height=5, width=maxlen)
-#        lb.pack()
-#        lb.select_set(0)
-
-        f.pack(expand=True, fill=BOTH)
+        f.pack(side=LEFT, fill=BOTH, padx=5, pady=5)
 
     def _create_pilots(self):
         headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role']
@@ -116,7 +109,7 @@ class GUI(Tk):
             ), '0000', '****'
         ]
 
-        f = self.widgets.f_campaigns
+        f = self.widgets.f_right
         style = ttk.Style()
         style.layout("custom.Treeview", [('custom.Treeview.treearea', {'sticky': 'nswe'})])
         style.configure("custom.Treeview.Heading", relief=FLAT)
