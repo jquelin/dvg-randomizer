@@ -19,8 +19,10 @@ class Campaign:
         self.name      = name
         self.year      = int(year)
         self.service   = service
+        self.services  = service.split('+')
         self.level     = int(level)
 
+        # campaign lengths
         self.lengths = []
         lengths = [
             (sdays, sso, ssquad),

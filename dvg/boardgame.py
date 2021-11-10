@@ -35,9 +35,19 @@ class Boardgame:
             None
         )
 
-    def campaign(self, name, year):
+
+    def campaign(self, name, year, service):
+        # service can be either a lone service or a combined string of
+        # services such as 'USN+USMC'
         return next(
-            filter(lambda c: (c.name == name and c.year == year), self.campaigns),
+            filter(
+                lambda c: (
+                    name == c.name
+                    and year == c.year
+                    and (service in c.services or service == c.service)
+                ),
+                self.campaigns
+            ),
             None
         )
 
