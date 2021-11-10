@@ -40,7 +40,7 @@ class GUI(Tk):
     # -- gui creation
 
     def _create_boardgames(self):
-        lf = LabelFrame(self, text='Board game', labelanchor=N)
+        lf = LabelFrame(self, text=' Board game ', labelanchor=N)
         self.vars.boardgame = StringVar()
 
         for bg in data.boardgames:
@@ -50,13 +50,13 @@ class GUI(Tk):
                 command=self.select_boardgame
             )
             rb.pack(side=LEFT)
-        lf.pack(padx=20, pady=20)
+        lf.pack(padx=15, pady=15, ipadx=15, ipady=15)
 
     def _create_campaign_length(self):
         f = Frame(self)
         self.widgets.f_right = f
 
-        lf = LabelFrame(f, text='Campaign length', labelanchor=N)
+        lf = LabelFrame(f, text=' Campaign length ', labelanchor=N)
         self.widgets.but_length ={}
         for length in ['short', 'medium', 'long']:
             text = f'{length}\nnot available'
@@ -78,10 +78,9 @@ class GUI(Tk):
         ]
         aligns  = [CENTER, W, CENTER, CENTER, CENTER]
 
-        f = Frame(self)
-        Label(f, text="Select your campaign", anchor=CENTER).pack(fill=X)
+        lf = LabelFrame(self, text=' Campaign ', labelanchor=N)
 
-        tv = Treeview(f, columns=headers, height=20, show='headings',
+        tv = Treeview(lf, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
         tv.bind('<<TreeviewSelect>>', self.select_campaign)
         tv.tag_configure("odd", background='#EEEEEE')
@@ -93,13 +92,12 @@ class GUI(Tk):
             width = font.nametofont('TkHeadingFont').measure(longest)+10
             tv.column(col, width=width, anchor=anchor)
         tv.pack(side=LEFT, fill=Y)
-        vsb = Scrollbar(f, orient="vertical", command=tv.yview)
+        vsb = Scrollbar(lf, orient="vertical", command=tv.yview)
         vsb.pack(side=LEFT, fill=Y)
         tv.configure(yscrollcommand=vsb.set)
 
-        self.widgets.f_left = f
+        lf.pack(side=LEFT, fill=BOTH, padx=5, pady=5, ipadx=5, ipady=5)
         self.widgets.tv_campaigns = tv
-        f.pack(side=LEFT, fill=BOTH, padx=5, pady=5)
 
     def _create_pilots(self):
         headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role']
