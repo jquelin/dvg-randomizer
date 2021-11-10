@@ -19,6 +19,7 @@ class Data:
         self.load_pilots()
         self.load_campaigns()
         self.load_allowed()
+        self.load_forbidden()
 
     # -- data loading
 
@@ -104,6 +105,28 @@ class Data:
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
 
+
+    def load_forbidden(self):
+        log.info("loading forbidden aircrafts")
+        filepath = self.get_csv_path('forbidden.csv')
+        log.info(f"reading {filepath}")
+        with open(filepath) as fp:
+            reader = csv.reader(fp)
+            next(reader, None)  # skip the headers
+            for bgname, box, campaign_name, year, service, aircraft in reader:
+                bg = self.boardgame(bgname)
+                if bg is None:
+                    log.error(f'boardgame {bgname} not found')
+                else:
+                    campaign = bg.campaign(campaign_name, int(year), service)
+                    if campaign is None:
+                        log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
+                    else:
+                        campaign.forbidden.append(aircraft)
+
+            for bg in self.boardgames:
+                for cmpgn in bg.campaigns:
+                    log.info(f"{cmpgn}: found {len(cmpgn.forbidden)} forbidden")
 
     def load_pilots(self):
         log.info("loading pilots")
