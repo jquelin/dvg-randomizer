@@ -37,6 +37,12 @@ class Campaign:
                 cl = CampaignLength(i, days, so, squad)
                 self.lengths.append(cl)
 
+        # Some campaigns allow only some planes or forbid some.
+        # Some even fix the number of a given aircraft.
+        self.allowed   = []     # allowed planes
+        self.forbidden = []     # forbidden planes
+
+
     def id(self):
         return f'{self.boardgame.alias}-{self.name}-{self.service}-{self.year}'
 
