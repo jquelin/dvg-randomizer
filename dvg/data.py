@@ -31,11 +31,13 @@ class Data:
             next(reader, None)  # skip the headers
             for bgname, box, service, name, year_in, year_out, cost, role in reader:
                 bg = self.boardgame(bgname)
-                # FIXME check bg
-                aircraft = Aircraft(bg, box, service, name, year_in,
-                                    year_out, cost, role)
-                log.debug(f'- found aircraft {aircraft}')
-                bg.add_aircraft(aircraft)
+                if bg is None:
+                    log.error(f'boardgame {bgname} not found')
+                else:
+                    aircraft = Aircraft(bg, box, service, name, year_in,
+                                        year_out, cost, role)
+                    log.debug(f'- found aircraft {aircraft}')
+                    bg.add_aircraft(aircraft)
 
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.aircrafts)} aircrafts")
@@ -86,16 +88,18 @@ class Data:
             for bgname, box, name, year, service, level, \
                     sdays, sso, ssquad, mdays, mso, msquad, ldays, lso, lsquad in reader:
                 bg = self.boardgame(bgname)
-                # FIXME check bg
-                for single_service in service.split('|'):
-                    campaign = Campaign(bg, box, name, year, single_service, level,
-                                        sdays, sso, ssquad,
-                                        mdays, mso, msquad,
-                                        ldays, lso, lsquad)
-                    # FIXME: check if campaign has at least one length
-                    # FIXME: check if campaign is a duplicate
-                    log.debug(f"- found campaign {campaign}")
-                    bg.add_campaign(campaign)
+                if bg is None:
+                    log.error(f'boardgame {bgname} not found')
+                else:
+                    for single_service in service.split('|'):
+                        campaign = Campaign(bg, box, name, year, single_service, level,
+                                            sdays, sso, ssquad,
+                                            mdays, mso, msquad,
+                                            ldays, lso, lsquad)
+                        # FIXME: check if campaign has at least one length
+                        # FIXME: check if campaign is a duplicate
+                        log.debug(f"- found campaign {campaign}")
+                        bg.add_campaign(campaign)
 
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
@@ -110,14 +114,16 @@ class Data:
             next(reader, None)  # skip the headers
             for bgname, box, service, name, aircraft_name, elite in reader:
                 bg = self.boardgame(bgname)
-                # FIXME check bg
-                aircraft = bg.aircraft(service, aircraft_name)
-                if aircraft is None:
-                    log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
+                if bg is None:
+                    log.error(f'boardgame {bgname} not found')
                 else:
-                    pilot = Pilot(bg, box, service, name, aircraft)
-                    log.debug(f'- found pilot {pilot}')
-                    bg.add_pilot(pilot)
+                    aircraft = bg.aircraft(service, aircraft_name)
+                    if aircraft is None:
+                        log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
+                    else:
+                        pilot = Pilot(bg, box, service, name, aircraft)
+                        log.debug(f'- found pilot {pilot}')
+                        bg.add_pilot(pilot)
 
             for bg in self.boardgames:
                 log.info(f"{bg}: found {len(bg.pilots)} pilots")
