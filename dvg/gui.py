@@ -190,11 +190,6 @@ class GUI(Tk):
             self.widgets.but_length[label].configure(state=NORMAL, text=text)
 
 
-    def select_campaign_length(self):
-        if self.campaign is None:
-            return
-        pass
-
     def sort_campaigns(self, col, descending):
         """Sort campaigns tree contents when a column header is clicked on."""
         log.debug(f"sorting campaigns by {col}")
