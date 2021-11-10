@@ -21,6 +21,14 @@ class Data:
         self.load_allowed()
         self.load_forbidden()
 
+        log.info('find campaign pilots')
+        for bg in self.boardgames:
+            for cmpgn in bg.campaigns:
+                cmpgn.compute_pilots()
+                log.info(f'{cmpgn}: found {len(cmpgn.pilots)} pilots')
+
+
+
     # -- data loading
 
     def load_aircrafts(self):
@@ -60,10 +68,6 @@ class Data:
                         log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
                     else:
                         campaign.allowed.append([aircraft, nb])
-
-            for bg in self.boardgames:
-                for cmpgn in bg.campaigns:
-                    log.info(f"{cmpgn}: found {len(cmpgn.allowed)} allowed")
 
     def load_boardgames(self):
         log.info("loading boardgames") 
@@ -123,10 +127,6 @@ class Data:
                         log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
                     else:
                         campaign.forbidden.append(aircraft)
-
-            for bg in self.boardgames:
-                for cmpgn in bg.campaigns:
-                    log.info(f"{cmpgn}: found {len(cmpgn.forbidden)} forbidden")
 
     def load_pilots(self):
         log.info("loading pilots")

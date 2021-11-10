@@ -50,7 +50,7 @@ class Campaign:
         out = '[' + ",".join([l.label for l in self.lengths]) + ']'
         return f'{self.id()} level={self.level} {out}'
 
-    def pilots(self):
+    def compute_pilots(self):
         # first, find all pilots whose aircraft match the campaign year
         pilots = list( filter(
             lambda p: (
@@ -81,4 +81,4 @@ class Campaign:
             pilots = list(filter(lambda p: p.aircraft.name not in self.forbidden, pilots))
         log.debug(f'{self.id()}: found {len(pilots)} pilots after checking forbidden')
 
-        return pilots
+        self.pilots = pilots
