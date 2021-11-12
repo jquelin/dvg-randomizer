@@ -3,16 +3,22 @@ from dvg.logger import log
 
 class CampaignLength:
     def __init__(self, level, days, so, squad):
-        self.level = level
-        self.days  = days
-        self.so    = so
-        self.squad = squad
-        labels = ['short', 'medium', 'long']
-        self.label = labels[self.level-1]
+        self.level  = level
+        self.days   = days
+        self.so     = so
+
+        # squad composition
+        self.squad  = squad
+        self.pilots = [int(i) for i in squad.split('+')]
+
+        # campaign length label
+        labels      = ['short', 'medium', 'long']
+        self.label  = labels[self.level-1]
 
 class Campaign:
     def __init__(self, bg, box, name, year, service, level,
-                 sdays, sso, ssquad, mdays, mso, msquad,
+                 sdays, sso, ssquad,
+                 mdays, mso, msquad,
                  ldays, lso, lsquad):
         self.boardgame = bg
         self.box       = box
@@ -23,19 +29,10 @@ class Campaign:
         self.level     = int(level)
 
         # campaign lengths
-        self.lengths = []
-        lengths = [
-            (sdays, sso, ssquad),
-            (mdays, mso, msquad),
-            (ldays, lso, lsquad),
-        ]
-        i = 0
-        for l in lengths:
-            i += 1
-            days, so, squad = l
-            if days != '':
-                cl = CampaignLength(i, days, so, squad)
-                self.lengths.append(cl)
+        self.short  = CampaignLength(1, sdays, sso, ssquad) if sdays!='' else None
+        self.medium = CampaignLength(2, mdays, mso, msquad) if mdays!='' else None
+        self.long   = CampaignLength(3, ldays, lso, lsquad) if ldays!='' else None
+        self.lengths = [cl for cl in [self.short, self.medium, self.long] if cl is not None]
 
         # Some campaigns allow only some planes or forbid some.
         # Some even fix the number of a given aircraft.

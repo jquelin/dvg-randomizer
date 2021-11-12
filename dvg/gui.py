@@ -1,4 +1,5 @@
 
+import random
 from tkinter.ttk import *
 from tkinter import *
 from tkinter import font
@@ -11,9 +12,6 @@ from dvg.data   import data
 
 class GUI(Tk):
     def __init__(self):
-        # load boardgames data
-#        self.boardgames = boardgame.all_boardgames()
-
         # a convenient way to store our vars
         self.vars    = types.SimpleNamespace() # gui vars (StringVar)
         self.widgets = types.SimpleNamespace() # widgets
@@ -60,7 +58,8 @@ class GUI(Tk):
         self.widgets.but_length ={}
         for length in ['short', 'medium', 'long']:
             text = f'{length}\nnot available'
-            b = Button(lf, text=text, state=DISABLED)
+            b = Button(lf, text=text, state=DISABLED,
+                       command=lambda l=length: self.click_campaign_length(l))
             b.pack(side=LEFT, padx=5, pady=5, expand=True, fill=BOTH)
             self.widgets.but_length[length] = b
 
@@ -83,6 +82,8 @@ class GUI(Tk):
         tv = Treeview(lf, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
         tv.bind('<<TreeviewSelect>>', self.select_campaign)
+        tv.bind('<Button-1>', self.tv_campaigns_click)
+
         tv.tag_configure("odd", background='#EEEEEE')
 
         for col, longest, anchor in zip(headers, longest, aligns):
@@ -108,12 +109,40 @@ class GUI(Tk):
         ]
 
         f = self.widgets.f_right
+
+        # change pilots treeview style
         style = ttk.Style()
+        grey = self.cget('bg')
         style.layout("custom.Treeview", [('custom.Treeview.treearea', {'sticky': 'nswe'})])
-        style.configure("custom.Treeview.Heading", relief=FLAT)
+        style.configure(
+            "custom.Treeview.Heading",
+            relief=FLAT,
+            font=(None, 12, 'bold')
+        )
+        style.configure(
+            "custom.Treeview",
+            highlightthickness=0,
+            bd=0,
+            fieldbackground=grey,
+            background=grey
+        )
+        style.map(
+            "custom.Treeview.Heading",
+            background=[('pressed', grey), ('!pressed', grey)]
+        )
+
+
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=NONE, style='custom.Treeview')
+        tv.bind('<Button-1>', self.tv_pilots_click)
         tv.pack(side=TOP, fill=BOTH, expand=True)
+
+        tv.tag_configure('newbie',  background='#fff3cd') #664d03
+        tv.tag_configure('green',   background='#cff4fc') #055160
+        tv.tag_configure('average', background='#cfe2ff') #084298
+        tv.tag_configure('skilled', background='#d1e7dd') #0f5132
+        tv.tag_configure('veteran', background='#f8d7da') #842029
+        # alert dark color:#141619;background-color:#d3d3d4
 
         for col, longest in zip(headers, longest):
             tv.heading(col, text=col)
@@ -121,11 +150,38 @@ class GUI(Tk):
             width = font.nametofont('TkHeadingFont').measure(longest)+10
             tv.column(col, width=width)
 
+        self.widgets.tv_pilots = tv
 
     # -- private methods
     
         
     # -- events
+
+    def click_campaign_length(self, length):
+        campaign = self.cur_campaign
+        clength  = getattr(campaign, length)
+        squad = clength.pilots
+        log.debug(f'generating squad for {length}: {squad}')
+        tv = self.widgets.tv_pilots
+        tv.delete(*tv.get_children())
+
+        # draw new set of pilots
+        available = random.sample(campaign.pilots, len(campaign.pilots))
+        pilots = []
+        ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
+        for rank, nb in zip(ranks, squad):
+            log.debug(f'{nb} at rank {rank} (available: {len(available)})')
+            i = nb
+            while i>0:
+                p = available.pop(0)   # FIXME catch empty error
+#                new.rank = rank
+#                pilots.append(new)
+                #log.debug(f'{rank}: {new}')
+                tv.insert(
+                    '', END, tags=(rank),
+                    values=[rank, p.name, p.aircraft.name, p.service, p.aircraft.role]
+                )
+                i -= 1
 
     def close(self, event):
         self.destroy()
@@ -169,7 +225,8 @@ class GUI(Tk):
         for length in ['short', 'medium', 'long']:
             text = f'{length}\nnot available'
             self.widgets.but_length[length].configure(
-                state=DISABLED, text=text)
+                state=DISABLED, text=text
+            )
 
         for length in self.cur_campaign.lengths:
             days  = length.days
@@ -194,3 +251,13 @@ class GUI(Tk):
             tv.move(item[1], '', ix)
         # switch the heading so it will sort in the opposite direction
         tv.heading(col, command=lambda col=col: self.sort_campaigns(col, int(not descending)))
+
+    def tv_campaigns_click(self, ev):
+        # prevent column resizing
+         if self.widgets.tv_campaigns.identify_region(ev.x, ev.y) == "separator":
+             return "break"
+
+    def tv_pilots_click(self, ev):
+        # prevent column resizing
+         if self.widgets.tv_pilots.identify_region(ev.x, ev.y) == "separator":
+             return "break"
