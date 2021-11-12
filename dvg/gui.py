@@ -137,11 +137,11 @@ class GUI(Tk):
         tv.bind('<Button-1>', self.tv_pilots_click)
         tv.pack(side=TOP, fill=BOTH, expand=True)
 
-        tv.tag_configure('newbie',  background='#fff3cd') #664d03
-        tv.tag_configure('green',   background='#cff4fc') #055160
-        tv.tag_configure('average', background='#cfe2ff') #084298
-        tv.tag_configure('skilled', background='#d1e7dd') #0f5132
-        tv.tag_configure('veteran', background='#f8d7da') #842029
+        tv.tag_configure('newbie',  background='#fff3cd', foreground='#665d03')
+        tv.tag_configure('green',   background='#cff4fc', foreground='#055160')
+        tv.tag_configure('average', background='#cfe2ff', foreground='#084298')
+        tv.tag_configure('skilled', background='#d1e7dd', foreground='#0f5132')
+        tv.tag_configure('veteran', background='#f8d7da', foreground='#842029')
         # alert dark color:#141619;background-color:#d3d3d4
 
         for col, longest in zip(headers, longest):
