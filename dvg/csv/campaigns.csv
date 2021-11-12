@@ -9,8 +9,8 @@ CL,core,Battle of the Coral Sea,1942,USN,3,2,15,1+2+4+1+0+0,3,24,1+2+5+1+1+0,4,3
 CL,core,Guadalcanal,1942,USMC,3,4,14,1+2+4+1+0+0,7,22,1+2+5+1+1+0,10,29,1+2+6+2+1+0
 CL,core,New Georgia,1943,USMC,3,4,15,0+2+5+1+0+0,8,25,0+2+6+1+1+0,12,35,0+2+7+2+1+0
 CL,core,Pearl Harbor: Enterprise coming into range,1941,USAAF+USN,3,,,,,,,1,10,1+2+6+2+1+0
-CL,core,Pearl Harbor: P-40 defense,1941,USAAF+USN,3,,,,,,,1,25,1+2+6+2+1+0
-CL,core,Pearl Harbor: Time travel,1941,Pearl Harbor,3,,,,,,,1,20,1+2+6+2+1+0
+CL,core,Pearl Harbor: P-40 defense,1941,USAAF,3,,,,,,,1,25,0+2+0+0+0+0
+CL,core,Pearl Harbor: Time travel,1941,Pearl Harbor,3,,,,,,,1,20,0+0+0+6+0+0
 CL,core,Battle of Midway,1942,USMC,4,2,12,1+2+4+1+0+0,3,19,1+2+5+1+1+0,4,24,1+2+6+2+1+0
 CL,core,Battle of Midway,1942,USN,4,2,15,1+2+4+1+0+0,3,24,1+2+5+1+1+0,4,33,1+2+6+2+1+0
 CL,core,Black Sheep Squadron,1943,USMC,4,,,,,,,8,10,1+2+6+2+1+0
