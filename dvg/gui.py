@@ -137,12 +137,14 @@ class GUI(Tk):
         tv.bind('<Button-1>', self.tv_pilots_click)
         tv.pack(side=TOP, fill=BOTH, expand=True)
 
-        tv.tag_configure('newbie',  background='#fff3cd', foreground='#665d03')
-        tv.tag_configure('green',   background='#cff4fc', foreground='#055160')
-        tv.tag_configure('average', background='#cfe2ff', foreground='#084298')
-        tv.tag_configure('skilled', background='#d1e7dd', foreground='#0f5132')
-        tv.tag_configure('veteran', background='#f8d7da', foreground='#842029')
-        # alert dark color:#141619;background-color:#d3d3d4
+        tv.tag_configure('newbie',    background='#fff3cd', foreground='#665d03')
+        tv.tag_configure('green',     background='#d1e7dd', foreground='#055160')
+        tv.tag_configure('average',   background='#cfe2ff', foreground='#084298')
+        tv.tag_configure('skilled',   background='#f8d7da', foreground='#842029')
+#        tv.tag_configure('veteran',   background='#aea1c8', foreground='#8750cf')
+        tv.tag_configure('veteran',   background='#aea1c8', foreground='#613065')
+        tv.tag_configure('legendary', background='#c3c3c3', foreground='#333333')
+        tv.tag_configure('ace',       background='#141619', foreground='#d3d3d4')
 
         for col, longest in zip(headers, longest):
             tv.heading(col, text=col)
