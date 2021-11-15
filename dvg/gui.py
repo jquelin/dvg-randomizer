@@ -7,8 +7,9 @@ from tkinter import font
 import types
 
 
-from dvg.logger import log
-from dvg.data   import data
+from dvg.logger   import log
+from dvg.data     import data
+from dvg.game     import Game
 
 class GUI(Tk):
     def __init__(self):
@@ -156,34 +157,45 @@ class GUI(Tk):
 
     # -- private methods
     
+    def refresh_roaster(self):
+        game = self.cur_game
+
+        tv = self.widgets.tv_pilots
+        tv.delete(*tv.get_children())
+
+        for p in game.pilots:
+            tv.insert(
+                '', END, tags=(p.rank),
+                values=[p.rank, p.name, p.aircraft.name, p.service, p.aircraft.role]
+            )
+
         
     # -- events
 
     def click_campaign_length(self, length):
         campaign = self.cur_campaign
         clength  = getattr(campaign, length)
+        self.cur_clength = clength
+        game = Game(self.cur_boardgame, self.cur_campaign, self.cur_clength)
+        self.cur_game = game
+
         squad = clength.pilots
         log.debug(f'generating squad for {length}: {squad}')
-        tv = self.widgets.tv_pilots
-        tv.delete(*tv.get_children())
 
         # draw new set of pilots
         available = random.sample(campaign.pilots, len(campaign.pilots))
-        pilots = []
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
         for rank, nb in zip(ranks, squad):
             log.debug(f'{nb} at rank {rank} (available: {len(available)})')
             i = nb
             while i>0:
                 p = available.pop(0)   # FIXME catch empty error
-#                new.rank = rank
-#                pilots.append(new)
-                #log.debug(f'{rank}: {new}')
-                tv.insert(
-                    '', END, tags=(rank),
-                    values=[rank, p.name, p.aircraft.name, p.service, p.aircraft.role]
-                )
+                p.rank = rank
+                game.pilots.append(p)
                 i -= 1
+
+        self.refresh_roaster()
+
 
     def close(self, event):
         self.destroy()
