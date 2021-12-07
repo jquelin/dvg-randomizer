@@ -11,7 +11,7 @@ class Aircraft:
         self.name      = name
         self.year_in   = int(year_in)
         self.year_out  = int(year_out) if year_out else 9999
-        self.cost      = cost
+        self.cost      = int(cost)
         self.role      = role
 
     def id(self):

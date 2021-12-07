@@ -120,7 +120,6 @@ class GUI(Tk):
         style.configure(
             "custom.Treeview.Heading",
             relief=FLAT,
-            font=(None, 12, 'bold')
         )
         style.configure(
             "custom.Treeview",
@@ -177,7 +176,8 @@ class GUI(Tk):
             tv.insert(
                 '', END, tags=(p.rank),
                 values=[p.rank, p.name, p.aircraft.name, p.service,
-                        p.aircraft.role, p.aircraft.cost]
+                        p.aircraft.role,
+                        p.aircraft.cost*game.clength.level]
             )
 
         
