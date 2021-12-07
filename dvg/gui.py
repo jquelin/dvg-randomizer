@@ -10,6 +10,7 @@ import types
 from dvg.logger   import log
 from dvg.data     import data
 from dvg.game     import Game
+from dvg.logsheet import generate_pdf
 
 class GUI(Tk):
     def __init__(self):
@@ -157,6 +158,12 @@ class GUI(Tk):
         self.widgets.tv_pilots = tv
         tv.pack(side=TOP, fill=BOTH, padx=5, expand=True)
 
+        # create button to generate logsheet
+        b = Button(f, text='Generate campaign log sheet',
+                   command=self.click_generate_logsheet,
+                   state=DISABLED)
+        b.pack(side=TOP, fill=X)
+        self.widgets.but_generate = b
 
     # -- private methods
     
@@ -200,8 +207,11 @@ class GUI(Tk):
                 game.pilots.append(p)
                 i -= 1
 
+        self.widgets.but_generate.configure(state=NORMAL)
         self.refresh_roaster()
 
+    def click_generate_logsheet(self):
+        generate_pdf(self.cur_game)
 
     def close(self, event):
         self.destroy()
