@@ -180,7 +180,7 @@ class GUI(Tk):
                 so_bonus = f'{so_bonus:+d}'
             tv.insert(
                 '', END, tags=(p.rank),
-                values=[p.rank, p.name, p.aircraft.name, p.service,
+                values=[p.rank, p.elite_name, p.aircraft.name, p.service,
                         p.aircraft.role, so_bonus]
             )
 

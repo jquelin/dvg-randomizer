@@ -10,11 +10,16 @@ class Pilot:
         self.name      = name
         self.aircraft  = aircraft
         if elite != '':
-            self.is_elite = True
-            self.elite    = elite.split('+') if elite.find('+') else [0,elite]
+            self.is_elite    = True
+            self.elite_name  = f'\u2606 {name} \u2606'
+            if '+' in elite:
+                self.elite   = [int(s) for s in elite.split('+')]
+            else:
+                self.elite   = [0, int(elite)]
         else:
-            self.is_elite = False
-            self.elite    = None
+            self.is_elite    = False
+            self.elite       = None
+            self.elite_name  = name
 
     def id(self):
         id = self.boardgame.alias
