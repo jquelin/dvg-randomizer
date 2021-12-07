@@ -10,7 +10,7 @@ CL,core,USMC+USN,F4F Wildcat,1941,1942,0,fighter
 CL,core,USMC+USN,F4F Wildcat,1943,,-2,fighter
 CL,core,USMC+USN,F4U Corsair,1943,1945,0,fighter
 CL,core,UK-FAA,F4U Corsair,1943,1945,0,fighter
-CL,core,USMC+USN,F6F Hellcat,1943,1945,,fighter
+CL,core,USMC+USN,F6F Hellcat,1943,1945,0,fighter
 CL,core,USAAF,P-38 Lightning,1943,1945,0,fighter
 CL,core,USAAF,P-40 Warhawk,1941,1942,0,fighter
 CL,core,USAAF,P-40 Warhawk,1943,,-2,fighter
