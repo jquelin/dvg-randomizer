@@ -103,7 +103,7 @@ class GUI(Tk):
         self.widgets.tv_campaigns = tv
 
     def _create_pilots(self):
-        headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role', 'Cost']
+        headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role', 'SO']
         anchors = [CENTER, W, CENTER, CENTER, CENTER, CENTER]
         longest = [
             *list(
@@ -173,11 +173,15 @@ class GUI(Tk):
         tv.delete(*tv.get_children())
 
         for p in game.pilots:
+            so_bonus = p.so_bonus(game)
+            if so_bonus == 0:
+                so_bonus = '-'
+            else:
+                so_bonus = f'{so_bonus:+d}'
             tv.insert(
                 '', END, tags=(p.rank),
                 values=[p.rank, p.name, p.aircraft.name, p.service,
-                        p.aircraft.role,
-                        p.aircraft.cost*game.clength.level]
+                        p.aircraft.role, so_bonus]
             )
 
         

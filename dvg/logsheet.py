@@ -174,7 +174,7 @@ def generate_pdf(game):
         if i <= len(game.pilots):
             has_pilot = True
             p = game.pilots[i-1]
-            so_bonus = p.aircraft.cost * game.clength.level * -1 # bonus = -cost
+            so_bonus = p.so_bonus(game)
             line2 = f'{p.aircraft.role} [{so_bonus:+d}SO]' if so_bonus else p.aircraft.role
             curlabels.extend([p.name, '', [p.aircraft.name, line2]])
         else:

@@ -146,7 +146,7 @@ class Data:
                     if aircraft is None:
                         log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
                     else:
-                        pilot = Pilot(bg, box, service, name, aircraft)
+                        pilot = Pilot(bg, box, service, name, aircraft, elite)
                         log.debug(f'- found pilot {pilot}')
                         bg.add_pilot(pilot)
 
