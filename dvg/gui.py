@@ -102,11 +102,12 @@ class GUI(Tk):
         self.widgets.tv_campaigns = tv
 
     def _create_pilots(self):
-        headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role']
+        headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role', 'Cost']
+        anchors = [CENTER, W, CENTER, CENTER, CENTER, CENTER]
         longest = [
             *list(
                 [data.longest[k] for k in ['ranks', 'pilots', 'aircrafts', 'services', 'roles']]
-            ), '0000', '****'
+            ), 'Cost'
         ]
 
         f = self.widgets.f_right
@@ -136,7 +137,6 @@ class GUI(Tk):
         tv = Treeview(f, columns=headers, height=20, show='headings',
                       selectmode=NONE, style='custom.Treeview')
         tv.bind('<Button-1>', self.tv_pilots_click)
-        tv.pack(side=TOP, fill=BOTH, expand=True)
 
         tv.tag_configure('newbie',    background='#fff3cd', foreground='#665d03')
         tv.tag_configure('green',     background='#d1e7dd', foreground='#055160')
@@ -147,13 +147,16 @@ class GUI(Tk):
         tv.tag_configure('legendary', background='#c3c3c3', foreground='#333333')
         tv.tag_configure('ace',       background='#141619', foreground='#d3d3d4')
 
-        for col, longest in zip(headers, longest):
+        for col, longest, anchor in zip(headers, longest, anchors):
             tv.heading(col, text=col)
             # adjust the column's width to the header string
             width = font.nametofont('TkHeadingFont').measure(longest)+10
-            tv.column(col, width=width)
+            tv.column(col, width=width, anchor=anchor)
+
 
         self.widgets.tv_pilots = tv
+        tv.pack(side=TOP, fill=BOTH, padx=5, expand=True)
+
 
     # -- private methods
     
@@ -166,7 +169,8 @@ class GUI(Tk):
         for p in game.pilots:
             tv.insert(
                 '', END, tags=(p.rank),
-                values=[p.rank, p.name, p.aircraft.name, p.service, p.aircraft.role]
+                values=[p.rank, p.name, p.aircraft.name, p.service,
+                        p.aircraft.role, p.aircraft.cost]
             )
 
         
@@ -178,6 +182,8 @@ class GUI(Tk):
         self.cur_clength = clength
         game = Game(self.cur_boardgame, self.cur_campaign, self.cur_clength)
         self.cur_game = game
+
+        # FIXME HLCAO Lybia 84 USMC
 
         squad = clength.pilots
         log.debug(f'generating squad for {length}: {squad}')
