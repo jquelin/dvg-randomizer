@@ -82,7 +82,8 @@ def generate_pdf(game):
         'Day', ['Primary', 'Secondary', 'End of day'],
         'Mission #', 'Target #', 'Target status', 'Victory Points',
         'Total VP', '', *tracks, '',
-        'Starting SO', 'Ordnance', 'SO lost', 'SO gained'
+        'Starting SO', 'Ordnance', 'SO lost', 'SO gained', '',
+        'XP', 'Stress'
 
     ] 
 
@@ -130,6 +131,11 @@ def generate_pdf(game):
                     pdf.cell(width, height, 'S', 1, 0, 'C')
                     pdf.set_fill_color(GREYL2)
                     pdf.cell(width, height, 'D', 1, 0, 'C', 1)
+
+                elif row == 'Stress':
+                    pdf.cell(width, height, '', 1, 0, 'C')
+                    pdf.cell(width, height, '', 1)
+                    pdf.cell(width, height, '', 1, 0, 'C', 1)
 
                 else:
                     pdf.cell(width, height, '', 1, 0, 'C')
