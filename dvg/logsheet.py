@@ -79,11 +79,10 @@ def generate_pdf(game):
     elif bg.alias == 'PL':
         tracks.append('Politics')
     rows = [
-        'Day', ['Primary', 'Secondary', 'End of day'],
-        'Mission #', 'Target #', 'Target status', 'Victory Points',
-        'Total VP', '', *tracks, '',
+        'Day', ['Primary', 'Secondary', 'End of day'], 'Mission #', 'Day/Night',
+        'Target #', 'Target status', 'Victory Points', 'Total VP', '', *tracks, '',
         'Starting SO', 'Ordnance', 'SO lost', 'SO gained', '',
-        'XP', 'Stress'
+        'WP modifier', 'XP', 'Stress'
 
     ] 
 
