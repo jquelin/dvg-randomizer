@@ -18,7 +18,7 @@ def generate_pdf(game):
 
     has_aces = bg.alias in {'CL', 'ZL'}
 
-    margin = 5
+    margin = 10
     width  = 4  # default cell width
     height = 5  # default row height
     wfull = 297
@@ -160,11 +160,16 @@ def generate_pdf(game):
 
     ] 
 
-    cury = hfull - margin - (nb_pilots+1) * height - height - len(rows)*height
+    cury = (
+        hfull - margin - (nb_pilots+1) * height - height -
+        len(rows)*height + (len([r for r in rows if r ==''])+1)*height/2
+    )
 
     for row in rows:
         if row == '':
             pdf.ln()
+            # go to next line
+            cury += height/2
 
         else:
             pdf.set_xy(xdays, cury)
@@ -215,8 +220,8 @@ def generate_pdf(game):
                     pdf.cell(width, height, '', 1)
                     pdf.cell(width, height, 'x', 1, 0, 'C', 1)
 
-        # go to next line
-        cury += height
+            # go to next line
+            cury += height
 
 
 
