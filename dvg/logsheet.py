@@ -89,12 +89,14 @@ def generate_pdf(game):
 
     options.append(['Total', None, None])
 
+    xoption = pdf.get_x()
+    yoption = pdf.get_y()
     pdf.set_text_color(WHITE)
     pdf.set_fill_color(GREYD)
-
     woption_txt = 30
     woption_so  = 10
     woptions = woption_txt + woption_so
+    pdf.set_font('DejaVu', '', 10)
     pdf.cell(woptions, height, 'Options', 1, 1, 'C', 1)
     pdf.set_text_color(BLACK)
     pdf.set_fill_color(WHITE)
@@ -120,17 +122,41 @@ def generate_pdf(game):
             else:
                 pdf.cell(woption_so, height, txtso, 1, 1, 'C')
 
+    odifficult = [
+        'More difficult',
+        'Extra Stress', 'Improved sites/bandits', 'Extra sites/bandits',
+        'Reduced SO',
+        'Less difficult',
+        'Less Stress', 'Downgraded sites/bandits', 'Fewer sites/bandits',
+        'Increased SO']
 
-#        More Difficult
-#            Extra stress
-#            Improved sites/bandits
-#            Extra sites/bandits
-#            Reduced SO
-#        Less Difficult
-#            Less Stress
-#            Downgraded sites/bandits
-#            Fewer sites/bandits
-#            Increased SO
+    xdifficulty = xoption+woptions+5
+    ydifficulty = yoption
+    pdf.set_xy(xdifficulty, yoption)
+    pdf.set_text_color(WHITE)
+    pdf.set_fill_color(GREYD)
+    woption_txt = 30
+    woption_cb  = 5
+    woptions = woption_txt + woption_cb
+    pdf.set_font('DejaVu', '', 10)
+    pdf.cell(woptions, height, 'Difficulty', 1, 1, 'C', 1)
+    pdf.set_text_color(BLACK)
+    pdf.set_fill_color(WHITE)
+    pdf.set_font('DejaVu', '', 6)
+    for option in odifficult:
+        ydifficulty += height
+        pdf.set_xy(xdifficulty, ydifficulty)
+
+        if option.find('difficult') != -1:
+            pdf.set_fill_color(GREYL2)
+            pdf.cell(woptions, height, option, 1, 1, '', 1)
+
+        else:
+#            pdf.set_fill_color(GREYL2)
+            pdf.cell(woption_txt, height, option, 1, 0)
+            pdf.cell(woption_cb, height, '\u25a1', 1, 1, 'C')
+
+
 
 
 
