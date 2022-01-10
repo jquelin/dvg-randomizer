@@ -18,7 +18,7 @@ def generate_pdf(game):
 
     has_aces = bg.alias in {'CL', 'ZL'}
 
-    margin = 10
+    margin = 5
     width  = 4  # default cell width
     height = 5  # default row height
     wfull = 297
@@ -64,8 +64,82 @@ def generate_pdf(game):
     # FIXME AIM limit IAFL
     # FIXME checkboxes pilot selected
 
-    # outcome
-#    cury = pdf.get_y()
+
+    # *** options
+    options = [
+        ['Campaign SO points', clength.so, None],
+        ['Random squadron',     6*clength.level, None],
+        ['Aircraft costs',   sum([p.so_bonus(game) for p in game.pilots]), None],
+        ['Pilot promotion',  None, None],
+        ['Pilot skills',     None, None],
+        ['Aces',             None, None],
+        ['±1 pilot',           -3*clength.level, 'cb'],
+        ['High stress attack', -3*clength.level, 'cb'],
+        ['Damaging target',    -3*clength.level, 'cb'],
+    ]
+    if bg.alias == 'HLCAO':
+        options.append(['Night missions',      0, 'cb'])
+        options.append(['Large deck marines', -3*clength.level, 'cb'])
+    elif bg.alias == 'ZL':
+        options.append(['Pulling rank', -2*clength.level, 'cb'])
+    elif bg.alias == 'IAFL':
+        options.append(['Succesful AtA Cannon', -1*clength.level, 'cb'])
+    elif bg.alias == 'PL':
+        options.append(['Early AIM-9 Sidewinders', 3*clength.level, 'cb'])
+
+    options.append(['Total', None, None])
+
+    pdf.set_text_color(WHITE)
+    pdf.set_fill_color(GREYD)
+
+    woption_txt = 30
+    woption_so  = 10
+    woptions = woption_txt + woption_so
+    pdf.cell(woptions, height, 'Options', 1, 1, 'C', 1)
+    pdf.set_text_color(BLACK)
+    pdf.set_fill_color(WHITE)
+    for option, so, cb in options:
+        txtso = '' if so is None else f'{so:+d}'
+        pdf.set_font('DejaVu', '', 6)
+        if option == 'Total':
+            pdf.set_fill_color(GREYL2)
+            pdf.cell(woption_txt, height, option, 1, 0, '', 1)
+            pdf.cell(woption_so, height, txtso, 1, 1, 'C', 1)
+            pdf.set_fill_color(WHITE)
+        else:
+            pdf.cell(woption_txt, height, option, 1, 0)
+            if cb == 'cb':
+                x = pdf.get_x()
+                y = pdf.get_y()
+                pdf.cell(woption_so, height, '\u25a1', 0, 0, 'L')
+                pdf.set_xy(x,y)
+                pdf.cell(woption_so, height, txtso, 0, 0, 'R')
+                pdf.set_xy(x,y)
+                pdf.cell(woption_so, height, '', 1, 1, 'C')
+
+            else:
+                pdf.cell(woption_so, height, txtso, 1, 1, 'C')
+
+
+#        More Difficult
+#            Extra stress
+#            Improved sites/bandits
+#            Extra sites/bandits
+#            Reduced SO
+#        Less Difficult
+#            Less Stress
+#            Downgraded sites/bandits
+#            Fewer sites/bandits
+#            Increased SO
+
+
+
+#    Day
+#    IAFL
+#        AIM limit
+#        Pilot Loss Penalty : Nominal/Moderate/Severe
+
+
 
     # *** days
     wdtitle = 15

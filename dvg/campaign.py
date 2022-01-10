@@ -5,7 +5,7 @@ class CampaignLength:
     def __init__(self, level, days, so, squad):
         self.level  = level
         self.days   = days
-        self.so     = so
+        self.so     = int(so)
 
         # squad composition
         self.squad  = squad
