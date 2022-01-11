@@ -121,7 +121,10 @@ def generate_pdf(game):
 
             else:
                 pdf.cell(woption_so, height, txtso, 1, 1, 'C')
+    youtcome = pdf.get_y() + height / 2
 
+
+    # difficulty
     odifficult = [
         'More difficult',
         'Extra Stress', 'Improved sites/bandits', 'Extra sites/bandits',
@@ -130,16 +133,18 @@ def generate_pdf(game):
         'Less Stress', 'Downgraded sites/bandits', 'Fewer sites/bandits',
         'Increased SO']
 
-    xdifficulty = xoption+woptions+5
+
+    pad = 5 / 2
+    xdifficulty = xoption+woptions+pad
     ydifficulty = yoption
     pdf.set_xy(xdifficulty, yoption)
     pdf.set_text_color(WHITE)
     pdf.set_fill_color(GREYD)
     woption_txt = 30
     woption_cb  = 5
-    woptions = woption_txt + woption_cb
+    wdifficulty = woption_txt + woption_cb
     pdf.set_font('DejaVu', '', 10)
-    pdf.cell(woptions, height, 'Difficulty', 1, 1, 'C', 1)
+    pdf.cell(wdifficulty, height, 'Difficulty', 1, 1, 'C', 1)
     pdf.set_text_color(BLACK)
     pdf.set_fill_color(WHITE)
     pdf.set_font('DejaVu', '', 6)
@@ -149,22 +154,41 @@ def generate_pdf(game):
 
         if option.find('difficult') != -1:
             pdf.set_fill_color(GREYL2)
-            pdf.cell(woptions, height, option, 1, 1, '', 1)
+            pdf.cell(wdifficulty, height, option, 1, 1, '', 1)
 
         else:
 #            pdf.set_fill_color(GREYL2)
             pdf.cell(woption_txt, height, option, 1, 0)
             pdf.cell(woption_cb, height, '\u25a1', 1, 1, 'C')
 
+    # Outcome
+    xoutcome = xoption
+    woutcome = woptions + pad + wdifficulty
+    pdf.set_xy(xoutcome, youtcome)
+    pdf.set_text_color(WHITE)
+    pdf.set_fill_color(GREYD)
+    pdf.set_font('DejaVu', '', 10)
+    pdf.cell(woutcome, height, 'Outcome & Notes', 1, 1, 'C', 1)
+    pdf.set_text_color(BLACK)
+    pdf.set_fill_color(WHITE)
+    houtcome = (
+        (hfull - margin - (nb_pilots+1) * height - height/2)
+        - youtcome - height
+    )
+    pdf.cell(woutcome, houtcome, '', 1)
+    pdf.set_xy(xoutcome, youtcome + height)
+    pdf.set_font('DejaVu', '', 8)
+    outcomes = ('Great', 'Good', 'Adequate', 'Poor', 'Dismal')
+    txtlen = woutcome / len(outcomes)
+    for outcome in outcomes:
+        txt = f'\u25a1 {outcome}'
+        pdf.cell(txtlen, height, txt, 0, 0, 'C')
 
-
-
-
-#    Day
-#    IAFL
-#        AIM limit
-#        Pilot Loss Penalty : Nominal/Moderate/Severe
-
+    if bg.alias == 'IAFL':
+        pdf.set_font('DejaVu', '', 6)
+        pdf.set_xy(xoutcome, youtcome + height*2)
+        pdf.cell(woutcome, height, 'AIM limit:', 0, 1)
+        pdf.cell(woutcome, height, 'Pilot loss penalty:', 0, 1)
 
 
     # *** days
