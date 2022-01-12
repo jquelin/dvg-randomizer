@@ -177,6 +177,8 @@ def generate_pdf(game):
     )
     pdf.cell(woutcome, houtcome, '', 1)
     pdf.set_xy(xoutcome, youtcome + height)
+    pdf.cell(woutcome, height, '', 1)
+    pdf.set_xy(xoutcome, youtcome + height)
     pdf.set_font('DejaVu', '', 8)
     outcomes = ('Great', 'Good', 'Adequate', 'Poor', 'Dismal')
     txtlen = woutcome / len(outcomes)
