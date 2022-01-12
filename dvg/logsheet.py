@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from fpdf import FPDF 
+import pkg_resources
 
 from dvg.logger import log
 
@@ -35,7 +36,8 @@ def generate_pdf(game):
     
     pdf = FPDF(orientation='L')
     pdf.set_auto_page_break(False)
-    pdf.add_font('DejaVu', '', 'DejaVuSansCondensed.ttf', uni=True)
+    ttf_file = pkg_resources.resource_filename('dvg.misc', 'DejaVuSansCondensed.ttf')
+    pdf.add_font('DejaVu', '', ttf_file, uni=True)
 
 
     pdf.add_page()
