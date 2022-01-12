@@ -158,11 +158,18 @@ class GUI(Tk):
         tv.pack(side=TOP, fill=BOTH, padx=5, expand=True)
 
         # create button to generate logsheet
-        b = Button(f, text='Generate campaign log sheet',
+        fb = Frame(f, bg='yellow')
+        b = Button(fb, text='Generate campaign log sheet',
                    command=self.click_generate_logsheet,
                    state=DISABLED)
-        b.pack(side=TOP, fill=X)
+        b.pack(side=LEFT, fill=X, expand=True)
         self.widgets.but_generate = b
+        b = Button(fb, text='Add replacement pilot',
+                   command=self.click_add_replacement_pilot,
+                   state=DISABLED)
+        b.pack(side=LEFT, fill=X, expand=True)
+        self.widgets.but_add_pilot = b
+        fb.pack(side=TOP, fill=X)
 
     # -- private methods
     
@@ -186,6 +193,17 @@ class GUI(Tk):
 
         
     # -- events
+
+    def click_add_replacement_pilot(self):
+        newp = self.cur_remaining_pilots.pop(0)
+        log.debug(f'adding pilot {newp}')
+        if len(self.cur_remaining_pilots) == 0:
+            self.widgets.but_add_pilot.configure(state=DISABLED)
+        newp.rank = 'replacement'
+        self.cur_game.pilots.append(newp)
+        self.refresh_roaster()
+        log.debug(f'remaining pilots: {len(self.cur_remaining_pilots)}')
+
 
     def click_campaign_length(self, length):
         campaign = self.cur_campaign
@@ -223,6 +241,7 @@ class GUI(Tk):
         others = remaining[nb:]
         selected.extend(picked)
         random.shuffle(selected)
+        self.cur_remaining_pilots = others
 
         # assign ranks
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
@@ -235,6 +254,8 @@ class GUI(Tk):
                 i -= 1
 
         self.widgets.but_generate.configure(state=NORMAL)
+        self.widgets.but_add_pilot.configure(
+            state=NORMAL if len(others)>0 else DISABLED)
         self.refresh_roaster()
 
     def click_generate_logsheet(self):
