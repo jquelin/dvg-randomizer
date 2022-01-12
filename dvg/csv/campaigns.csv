@@ -29,10 +29,10 @@ HLCAO,Cthulhu,R’lyeh,2015,USN|USMC,2,3,21,1+2+4+1+0+0,6,42,1+2+5+1+1+0,9,63,1+
 HLCAO,Cthulhu,Mediterranean,2015,USN|USMC,3,4,24,1+2+4+1+0+0,8,50,1+2+5+1+1+0,12,76,1+2+6+2+1+0
 HLCAO,Cthulhu,East Coast,2016,USN|USMC,4,5,30,1+2+4+1+0+0,10,60,1+2+5+1+1+0,15,90,1+2+6+2+1+0
 HLCAO,exp1,Yugoslavia,1999,USN|USMC,1,3,12,1+2+4+1+0+0,5,23,1+2+5+1+1+0,8,39,1+2+6+2+1+0
-HLCAO,exp1,Lebanon,1983,USN|USMC,2,4,15,1+2+4+1+0+0,8,30,1+2+5+1+1+0,12,45,1+2+6+2+1+0
+HLCAO,exp1,Lebanon,1983,USN,2,4,15,1+2+4+1+0+0,8,30,1+2+5+1+1+0,12,45,1+2+6+2+1+0
 HLCAO,exp1,Silent Aurora Antartica,1999,USN|USMC,2,1,5,1+2+4+1+0+0,,,,,,
 HLCAO,exp1,Syria: Operation Nightfall,2013,USN|USMC,3,3,28,1+2+4+1+0+0,5,44,1+2+5+1+1+0,7,56,1+2+6+2+1+0
-HLCAO,exp1,WW3 North Atlantic,1980,USN|USMC,4,5,9,1+2+4+1+0+0,10,18,1+2+5+1+1+0,15,27,1+2+6+2+1+0
+HLCAO,exp1,WW3 North Atlantic,1980,USN,4,5,9,1+2+4+1+0+0,10,18,1+2+5+1+1+0,15,27,1+2+6+2+1+0
 IAFL,core,Desert Storm,1991,Israel,1,3,22,1+2+4+1+0+0,6,44,1+2+5+1+1+0,9,66,1+2+6+2+1+0
 IAFL,core,The 6 day war,1967,Israel,1,,,,6,24,1+2+5+1+1+0,,,
 IAFL,core,Lebanon I,1982,Israel,2,4,15,1+2+4+1+0+0,8,29,1+2+5+1+1+0,12,42,1+2+6+2+1+0
