@@ -194,19 +194,44 @@ class GUI(Tk):
         game = Game(self.cur_boardgame, self.cur_campaign, self.cur_clength)
         self.cur_game = game
 
-        # FIXME HLCAO Lybia 84 USMC
-
         squad = clength.pilots
         log.debug(f'generating squad for {length}: {squad}')
 
         # draw new set of pilots
         available = random.sample(campaign.pilots, len(campaign.pilots))
+        remaining = []
+        selected  = []
+
+        # check if wanting a fixed number of given airplanes
+        for allowed, nb in campaign.allowed:
+            subset = [a for a in available if a.aircraft.name == allowed]
+            random.shuffle(subset)
+            if nb != '':
+                nb = int(nb)
+                log.debug(f'wanting {nb} {allowed} - {len(subset)} available')
+                picked = subset[:nb]
+                others = subset[nb:]
+                selected.extend(picked)
+                remaining.extend(others)    # FIXME should they be able to be picked?
+            else:
+                remaining.extend(subset)
+
+        # complete with other airplanes
+        nbtotal    = sum(squad)
+        nbselected = len(selected)
+        log.debug(f'wanting {nbtotal}, already having {nbselected} - {len(remaining)} available')
+        random.shuffle(remaining)
+        nb = nbtotal-nbselected
+        picked = remaining[:nb]
+        others = remaining[nb:]
+        selected.extend(picked)
+        random.shuffle(selected)
+
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
         for rank, nb in zip(ranks, squad):
-            log.debug(f'{nb} at rank {rank} (available: {len(available)})')
             i = nb
             while i>0:
-                p = available.pop(0)   # FIXME catch empty error
+                p = selected.pop(0)
                 p.rank = rank
                 game.pilots.append(p)
                 i -= 1
