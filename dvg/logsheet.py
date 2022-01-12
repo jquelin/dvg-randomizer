@@ -63,7 +63,6 @@ def generate_pdf(game):
     pdf.cell(wtoday, height, today, 1, 1, 'C', 0, '')
     pdf.ln()
 
-    # FIXME AIM limit IAFL
     # FIXME checkboxes pilot selected
 
 
@@ -190,9 +189,12 @@ def generate_pdf(game):
 
     if bg.alias == 'IAFL':
         pdf.set_font('DejaVu', '', 6)
-        pdf.set_xy(xoutcome, youtcome + height*2)
-        pdf.cell(woutcome, height, 'AIM limit:', 0, 1)
-        pdf.cell(woutcome, height, 'Pilot loss penalty:', 0, 1)
+        pdf.set_xy(xoutcome, youtcome + houtcome)
+        txt = 'Pilot loss penalty: '
+        txt += ' '.join([f'\u25a1 {p}' for p in ('nominal', 'moderate', 'severe')])
+        wtxt = pdf.get_string_width(txt) + 2
+        pdf.cell(wtxt, height, txt, 1)
+        pdf.cell(woutcome - wtxt, height, 'AIM limit:', 1)
 
 
     # *** days
