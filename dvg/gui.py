@@ -199,22 +199,19 @@ class GUI(Tk):
 
         # draw new set of pilots
         available = random.sample(campaign.pilots, len(campaign.pilots))
-        remaining = []
         selected  = []
 
         # check if wanting a fixed number of given airplanes
         for allowed, nb in campaign.allowed:
-            subset = [a for a in available if a.aircraft.name == allowed]
-            random.shuffle(subset)
             if nb != '':
                 nb = int(nb)
+                subset = [a for a in available if a.aircraft.name == allowed]
+                random.shuffle(subset)
                 log.debug(f'wanting {nb} {allowed} - {len(subset)} available')
                 picked = subset[:nb]
-                others = subset[nb:]
                 selected.extend(picked)
-                remaining.extend(others)    # FIXME should they be able to be picked?
-            else:
-                remaining.extend(subset)
+
+        remaining = [p for p in available if p not in selected]
 
         # complete with other airplanes
         nbtotal    = sum(squad)
@@ -227,6 +224,7 @@ class GUI(Tk):
         selected.extend(picked)
         random.shuffle(selected)
 
+        # assign ranks
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
         for rank, nb in zip(ranks, squad):
             i = nb
