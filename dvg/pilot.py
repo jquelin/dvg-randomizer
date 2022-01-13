@@ -32,12 +32,19 @@ class Pilot:
         return f'{self.id()} ({self.aircraft})'
 
     def so_bonus(self, game):
+        special = game.campaign.special_costs
         cl_level = game.clength.level
         if self.is_elite:
             so_cost = self.elite[0] + self.elite[1]*cl_level
         else:
             so_cost = self.aircraft.cost * cl_level
+            if special:
+                for aircraft, cost in special:
+                    if self.aircraft.name == aircraft:
+                        sp_so_cost = int(cost * cl_level)
+                        log.debug(f'aircraft {aircraft} has a special cost {sp_so_cost} (instead of {so_cost} for this campaign')
+                        so_cost = sp_so_cost
 
         # so_bonus = - so_cost
-        return -so_cost
+        return -int(so_cost)
 

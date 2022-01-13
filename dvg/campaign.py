@@ -36,8 +36,10 @@ class Campaign:
 
         # Some campaigns allow only some planes or forbid some.
         # Some even fix the number of a given aircraft.
+        # Some have special costs for airplanes.
         self.allowed   = []     # allowed planes
         self.forbidden = []     # forbidden planes
+        self.special_costs = [] # special aircraft costs
 
 
     def id(self):
