@@ -179,17 +179,22 @@ class GUI(Tk):
         tv = self.widgets.tv_pilots
         tv.delete(*tv.get_children())
 
-        for p in game.pilots:
-            so_bonus = p.so_bonus(game)
-            if so_bonus == 0:
-                so_bonus = '-'
-            else:
-                so_bonus = f'{so_bonus:+d}'
-            tv.insert(
-                '', END, tags=(p.rank),
-                values=[p.rank, p.elite_name, p.aircraft.name, p.service,
-                        p.aircraft.role, so_bonus]
-            )
+        if game is None:
+            self.widgets.but_add_pilot.configure(state=DISABLED)
+            self.widgets.but_generate.configure(state=DISABLED)
+
+        else:
+            for p in game.pilots:
+                so_bonus = p.so_bonus(game)
+                if so_bonus == 0:
+                    so_bonus = '-'
+                else:
+                    so_bonus = f'{so_bonus:+d}'
+                tv.insert(
+                    '', END, tags=(p.rank),
+                    values=[p.rank, p.elite_name, p.aircraft.name, p.service,
+                            p.aircraft.role, so_bonus]
+                )
 
         
     # -- events
@@ -285,6 +290,9 @@ class GUI(Tk):
         for c in self.widgets.lf_campaign_length.winfo_children():
             c.config(state=DISABLED)
 
+        self.cur_game = None
+        self.refresh_roaster()
+
 
     def select_campaign(self, ev):
         tv = self.widgets.tv_campaigns
@@ -312,6 +320,9 @@ class GUI(Tk):
             label = length.label
             text  = f"{label}\n{days} days, {so} SO"
             self.widgets.but_length[label].configure(state=NORMAL, text=text)
+
+        self.cur_game = None
+        self.refresh_roaster()
 
 
     def sort_campaigns(self, col, descending):
