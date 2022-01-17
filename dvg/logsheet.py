@@ -68,15 +68,16 @@ def generate_pdf(game):
 
     # *** options
     options = [
-        ['Campaign SO points', clength.so, None],
+        ['Campaign SO points',  clength.so, None],
         ['Random squadron',     6*clength.level, None],
-        ['Aircraft costs',   sum([p.so_bonus(game) for p in game.pilots]), None],
-        ['Pilot promotion',  None, None],
-        ['Pilot skills',     None, None],
-        ['Aces',             None, None],
-        ['±1 pilot',           -3*clength.level, 'cb'],
-        ['High stress attack', -3*clength.level, 'cb'],
-        ['Damaging target',    -3*clength.level, 'cb'],
+        ['Aircraft costs',      sum([p.so_bonus(game) for p in game.pilots]), None],
+        ['Pilot promotion',     None, None],
+        ['Pilot skills',        None, None],
+        ['Aces',                None, None],
+        ['Miscellaneous costs', None, None],
+        ['±1 pilot',            -3*clength.level, 'cb'],
+        ['High stress attack',  -3*clength.level, 'cb'],
+        ['Damaging target',     -3*clength.level, 'cb'],
     ]
     if bg.alias == 'HLCAO':
         options.append(['Night missions',      0, 'cb'])
@@ -195,6 +196,10 @@ def generate_pdf(game):
         wtxt = pdf.get_string_width(txt) + 2
         pdf.cell(wtxt, height, txt, 1)
         pdf.cell(woutcome - wtxt, height, 'AIM limit:', 1)
+    elif bg.alias == 'ZL':
+        pdf.set_font('DejaVu', '', 6)
+        pdf.set_xy(xoutcome, youtcome + houtcome)
+        pdf.cell(woutcome, height, 'Maintenance crews:', 1)
 
 
     # *** days
