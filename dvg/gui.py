@@ -20,6 +20,7 @@
 import random
 from tkinter.ttk import *
 from tkinter import *
+from tkinter import ttk
 from tkinter import font
 #import tkinter.font as tkFont
 import types
