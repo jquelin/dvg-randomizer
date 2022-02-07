@@ -21,7 +21,7 @@ As of today, the soft supports:
 - Phantom Leader, with the expansion #1
 - Israeli Air Force Leader, with its expansion #1
 - Corsair Leader
-- Zero Leader, with is China expansion
+- Zero Leader, with its China expansion
 
 
 
