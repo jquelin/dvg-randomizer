@@ -272,67 +272,27 @@ class GUI(Tk):
 
 
     def click_add_replacement_pilot(self):
-        newp = self.cur_remaining_pilots.pop(0)
-        log.debug(f'adding pilot {newp}')
-        if len(self.cur_remaining_pilots) == 0:
+        newp = self.cur_game.remaining_pilots.pop(0)
+        log.info(f'adding pilot {newp}')
+        if len(self.cur_game.remaining_pilots) == 0:
             self.widgets.but_add_pilot.configure(state=DISABLED)
         newp.rank = 'replacement'
         self.cur_game.pilots.append(newp)
         self.refresh_roaster()
-        log.debug(f'remaining pilots: {len(self.cur_remaining_pilots)}')
+        log.debug(f'remaining pilots: {len(self.cur_game.remaining_pilots)}')
 
 
     def click_campaign_length(self, length):
+        log.debug(f'clicked on campaign length {length}')
         campaign = self.cur_campaign
         clength  = getattr(campaign, length)
         self.cur_clength = clength
-        self.cur_game.set_campaign(self.cur_campaign, self.cur_clength)
         game = self.cur_game
-
-        squad = clength.pilots
-        log.debug(f'generating squad for {length}: {squad}')
-
-        # draw new set of pilots
-        available = random.sample(campaign.pilots, len(campaign.pilots))
-        selected  = []
-
-        # check if wanting a fixed number of given airplanes
-        for allowed, nb in campaign.allowed:
-            if nb != '':
-                nb = int(nb)
-                subset = [a for a in available if a.aircraft.name == allowed]
-                random.shuffle(subset)
-                log.debug(f'wanting {nb} {allowed} - {len(subset)} available')
-                picked = subset[:nb]
-                selected.extend(picked)
-
-        remaining = [p for p in available if p not in selected]
-
-        # complete with other airplanes
-        nbtotal    = sum(squad)
-        nbselected = len(selected)
-        log.debug(f'wanting {nbtotal}, already having {nbselected} - {len(remaining)} available')
-        random.shuffle(remaining)
-        nb = nbtotal-nbselected
-        picked = remaining[:nb]
-        others = remaining[nb:]
-        selected.extend(picked)
-        random.shuffle(selected)
-        self.cur_remaining_pilots = others
-
-        # assign ranks
-        ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
-        for rank, nb in zip(ranks, squad):
-            i = nb
-            while i>0:
-                p = selected.pop(0)
-                p.rank = rank
-                game.pilots.append(p)
-                i -= 1
+        game.set_campaign(self.cur_campaign, self.cur_clength)
 
         self.widgets.but_generate.configure(state=NORMAL)
         self.widgets.but_add_pilot.configure(
-            state=NORMAL if len(others)>0 else DISABLED)
+            state=NORMAL if len(game.remaining_pilots)>0 else DISABLED)
         self.refresh_roaster()
 
     def click_generate_logsheet(self):
