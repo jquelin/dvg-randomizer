@@ -21,9 +21,17 @@ from dvg.logger import log
 
 
 class Game:
-    def __init__(self, bg, campaign, clength):
-        self.bg       = bg
-        self.campaign = campaign
-        self.clength  = clength
-        self.pilots   = []
+    def __init__(self, bg):
+        self.boardgame = bg
+        self.boxes = set(bg.boxes())
+        self.campaign = None
+
+    def campaigns(self):
+        campaigns = [c for c in self.boardgame.campaigns if c.box in self.boxes]
+        return campaigns
+
+    def set_campaign(self, campaign, clength):
+        self.campaign  = campaign
+        self.clength   = clength
+        self.pilots    = []
 

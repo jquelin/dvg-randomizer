@@ -31,7 +31,7 @@ GREYD  = 100
 BLACK  = 0
 
 def generate_pdf(game):
-    bg = game.bg
+    bg = game.boardgame
     campaign = game.campaign
     clength  = game.clength
 

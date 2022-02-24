@@ -42,10 +42,22 @@ class GUI(Tk):
         Tk.__init__(self)
         self.title('DVG air leader')
         self.bind('<Escape>', self.close)
+
+        f = types.SimpleNamespace()
+        self.widgets.frames = f
+        f.top   = Frame(self)
+        f.left  = Frame(self)
+        f.right = Frame(self)
+
         self._create_boardgames()
+        self._create_expansions()
         self._create_campaigns()
         self._create_campaign_length()
         self._create_pilots()
+
+        f.top.pack(side=TOP)
+        f.left.pack(side=LEFT,  fill=Y)
+        f.right.pack(side=LEFT, expand=True, fill=BOTH)
 
         # set minimum window size
         self.update()
@@ -59,7 +71,7 @@ class GUI(Tk):
     # -- gui creation
 
     def _create_boardgames(self):
-        lf = LabelFrame(self, text=' Board game ', labelanchor=N)
+        lf = LabelFrame(self.widgets.frames.top, text=' Board game ', labelanchor=N)
         self.vars.boardgame = StringVar()
 
         for bg in data.boardgames:
@@ -72,7 +84,7 @@ class GUI(Tk):
         lf.pack(padx=15, pady=15, ipadx=15, ipady=15)
 
     def _create_campaign_length(self):
-        f = Frame(self)
+        f = Frame(self.widgets.frames.right)
         self.widgets.f_right = f
 
         lf = LabelFrame(f, text=' Campaign length ', labelanchor=N)
@@ -98,7 +110,7 @@ class GUI(Tk):
         ]
         aligns  = [CENTER, W, CENTER, CENTER, CENTER]
 
-        lf = LabelFrame(self, text=' Campaign ', labelanchor=N)
+        lf = LabelFrame(self.widgets.frames.left, text=' Campaign ', labelanchor=N)
 
         tv = Treeview(lf, columns=headers, height=20, show='headings',
                       selectmode=BROWSE)
@@ -120,6 +132,11 @@ class GUI(Tk):
 
         lf.pack(side=LEFT, fill=BOTH, padx=5, pady=5, ipadx=5, ipady=5)
         self.widgets.tv_campaigns = tv
+
+    def _create_expansions(self):
+        f = Frame(self.widgets.frames.left)
+        f.pack(side=TOP, fill=X)
+        self.widgets.frames.expansions = f
 
     def _create_pilots(self):
         headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role', 'SO']
@@ -192,13 +209,36 @@ class GUI(Tk):
 
     # -- private methods
     
+    def refresh_campaigns(self):
+        log.debug('refreshing campaigns')
+        tv = self.widgets.tv_campaigns
+        tv.delete(*tv.get_children())
+        line = 1
+        for c in self.cur_game.campaigns():
+            if line % 2 == 0:
+                tags = []
+            else:
+                tags = ['odd']
+            tv.insert('', END, values=[c.box, c.name, c.service, c.year,
+                                       "*"*c.level], tags=(tags))
+            line += 1
+#        logger.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
+
+        for c in self.widgets.lf_campaign_length.winfo_children():
+            c.config(state=DISABLED)
+
+        self.cur_game.campaign = None
+        self.refresh_roaster()
+
+
+
     def refresh_roaster(self):
         game = self.cur_game
 
         tv = self.widgets.tv_pilots
         tv.delete(*tv.get_children())
 
-        if game is None:
+        if game.campaign is None:
             self.widgets.but_add_pilot.configure(state=DISABLED)
             self.widgets.but_generate.configure(state=DISABLED)
 
@@ -218,6 +258,19 @@ class GUI(Tk):
         
     # -- events
 
+    def check_expansion(self, box):
+        cbvars = self.vars.cbvars
+        if box == 'core':
+            cbvars[box].set(True)
+        else:
+            if cbvars[box].get():
+                self.cur_game.boxes.add(box)
+            else:
+                self.cur_game.boxes.remove(box)
+        log.debug(f'click on box {box} (selected={self.cur_game.boxes}')
+        self.refresh_campaigns()
+
+
     def click_add_replacement_pilot(self):
         newp = self.cur_remaining_pilots.pop(0)
         log.debug(f'adding pilot {newp}')
@@ -233,8 +286,8 @@ class GUI(Tk):
         campaign = self.cur_campaign
         clength  = getattr(campaign, length)
         self.cur_clength = clength
-        game = Game(self.cur_boardgame, self.cur_campaign, self.cur_clength)
-        self.cur_game = game
+        self.cur_game.set_campaign(self.cur_campaign, self.cur_clength)
+        game = self.cur_game
 
         squad = clength.pilots
         log.debug(f'generating squad for {length}: {squad}')
@@ -289,28 +342,30 @@ class GUI(Tk):
         self.destroy()
 
     def select_boardgame(self):
-        log.debug(f"new boardgame selected: {self.vars.boardgame.get()}")
-        self.cur_boardgame = next(bg for bg in data.boardgames if
-                                  bg.name == self.vars.boardgame.get())
+        bg_name = self.vars.boardgame.get()
+        log.debug(f"new boardgame selected: {bg_name}")
+        bg = next(bg for bg in data.boardgames if bg.name == self.vars.boardgame.get())
+        self.cur_boardgame = bg
+        log.debug(f'boardgame {bg} found')
+        self.cur_game = Game(bg)
 
-        tv = self.widgets.tv_campaigns
-        tv.delete(*tv.get_children())
-        line = 1
-        for c in self.cur_boardgame.campaigns:
-            if line % 2 == 0:
-                tags = []
-            else:
-                tags = ['odd']
-            tv.insert('', END, values=[c.box, c.name, c.service, c.year,
-                                       "*"*c.level], tags=(tags))
-            line += 1
-#        logger.debug(f"new boardgame selected: {self.cur_boardgame.name} - {self.cur_boardgame.year}")
+        fexp = self.widgets.frames.expansions
+        for c in fexp.winfo_children(): c.destroy()
+        Label(fexp, text='Expansions:', font='TkHeadingFont').pack(side=LEFT)
+        cbvars = {}
+        for box in self.cur_boardgame.boxes():
+            cbvar = BooleanVar(value=True)
+            cbvars[box] = cbvar
+            cb = Checkbutton(
+                fexp, text=box, variable=cbvar,
+                command=lambda b=box: self.check_expansion(b)
+            )
+#            if box == 'core': cb.configure(state=DISABLED)
+            cb.pack(side=LEFT)
+        self.vars.cbvars = cbvars
 
-        for c in self.widgets.lf_campaign_length.winfo_children():
-            c.config(state=DISABLED)
+        self.refresh_campaigns()
 
-        self.cur_game = None
-        self.refresh_roaster()
 
 
     def select_campaign(self, ev):
@@ -340,7 +395,7 @@ class GUI(Tk):
             text  = f"{label}\n{days} days, {so} SO"
             self.widgets.but_length[label].configure(state=NORMAL, text=text)
 
-        self.cur_game = None
+        self.cur_game.campaign = None
         self.refresh_roaster()
 
 

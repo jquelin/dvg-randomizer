@@ -69,6 +69,13 @@ class Boardgame:
             None
         )
 
+    def boxes(self):
+        boxes = set()
+        for campaign in self.campaigns: boxes.add(campaign.box)
+        boxes.remove('core')
+        return ['core', *sorted(boxes)]
+
+
 
 #
 #def all_boardgames():
