@@ -1,3 +1,5 @@
+1.1.0 2022-02-26
+
 - Ability to filter campaigns & pilots based on expansions
 - Added changelog
 - New script to help doing releases
