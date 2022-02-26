@@ -1,0 +1,40 @@
+#!/bin/bash
+
+newver=$1
+if [[ $newver == '' ]]
+then
+    echo "Usage: $0 <newversion>"
+    exit 1
+
+else
+    echo "Releasing version $newver"
+fi
+
+echo "- checking git status"
+if git status --porcelain | grep -q '??'
+then
+    echo "Some files aren't tracked in git - aborting"
+    git status --porcelain | grep '??'
+    exit 1
+fi
+if git status --porcelain | egrep -q '^ M'
+then
+    echo "Some files aren't committed in git - aborting"
+    git status --porcelain | egrep '^ M'
+    exit 1
+fi
+
+echo "- updating version in README.md"
+perl -pi -E "s{This is version (\S+)}{This is version $newver}" README.md
+
+echo "- adding version to CHANGES.md"
+tmp=changes.tmp
+echo "$newver $(date +%F)" >$tmp
+echo >>$tmp
+cat CHANGES.md>>$tmp
+mv $tmp CHANGES.md
+
+echo "- committing README.md & CHANGES.md"
+git ci -m "$newver" README.md CHANGES.md
+git tag $newver
+
