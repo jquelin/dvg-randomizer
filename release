@@ -38,3 +38,6 @@ echo "- committing README.md & CHANGES.md"
 git ci -m "$newver" README.md CHANGES.md
 git tag $newver
 
+echo "- pushing everything to central repository"
+git push
+git push --tags
