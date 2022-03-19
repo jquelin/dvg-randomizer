@@ -291,7 +291,10 @@ class GUI(Tk):
         self.cur_clength = clength
         game = self.cur_game
         game.set_campaign(self.cur_campaign, self.cur_clength)
-        gui.composition.SquadComposition(self)
+        if 1:
+            gui.composition.SquadComposition(self)
+        else:
+            self.composition_window_return()
 
     def composition_window_return(self):
         game = self.cur_game

@@ -64,8 +64,6 @@ class Game:
                 log.debug(f'aircraft {aircraft} available: [0-{nb_max}]({nb_available} available)')
                 aircrafts.append([aircraft, 0, nb_max])
 
-#        aircrafts.insert(0, ['random', 0, nb_random])
-
         return aircrafts
 
     def get_squad_size(self):
@@ -120,6 +118,7 @@ class Game:
                 i -= 1
 
     def set_campaign(self, campaign, clength):
-        self.campaign = campaign
-        self.clength  = clength
+        self.campaign    = campaign
+        self.clength     = clength
+        self.composition = []
 
