@@ -6,7 +6,7 @@ import sys
 bindir = os.path.dirname(__file__)
 sys.path.append(bindir)
 
-from dvg.gui import GUI
+from gui.main import GUI
 
 gui = GUI()
 gui.mainloop()

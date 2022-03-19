@@ -32,30 +32,65 @@ class Game:
         campaigns = [c for c in self.boardgame.campaigns if c.box in self.boxes]
         return campaigns
 
-    def set_campaign(self, campaign, clength):
-        self.campaign  = campaign
-        self.clength   = clength
-        self.pilots    = []
+    def get_aircraft_possibilities(self):
+        pilots  = [p for p in self.campaign.pilots if p.box in self.boxes]
+        nbtotal = sum(self.clength.pilots)
+        log.debug(f'campaign requires maximum {nbtotal} pilots')
 
+        nb_aircrafts = {}
+        for p in pilots:
+            aircraft = p.aircraft
+            if aircraft in nb_aircrafts:
+                nb_aircrafts[aircraft] += 1
+            else:
+                nb_aircrafts[aircraft] = 0
+
+        nb_mandatory = {t[0]:t[1] for t in self.campaign.allowed if t[1]}
+        aircrafts = []
+        nb_random = nbtotal
+        for aircraft in sorted(nb_aircrafts):
+            nb_available = len([p for p in pilots if p.aircraft == aircraft])
+            if aircraft.name in nb_mandatory:
+                nb_fixed = int(nb_mandatory[aircraft.name])
+                log.debug(
+                    f'aircraft {aircraft} available: ' +
+                    f'wanting {nb_fixed} pilots ' +
+                    f'({nb_available} available)'
+                )
+                aircrafts.append([aircraft, nb_fixed, nb_fixed])
+                nb_random -= nb_fixed
+            else:
+                nb_max = min(nb_available, nbtotal)
+                log.debug(f'aircraft {aircraft} available: [0-{nb_max}]({nb_available} available)')
+                aircrafts.append([aircraft, 0, nb_max])
+
+#        aircrafts.insert(0, ['random', 0, nb_random])
+
+        return aircrafts
+
+    def get_squad_size(self):
+        return sum(self.clength.pilots)
+
+    def draw_roaster(self):
         # fetch squad composition
-        squad = clength.pilots
+        campaign = self.campaign
+        clength  = self.clength
+        squad    = self.clength.pilots
         log.debug(f'generating squad for {clength.label}: {squad}')
 
         # draw new set of pilots
         available = [p for p in campaign.pilots if p.box in self.boxes]
         selected  = []
+        self.pilots = []
         log.debug(f'{len(available)} pilots available in pool')
 
-        # check if wanting a fixed number of given airplanes
-        for allowed, nb in campaign.allowed:
-            if nb != '':
-                nb = int(nb)
-                subset = [a for a in available if a.aircraft.name == allowed]
-                random.shuffle(subset)
-                log.debug(f'wanting {nb} {allowed} - {len(subset)} available')
-                picked = subset[:nb]
-                selected.extend(picked)
-                for p in picked: log.info(f'adding pilot {p}')
+        for aircraft, nb in self.composition:
+            subset = [a for a in available if a.aircraft == aircraft]
+            random.shuffle(subset)
+            log.debug(f'wanting {nb} {aircraft} - {len(subset)} available')
+            picked = subset[:nb]
+            selected.extend(picked)
+            for p in picked: log.info(f'adding pilot {p}')
 
         remaining = [p for p in available if p not in selected]
 
@@ -73,6 +108,7 @@ class Game:
         self.remaining_pilots = others
 
         # assign ranks
+        log.debug('assigning ranks')
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
         for rank, nb in zip(ranks, squad):
             i = nb
@@ -82,3 +118,8 @@ class Game:
                 log.info(f'assigning rank {rank} to {p}')
                 self.pilots.append(p)
                 i -= 1
+
+    def set_campaign(self, campaign, clength):
+        self.campaign = campaign
+        self.clength  = clength
+

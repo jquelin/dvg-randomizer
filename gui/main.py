@@ -30,6 +30,7 @@ from dvg.logger   import log
 from dvg.data     import data
 from dvg.game     import Game
 from dvg.logsheet import generate_pdf
+import gui.composition
 
 class GUI(Tk):
     def __init__(self):
@@ -284,12 +285,17 @@ class GUI(Tk):
 
     def click_campaign_length(self, length):
         log.debug(f'clicked on campaign length {length}')
+
         campaign = self.cur_campaign
         clength  = getattr(campaign, length)
         self.cur_clength = clength
         game = self.cur_game
         game.set_campaign(self.cur_campaign, self.cur_clength)
+        gui.composition.SquadComposition(self)
 
+    def composition_window_return(self):
+        game = self.cur_game
+        game.draw_roaster()
         self.widgets.but_generate.configure(state=NORMAL)
         self.widgets.but_add_pilot.configure(
             state=NORMAL if len(game.remaining_pilots)>0 else DISABLED)
@@ -337,7 +343,7 @@ class GUI(Tk):
             self.cur_campaign = None
             return
         (box, name, service, year, diff) = tv.item(curitem)['values']
-        log.debug(f"campaign {box} - {name} - {service} - {year} selected")
+        log.info(f"campaign {box} - {name} - {service} - {year} selected")
 
         self.cur_campaign = self.cur_boardgame.campaign(name, year, service)
 

@@ -32,6 +32,9 @@ class Aircraft:
         self.cost      = int(cost)
         self.role      = role
 
+    def __lt__(self, a):
+        return self.name < a.name
+
     def id(self):
         # box should not be part of id, since a core aircraft can be
         # reused from other expansions.
