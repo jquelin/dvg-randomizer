@@ -17,7 +17,7 @@ then
     git status --porcelain | grep '??'
     exit 1
 fi
-if git status --porcelain | egrep -q '^ M'
+if git status --porcelain | egrep -v CHANGES.md | egrep -q '^ M'
 then
     echo "Some files aren't committed in git - aborting"
     git status --porcelain | egrep '^ M'
