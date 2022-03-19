@@ -46,7 +46,8 @@ class SquadComposition(Toplevel):
 
         row = 2
         ipad = 2
-        self.spinboxes = {}
+        self.spinboxes   = {}
+        self.label_range = {}
         for aircraft, nbmin, nbmax in aircrafts:
             spinvar = IntVar()
             self.vars[aircraft] = spinvar
@@ -72,6 +73,7 @@ class SquadComposition(Toplevel):
             lrange = Label(self, text=f'[{nbmin}-{nbmax}]', state=DISABLED) # DISABLED for the look :-)
             sb.grid(column=3, row=row, sticky=E+W, padx=ipad, pady=ipad)
             lrange.grid(column=4, row=row, sticky=E+W, padx=ipad, pady=ipad)
+            self.label_range[aircraft] = lrange
             row += 1
 
 
@@ -138,13 +140,16 @@ class SquadComposition(Toplevel):
         curmax = self.spinboxes[aircraft].cget('to')
         if unassigned < 0:
             self.vars[aircraft].set(curval-1)
-#            self.flash(self.1)
+            self.flash(self.label_random, 1)
         elif curval < 0:
             self.vars[aircraft].set(curval+1)
+            self.flash(self.label_range[aircraft], 1)
         elif curval < curmin:
             self.vars[aircraft].set(curval+1)
+            self.flash(self.label_range[aircraft], 1)
         elif curval > curmax:
             self.vars[aircraft].set(curval-1)
+            self.flash(self.label_range[aircraft], 1)
 
         self.update_random_label()
 
