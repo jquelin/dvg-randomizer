@@ -5,7 +5,7 @@ dvg-randomizer - gui to randomize your squadron for DVG Air Leader games
 
 # VERSION
 
-This is version 1.1.0 of dvg-randomizer.
+This is version 1.2.0 of dvg-randomizer.
 
 
 # DESCRIPTION

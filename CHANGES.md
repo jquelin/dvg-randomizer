@@ -1,3 +1,7 @@
+1.2.0 2022-03-19
+
+- Ability to compose the squad (number of aircraft types)
+
 1.1.0 2022-02-26
 
 - Ability to filter campaigns & pilots based on expansions
