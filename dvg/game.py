@@ -20,16 +20,18 @@
 
 
 if __name__ == '__main__':
-    from os.path import dirname
+    from os.path import basename, dirname
     import sys
     bindir = dirname(dirname(__file__))
     sys.path.append(bindir)
+    if basename(sys.path[0]) == 'dvg':
+        del sys.path[0]
 
 import cmd2
 import random
 
+from dvg.data   import Data
 from dvg.logger import log
-
 
 class Game(cmd2.Cmd):
     def __init__(self, *args, **kwargs):
@@ -53,6 +55,29 @@ class Game(cmd2.Cmd):
         # customizing cmd2
         self.prompt = 'dvg: '
         self.runcmds_plus_hooks(['alias create bg boardgame >/dev/null'])
+
+
+    def do_list(self, stmt):
+        """List available choices"""
+        # depending on the app status, command will list different
+        # things.
+        if len(stmt.argv) == 1:
+            what = 'boardgames'
+        else:
+            what = stmt.argv[1]
+
+        # check aliases
+        aliases = {
+            'bg': 'boardgames',
+        }
+        if what in aliases:
+            what = aliases[what]
+
+        print(what)
+
+    def do_load(self, *stmt):
+        self.data = Data()
+
 
     def do_boardgame(self, bg):
         self.boardgame = bg

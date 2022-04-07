@@ -27,13 +27,15 @@ import types
 
 
 from dvg.logger   import log
-from dvg.data     import data
 from dvg.game     import Game
 from dvg.logsheet import generate_pdf
 import gui.composition
 
 class GUI(Tk):
     def __init__(self):
+        self.game = Game()
+        self.game.do_load()
+
         # a convenient way to store our vars
         self.vars    = types.SimpleNamespace() # gui vars (StringVar)
         self.widgets = types.SimpleNamespace() # widgets
@@ -56,7 +58,6 @@ class GUI(Tk):
         self._create_campaign_length()
         self._create_pilots()
 
-        self.cur_game = Game()
 
         f.top.pack(side=TOP)
         f.left.pack(side=LEFT,  fill=Y)
@@ -68,7 +69,7 @@ class GUI(Tk):
 
         # initialize gui with the first boardgame, and update gui
         # accordingly
-        self.vars.boardgame.set(data.boardgames[0].name)
+        self.vars.boardgame.set(self.game.data.boardgames[0].name)
         self.select_boardgame()
 
     # -- gui creation
@@ -77,7 +78,7 @@ class GUI(Tk):
         lf = LabelFrame(self.widgets.frames.top, text=' Board game ', labelanchor=N)
         self.vars.boardgame = StringVar()
 
-        for bg in data.boardgames:
+        for bg in self.game.data.boardgames:
             rb = Radiobutton(
                 lf, text=bg.name, value=bg.name,
                 variable=self.vars.boardgame,
@@ -108,7 +109,7 @@ class GUI(Tk):
         headers = ['Box', 'Name', 'Service', 'Year', 'Difficulty']
         longest = [
             *list(
-                [data.longest[k] for k in ['boxes', 'campaigns', 'services']]
+                [self.game.data.longest[k] for k in ['boxes', 'campaigns', 'services']]
             ), '0000', '****'
         ]
         aligns  = [CENTER, W, CENTER, CENTER, CENTER]
@@ -146,7 +147,7 @@ class GUI(Tk):
         anchors = [CENTER, W, CENTER, CENTER, CENTER, CENTER]
         longest = [
             *list(
-                [data.longest[k] for k in ['ranks', 'pilots', 'aircrafts', 'services', 'roles']]
+                [self.game.data.longest[k] for k in ['ranks', 'pilots', 'aircrafts', 'services', 'roles']]
             ), 'Cost'
         ]
 
@@ -217,7 +218,7 @@ class GUI(Tk):
         tv = self.widgets.tv_campaigns
         tv.delete(*tv.get_children())
         line = 1
-        for c in self.cur_game.campaigns():
+        for c in self.game.campaigns():
             if line % 2 == 0:
                 tags = []
             else:
@@ -230,13 +231,13 @@ class GUI(Tk):
         for c in self.widgets.lf_campaign_length.winfo_children():
             c.config(state=DISABLED)
 
-        self.cur_game.campaign = None
+        self.game.campaign = None
         self.refresh_roaster()
 
 
 
     def refresh_roaster(self):
-        game = self.cur_game
+        game = self.game
 
         tv = self.widgets.tv_pilots
         tv.delete(*tv.get_children())
@@ -267,22 +268,22 @@ class GUI(Tk):
             cbvars[box].set(True)
         else:
             if cbvars[box].get():
-                self.cur_game.boxes.add(box)
+                self.game.boxes.add(box)
             else:
-                self.cur_game.boxes.remove(box)
-        log.debug(f'click on box {box} (selected={self.cur_game.boxes}')
+                self.game.boxes.remove(box)
+        log.debug(f'click on box {box} (selected={self.game.boxes}')
         self.refresh_campaigns()
 
 
     def click_add_replacement_pilot(self):
-        newp = self.cur_game.remaining_pilots.pop(0)
+        newp = self.game.remaining_pilots.pop(0)
         log.info(f'adding pilot {newp}')
-        if len(self.cur_game.remaining_pilots) == 0:
+        if len(self.game.remaining_pilots) == 0:
             self.widgets.but_add_pilot.configure(state=DISABLED)
         newp.rank = 'replacement'
-        self.cur_game.pilots.append(newp)
+        self.game.pilots.append(newp)
         self.refresh_roaster()
-        log.debug(f'remaining pilots: {len(self.cur_game.remaining_pilots)}')
+        log.debug(f'remaining pilots: {len(self.game.remaining_pilots)}')
 
 
     def click_campaign_length(self, length):
@@ -291,7 +292,7 @@ class GUI(Tk):
         campaign = self.cur_campaign
         clength  = getattr(campaign, length)
         self.cur_clength = clength
-        game = self.cur_game
+        game = self.game
         game.set_campaign(self.cur_campaign, self.cur_clength)
         if 1:
             gui.composition.SquadComposition(self)
@@ -299,7 +300,7 @@ class GUI(Tk):
             self.composition_window_return()
 
     def composition_window_return(self):
-        game = self.cur_game
+        game = self.game
         game.draw_roaster()
         self.widgets.but_generate.configure(state=NORMAL)
         self.widgets.but_add_pilot.configure(
@@ -307,7 +308,7 @@ class GUI(Tk):
         self.refresh_roaster()
 
     def click_generate_logsheet(self):
-        generate_pdf(self.cur_game)
+        generate_pdf(self.game)
 
     def close(self, event):
         self.destroy()
@@ -315,10 +316,10 @@ class GUI(Tk):
     def select_boardgame(self):
         bg_name = self.vars.boardgame.get()
         log.debug(f"new boardgame selected: {bg_name}")
-        bg = next(bg for bg in data.boardgames if bg.name == self.vars.boardgame.get())
+        bg = next(bg for bg in self.game.data.boardgames if bg.name == self.vars.boardgame.get())
         self.cur_boardgame = bg
         log.debug(f'boardgame {bg} found')
-        self.cur_game.do_boardgame(bg)
+        self.game.do_boardgame(bg)
 
         fexp = self.widgets.frames.expansions
         for c in fexp.winfo_children(): c.destroy()
@@ -366,7 +367,7 @@ class GUI(Tk):
             text  = f"{label}\n{days} days, {so} SO"
             self.widgets.but_length[label].configure(state=NORMAL, text=text)
 
-        self.cur_game.campaign = None
+        self.game.campaign = None
         self.refresh_roaster()
 
 

@@ -31,7 +31,7 @@ class SquadComposition(Toplevel):
         self.wm_title('Squad composition')
         self.grab_set()
 
-        self.game = parent.cur_game
+        self.game = parent.game
 
         aircrafts = self.game.get_aircraft_possibilities()
         self.possibilities = aircrafts

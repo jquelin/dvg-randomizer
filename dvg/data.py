@@ -230,5 +230,3 @@ class Data:
     def get_csv_path(self, file:str):
         return pkg_resources.resource_filename('dvg.csv', file)
 
-
-data = Data()    # global var used to access DVG data
