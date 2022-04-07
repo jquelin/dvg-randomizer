@@ -7,6 +7,5 @@ bindir = os.path.dirname(__file__)
 sys.path.append(bindir)
 
 from gui.main import GUI
-
 gui = GUI()
 gui.mainloop()

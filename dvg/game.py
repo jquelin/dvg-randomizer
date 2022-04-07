@@ -1,3 +1,4 @@
+#!/bin/python
 #
 # This file is part of dvg-randomizer.
 #
@@ -17,13 +18,43 @@
 #
 
 
+
+if __name__ == '__main__':
+    from os.path import dirname
+    import sys
+    bindir = dirname(dirname(__file__))
+    sys.path.append(bindir)
+
+import cmd2
 import random
 
 from dvg.logger import log
 
 
-class Game:
-    def __init__(self, bg):
+class Game(cmd2.Cmd):
+    def __init__(self, *args, **kwargs):
+        # remove unwanted shortcuts *before* calling parent __init__
+        shortcuts = dict(cmd2.DEFAULT_SHORTCUTS)
+        for shortcut in ['!', '@', '@@']:
+            del shortcuts[shortcut]
+        cmd2.Cmd.__init__(self, shortcuts=shortcuts)
+
+        # remove unwanted commands
+        for cmd in ['do_edit', 'do_macro', 'do_run_pyscript',
+                'do_run_script', 'do_shell']:
+            delattr(cmd2.Cmd, cmd)
+
+        # remove unwanted settings
+        for setting in ['allow_style', 'always_show_hint', 'debug',
+                'echo', 'editor', 'feedback_to_output',
+                'max_completion_items', 'quiet', 'timing']:
+            self.remove_settable(setting)
+
+        # customizing cmd2
+        self.prompt = 'dvg: '
+        self.runcmds_plus_hooks(['alias create bg boardgame >/dev/null'])
+
+    def do_boardgame(self, bg):
         self.boardgame = bg
         self.boxes = set(bg.boxes())
         self.campaign = None
@@ -121,4 +152,9 @@ class Game:
         self.campaign    = campaign
         self.clength     = clength
         self.composition = []
+
+
+if __name__ == '__main__':
+    game = Game()
+    sys.exit(game.cmdloop())
 

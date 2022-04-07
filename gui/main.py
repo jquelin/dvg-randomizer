@@ -56,6 +56,8 @@ class GUI(Tk):
         self._create_campaign_length()
         self._create_pilots()
 
+        self.cur_game = Game()
+
         f.top.pack(side=TOP)
         f.left.pack(side=LEFT,  fill=Y)
         f.right.pack(side=LEFT, expand=True, fill=BOTH)
@@ -316,7 +318,7 @@ class GUI(Tk):
         bg = next(bg for bg in data.boardgames if bg.name == self.vars.boardgame.get())
         self.cur_boardgame = bg
         log.debug(f'boardgame {bg} found')
-        self.cur_game = Game(bg)
+        self.cur_game.do_boardgame(bg)
 
         fexp = self.widgets.frames.expansions
         for c in fexp.winfo_children(): c.destroy()
