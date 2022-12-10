@@ -16,3 +16,6 @@
 __pycache__
 
 logsheet.pdf
+
+dist
+dvg_randomizer.egg-info
