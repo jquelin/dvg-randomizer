@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dvg-randomizer"
-version = '1.3.1'
+version = '1.3.2'
 authors = [
   { name="Jerome Quelin", email="jquelin@gmail.com" },
 ]
@@ -19,14 +19,7 @@ classifiers = [
 dependencies = [
     "appdirs",
     "colorlog",
-    "csv",
     "fpdf",
-    "logging",
-    "pathlib",
-    "tkinter",
-    "tkinter.font",
-    "tkinter.ttk",
-    "yaml",
 ]
 
 [project.scripts]

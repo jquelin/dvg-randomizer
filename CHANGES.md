@@ -1,14 +1,20 @@
-1.3.1 2022-12-10
+1.3.2 2022-12-10
 
 - fix prereqs
 
-1.3.0 2022-12-10
+1.3.1 2022-12-10
+- fix prereqs
 
+1.3.0 2022-12-10
 - distributing to pypi
+
+---
 
 1.2.0 2022-03-19
 
 - Ability to compose the squad (number of aircraft types)
+
+---
 
 1.1.0 2022-02-26
 
