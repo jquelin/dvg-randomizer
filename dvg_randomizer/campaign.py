@@ -17,7 +17,7 @@
 #
 
 
-from dvg.logger import log
+from dvg_randomizer.logger import log
 
 class CampaignLength:
     def __init__(self, level, days, so, squad):

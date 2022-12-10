@@ -1,0 +1,6 @@
+recursive-include pytrisk *.csv
+recursive-include pytrisk *.jpg
+recursive-include pytrisk *.pkl
+recursive-include pytrisk *.png
+recursive-include pytrisk *.ttf
+recursive-include pytrisk *.yaml

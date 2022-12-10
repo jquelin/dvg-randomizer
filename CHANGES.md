@@ -1,3 +1,5 @@
+- distributing to pypi
+
 1.2.0 2022-03-19
 
 - Ability to compose the squad (number of aircraft types)

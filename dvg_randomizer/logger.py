@@ -17,34 +17,22 @@
 #
 
 import logging
+import colorlog
 
-logger_name = 'dvg'
+from dvg_randomizer import config
 
-try:
-    import colorlog
-except:
-    # no colorlog available
-    handler = logging.StreamHandler()
-    handler.setFormatter(
-        logging.Formatter(
-            '%(asctime)s %(module)s.%(funcName)s:%(lineno)d %(levelname)s %(message)s',
-            datefmt='%H:%M:%S'
-        )
-    )
-
-    log = logging.getLogger(logger_name)
-
-else:
-    # colorlog available
-    handler = colorlog.StreamHandler()
-    handler.setFormatter(
-        colorlog.ColoredFormatter(
-            '%(log_color)s%(asctime)s %(module)s.%(funcName)s:%(lineno)d %(levelname)s %(message)s',
-            datefmt='%H:%M:%S'
-        )
-    )
-    log = colorlog.getLogger(logger_name)
-
-
-log.setLevel(logging.DEBUG)
+colors = colorlog.default_log_colors
+colors['DEBUG'] = 'blue'
+colors['INFO']  = 'white'
+formatter = colorlog.ColoredFormatter(
+    '%(log_color)s%(asctime)s %(levelname)s %(message)s',
+    datefmt='%H:%M:%S',
+    log_colors=colors
+)
+handler = colorlog.StreamHandler()
+handler.setFormatter(formatter)
+log = colorlog.getLogger('dvg_randomizer')
 log.addHandler(handler)
+_log_level = config.get('logging.level', logging.DEBUG)
+log.setLevel(_log_level)
+

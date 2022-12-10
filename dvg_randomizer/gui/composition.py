@@ -22,7 +22,7 @@ from tkinter import ttk
 from tkinter import font
 import types
 
-from dvg.logger   import log
+from dvg_randomizer.logger   import log
 
 class SquadComposition(Toplevel):
     def __init__(self, parent):

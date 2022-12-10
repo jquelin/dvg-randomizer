@@ -20,9 +20,9 @@
 
 from datetime import datetime
 from fpdf import FPDF 
-import pkg_resources
+from pathlib import Path
 
-from dvg.logger import log
+from dvg_randomizer.logger import log
 
 WHITE  = 255
 GREYL1 = 240
@@ -54,7 +54,8 @@ def generate_pdf(game):
     
     pdf = FPDF(orientation='L')
     pdf.set_auto_page_break(False)
-    ttf_file = pkg_resources.resource_filename('dvg.misc', 'DejaVuSansCondensed.ttf')
+    ttf_file = Path(Path(__file__).parent, 'misc', 'DejaVuSansCondensed.ttf').as_posix()
+    log.debug(f'TTF file = {ttf_file}')
     pdf.add_font('DejaVu', '', ttf_file, uni=True)
 
 

@@ -17,15 +17,15 @@
 #
 
 import csv
-import pkg_resources
+from pathlib import Path
 
 #
 
-from dvg.aircraft  import Aircraft
-from dvg.boardgame import Boardgame
-from dvg.campaign  import Campaign
-from dvg.pilot     import Pilot
-from dvg.logger    import log
+from dvg_randomizer.aircraft  import Aircraft
+from dvg_randomizer.boardgame import Boardgame
+from dvg_randomizer.campaign  import Campaign
+from dvg_randomizer.pilot     import Pilot
+from dvg_randomizer.logger    import log
 
 #  ----
 
@@ -228,5 +228,8 @@ class Data:
 
 
     def get_csv_path(self, file:str):
-        return pkg_resources.resource_filename('dvg.csv', file)
+#        curfpath = Path(__file__).parent()
+#        wanted = Path(curfpath, 'csv', file)
+#        log.debug(f'looking file: {wanted}')
+        return Path(Path(__file__).parent, 'csv', file).as_posix()
 

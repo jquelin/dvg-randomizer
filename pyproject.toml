@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dvg-randomizer"
+version = '1.2.0'
+authors = [
+  { name="Jerome Quelin", email="jquelin@gmail.com" },
+]
+description = "classical Risk game"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "appdirs",
+    "cmd2",
+    "colorlog",
+    "contextlib",
+    "csv",
+    "datetime",
+    "fpdf",
+    "logging",
+    "os.path",
+    "pathlib",
+    "random",
+    "sys",
+    "tkinter",
+    "tkinter.font",
+    "tkinter.ttk",
+    "types",
+    "yaml",
+]
+
+[project.scripts]
+dvg-randomizer = "dvg_randomizer.__main__:run"
+
+[project.urls]
+"Homepage" = "https://github.com/jquelin/dvg-randomize"
+"Bug Tracker" = "https://github.com/jquelin/dvg-randomize/issues"
+

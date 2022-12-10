@@ -26,10 +26,10 @@ from tkinter import font
 import types
 
 
-from dvg.logger   import log
-from dvg.game     import Game
-from dvg.logsheet import generate_pdf
-import gui.composition
+from dvg_randomizer.logger   import log
+from dvg_randomizer.game     import Game
+from dvg_randomizer.logsheet import generate_pdf
+from dvg_randomizer.gui      import composition
 
 class GUI(Tk):
     def __init__(self):
@@ -71,6 +71,7 @@ class GUI(Tk):
         # accordingly
         self.vars.boardgame.set(self.game.data.boardgames[0].name)
         self.select_boardgame()
+
 
     # -- gui creation
 
@@ -295,7 +296,7 @@ class GUI(Tk):
         game = self.game
         game.set_campaign(self.cur_campaign, self.cur_clength)
         if 1:
-            gui.composition.SquadComposition(self)
+            composition.SquadComposition(self)
         else:
             self.composition_window_return()
 

@@ -17,7 +17,7 @@
 #
 
 
-from dvg.logger import log
+from dvg_randomizer.logger import log
 
 class Aircraft:
     def __init__(self, bg, box, service, name, year_in:int,
