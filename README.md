@@ -3,11 +3,6 @@
 dvg-randomizer - gui to randomize your squadron for DVG Air Leader games
 
 
-# VERSION
-
-This is version 1.2.0 of dvg-randomizer.
-
-
 # DESCRIPTION
 
 Dan Verssen Games (DVG) publishes awesome boardgames putting you in
@@ -27,28 +22,19 @@ As of today, the soft supports:
 
 # INSTALL
 
-No need to install the soft, just run:
+Just install via pip:
 
-    python randomizer
+    pip install dvg-randomizer
 
-to launch the GUI.
+Once installed, launch the app via the dvg-randomizer script:
 
-You will need to install fpdf, though, using the following command:
-
-    pip install fpdf
-
-If you want colored logs, you may want to install the colorlog module
-with the following command:
-
-    pip install colorlog
-
+    dvg-randomizer
 
 
 # SUPPORT
 
-The homepage for this program is
-https://github.com/jquelin/dvg-randomizer, where you will be able to
-find the source code and a bug tracker.
+The homepage for this program is https://github.com/jquelin/dvg-randomizer,
+where you will be able to find the source code and a bug tracker.
 
 
 # AUTHOR
