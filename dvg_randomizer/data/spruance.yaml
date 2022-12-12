@@ -1,0 +1,1624 @@
+commanders:
+  - box: core
+    name: Bouchard
+  - box: core
+    name: Bryan
+  - box: core
+    name: Ewen
+  - box: core
+    name: Kinsley
+  - box: core
+    name: Muson
+  - box: core
+    country: UK
+    name: Woodward
+  - box: core
+    country: UK
+    name: Young
+  - box: allies
+    country: UK
+    name: Soar
+  - box: allies
+    country: Japan
+    name: Kasai
+  - box: allies
+    country: Australia
+    name: Shadlers
+  - box: allies
+    country: NATO
+    name: Blout
+  - box: allies
+    country: NATO
+    name: Galvin
+  - box: allies
+    country: Canada
+    name: Garnier
+  - box: allies
+    country: Australia
+    name: Crutchley
+  - box: carriers
+    country: Italy
+    name: Biraghi
+  - box: carriers
+    country: France
+    name: Debray
+  - box: carriers
+    country: UK
+    name: Hermes
+  - box: carriers
+    country: UK
+    name: Black
+  - box: carriers
+    name: Bailey
+  - box: carriers
+    name: Barnes
+  - box: carriers
+    name: Dalton
+  - box: carriers
+    name: Cloyd
+  - box: carriers
+    name: McClain
+  - box: carriers
+    name: Willard
+  - box: subs
+    name: Bowman
+  - box: subs
+    name: Leidig
+  - box: subs
+    name: Mancuso
+  - box: subs
+    name: McCafferty
+  - box: subs
+    name: Rickover
+  - box: subs
+    name: Zacharias
+helicopters:
+  - box: core
+    cost: 4
+    name: Cacciatore
+    type: AB-212 Agusta Bell
+  - box: core
+    cost: 4
+    name: Rogue
+    type: CH-124 Sea King
+  - box: core
+    cost: 4
+    name: Baldie
+    type: Lynx HAS.2
+  - box: core
+    cost: 4
+    name: Mizzen
+    type: Lynx HAS.2
+  - box: core
+    cost: 4
+    name: Skids
+    type: SH-2F Seasprite
+  - box: core
+    cost: 4
+    name: Sprayer
+    type: SH-2F Seasprite
+  - box: core
+    cost: 4
+    name: Pitch
+    type: SH-3 Sea King
+  - box: core
+    cost: 5
+    name: Cleaner
+    type: SH-3 Sea King
+  - box: core
+    cost: 4
+    name: Hover
+    type: SH-60B Seahawk
+  - box: core
+    cost: 4
+    name: Blades
+    type: SH-60B Seahawk
+  - box: core
+    cost: 4
+    name: Porthole
+    type: Wessex HAS.3
+  - box: allies
+    cost: 4
+    name: Cupidon
+    type: SA 321G Super Frelon
+  - box: allies
+    cost: 4
+    name: Doudou
+    type: Mk.2 Lynx
+  - box: allies
+    cost: 4
+    name: Diablotin
+    type: Mk.2 Lynx
+  - box: allies
+    cost: 4
+    name: Lobo
+    type: S-70B Seahawk
+  - box: allies
+    cost: 4
+    name: Cranio
+    type: AB-212 Agusta Bell
+  - box: allies
+    cost: 4
+    name: Zio
+    type: AB-212 Agusta Bell
+  - box: allies
+    cost: 4
+    name: Topo
+    type: AB-212 Agusta Bell
+  - box: allies
+    cost: 4
+    name: Whinge
+    type: S-70B Seahawk
+  - box: allies
+    cost: 4
+    name: Brekky
+    type: S-70B Seahawk
+  - box: allies
+    cost: 5
+    name: Cobber
+    type: CH-124 Sea King
+  - box: allies
+    cost: 5
+    name: Larrikin
+    type: CH-124 Sea King
+  - box: allies
+    cost: 4
+    name: Stern
+    type: WG 13 Lynx
+  - box: allies
+    cost: 4
+    name: Engel
+    type: WG 13 Lynx
+ships:
+  - atlantic: true
+    box: core
+    cost: 20
+    name: USS Iowa BB-61
+    pacific: false
+    role: battleship
+    type: Iowa
+    year_in: 1984
+  - atlantic: false
+    box: core
+    cost: 20
+    name: USS Missouri BB-63
+    pacific: true
+    role: battleship
+    type: Iowa
+    year_in: 1986
+  - atlantic: false
+    box: core
+    cost: 26
+    name: USS Antietam CG-54
+    pacific: true
+    role: cruiser
+    type: Ticonderoga
+    year_in: 1987
+  - atlantic: false
+    box: core
+    cost: 26
+    name: USS Bunker Hill CG-52
+    pacific: true
+    role: cruiser
+    type: Ticonderoga
+    year_in: 1986
+  - atlantic: true
+    box: core
+    cost: 16
+    name: USS Gridley CG-21
+    pacific: false
+    role: cruiser
+    type: Leahy
+    year_in: 1963
+  - atlantic: false
+    box: core
+    cost: 16
+    name: USS Halsey CG-23
+    pacific: true
+    role: cruiser
+    type: Leahy
+    year_in: 1963
+  - atlantic: true
+    box: core
+    cost: 26
+    name: USS Leyte Gulf CG-55
+    pacific: false
+    role: cruiser
+    type: Ticonderoga
+    year_in: 1987
+  - atlantic: false
+    box: core
+    cost: 26
+    name: USS Mobile Bay CG-53
+    pacific: true
+    role: cruiser
+    type: Ticonderoga
+    year_in: 1987
+  - atlantic: false
+    box: core
+    cost: 18
+    name: USS Sterett CG-31
+    pacific: true
+    role: cruiser
+    type: Belknap
+    year_in: 1967
+  - atlantic: false
+    box: core
+    cost: 20
+    name: USS Texas CGN-39
+    pacific: true
+    role: cruiser
+    type: Virginia
+    year_in: 1977
+  - atlantic: true
+    box: core
+    cost: 22
+    name: USS Ticonderoga CG-47
+    pacific: false
+    role: cruiser
+    type: Ticonderoga
+    year_in: 1983
+  - atlantic: true
+    box: core
+    cost: 20
+    name: USS Virginia CGN-38
+    pacific: false
+    role: cruiser
+    type: Virginia
+    year_in: 1976
+  - atlantic: true
+    box: core
+    cost: 18
+    name: USS Wrainwright CG-28
+    pacific: false
+    role: cruiser
+    type: Belknap
+    year_in: 1966
+  - atlantic: true
+    box: core
+    cost: 12
+    name: HMAS Brisbane D41
+    pacific: true
+    role: destroyer
+    type: Perth
+    year_in: 1967
+  - atlantic: false
+    box: core
+    cost: 16
+    name: USS Callaghan DDG-994
+    pacific: true
+    role: destroyer
+    type: Kidd
+    year_in: 1980
+  - atlantic: false
+    box: core
+    cost: 20
+    name: USS Cushing DD-985
+    pacific: true
+    role: destroyer
+    type: Spruance
+    year_in: 1979
+  - atlantic: true
+    box: core
+    cost: 12
+    name: USS Dewey DDG-45
+    pacific: false
+    role: destroyer
+    type: Farragut
+    year_in: 1959
+  - atlantic: true
+    box: core
+    cost: 14
+    name: HMS Exeter D89
+    pacific: true
+    role: destroyer
+    type: Type 42
+    year_in: 1980
+  - atlantic: false
+    box: core
+    cost: 20
+    name: USS Fletcher DD-992
+    pacific: true
+    role: destroyer
+    type: Spruance
+    year_in: 1980
+  - atlantic: true
+    box: core
+    cost: 16
+    name: HMS Glamorgan D19
+    pacific: true
+    role: destroyer
+    type: County
+    year_in: 1966
+  - atlantic: true
+    box: core
+    cost: 12
+    name: HMCS Iroquois DDG 280
+    pacific: true
+    role: destroyer
+    type: Iroquois
+    year_in: 1972
+  - atlantic: true
+    box: core
+    cost: 20
+    name: USS John Rodgers DD-983
+    pacific: false
+    role: destroyer
+    type: Spruance
+    year_in: 1979
+  - atlantic: true
+    box: core
+    cost: 12
+    name: "L\xFCtiens D-185"
+    pacific: true
+    role: destroyer
+    type: "L\xFCtiens"
+    year_in: 1969
+  - atlantic: true
+    box: core
+    cost: 12
+    name: USS Mahan DDG-42
+    pacific: false
+    role: destroyer
+    type: Farragut
+    year_in: 1960
+  - atlantic: false
+    box: core
+    cost: 20
+    name: USS Paul Foster DD-964
+    pacific: true
+    role: destroyer
+    type: Spruance
+    year_in: 1976
+  - atlantic: false
+    box: core
+    cost: 12
+    name: USS Preble DDG-46
+    pacific: true
+    role: destroyer
+    type: Farragut
+    year_in: 1960
+  - atlantic: true
+    box: core
+    cost: 12
+    name: USS Richard E. Byrd DDG-23
+    pacific: false
+    role: destroyer
+    type: Charles F. Adams
+    year_in: 1964
+  - atlantic: true
+    box: core
+    cost: 16
+    name: USS Scott DDG-995
+    pacific: false
+    role: destroyer
+    type: Kidd
+    year_in: 1981
+  - atlantic: true
+    box: core
+    cost: 14
+    name: HMS Sheffield D80
+    pacific: true
+    role: destroyer
+    type: Type 42
+    year_in: 1971
+  - atlantic: true
+    box: core
+    cost: 20
+    name: USS Spruance DD-963
+    pacific: false
+    role: destroyer
+    type: Spruance
+    year_in: 1975
+  - atlantic: false
+    box: core
+    cost: 12
+    name: USS Waddell DDG-24
+    pacific: true
+    role: destroyer
+    type: Charles F. Adams
+    year_in: 1964
+  - atlantic: true
+    box: core
+    cost: 10
+    name: HMS Avenger F185
+    pacific: true
+    role: frigate
+    type: Type 21
+    year_in: 1978
+  - atlantic: true
+    box: core
+    cost: 12
+    name: HMS Argonaut F56
+    pacific: true
+    role: frigate
+    type: Leander
+    year_in: 1980
+  - atlantic: false
+    box: core
+    cost: 10
+    name: USS Barbey FF-1088
+    pacific: true
+    role: frigate
+    type: Knox
+    year_in: 1972
+  - atlantic: false
+    box: core
+    cost: 10
+    name: USS Brewton FF-1086
+    pacific: true
+    role: frigate
+    type: Knox
+    year_in: 1972
+  - atlantic: true
+    box: core
+    cost: 10
+    name: HMS Broadsword F88
+    pacific: true
+    role: frigate
+    type: Type 22
+    year_in: 1979
+  - atlantic: false
+    box: core
+    cost: 12
+    name: USS Cochrane DDG-21
+    pacific: true
+    role: destroyer
+    type: Charles F. Adams
+    year_in: 1964
+  - atlantic: false
+    box: core
+    cost: 10
+    name: USS Cook FF-1083
+    pacific: true
+    role: frigate
+    type: Knox
+    year_in: 1971
+  - atlantic: false
+    box: core
+    cost: 8
+    name: USS Crommelin FFG-37
+    pacific: true
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1983
+  - atlantic: false
+    box: core
+    cost: 8
+    name: USS Curts FFG-38
+    pacific: true
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1983
+  - atlantic: true
+    box: core
+    cost: 8
+    name: USS De Wert FFG-45
+    pacific: false
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1983
+  - atlantic: true
+    box: core
+    cost: 8
+    name: USS Doyle FFG-39
+    pacific: false
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1983
+  - atlantic: true
+    box: core
+    cost: 12
+    name: FMS Dusquesne D603
+    pacific: true
+    role: frigate
+    type: Suffren
+    year_in: 1970
+  - atlantic: true
+    box: core
+    cost: 12
+    name: Grecale F-571
+    pacific: true
+    role: frigate
+    type: Maestrale
+    year_in: 1983
+  - atlantic: false
+    box: core
+    cost: 10
+    name: USS Kirk FF-1087
+    pacific: true
+    role: frigate
+    type: Knox
+    year_in: 1972
+  - atlantic: false
+    box: core
+    cost: 10
+    name: USS Knox FF-1052
+    pacific: true
+    role: frigate
+    type: Knox
+    year_in: 1969
+  - atlantic: true
+    box: core
+    cost: 10
+    name: HMS Minerva F45
+    pacific: true
+    role: frigate
+    type: Leander
+    year_in: 1979
+  - atlantic: false
+    box: core
+    cost: 6
+    name: USS O'Callahan FF-1051
+    pacific: true
+    role: frigate
+    type: Garcia
+    year_in: 1968
+  - atlantic: true
+    box: core
+    cost: 10
+    name: USS Pharris FF-1094
+    pacific: false
+    role: frigate
+    type: Knox
+    year_in: 1974
+  - atlantic: false
+    box: core
+    cost: 8
+    name: USS Rentz FFG-46
+    pacific: true
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1984
+  - atlantic: false
+    box: core
+    cost: 8
+    name: USS Reuben James FFG-57
+    pacific: true
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1986
+  - atlantic: true
+    box: core
+    cost: 10
+    name: USS Truett FF-1095
+    pacific: false
+    role: frigate
+    type: Knox
+    year_in: 1974
+  - atlantic: true
+    box: core
+    cost: 8
+    name: USS Underwood FFG-36
+    pacific: false
+    role: frigate
+    type: Oliver Hazard Perry
+    year_in: 1983
+  - atlantic: true
+    box: core
+    cost: 10
+    name: USS Valdez FF-1096
+    pacific: false
+    role: frigate
+    type: Knox
+    year_in: 1974
+  - atlantic: true
+    box: core
+    cost: 6
+    name: USS Voge FF-1047
+    pacific: false
+    role: frigate
+    type: Garcia
+    year_in: 1966
+  - atlantic: true
+    box: allies
+    cost: 12
+    name: HMAS Perth D38
+    pacific: true
+    role: destroyer
+    type: Perth
+    year_in: 1965
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: SH-60
+    name: HMAS Adelaide FFG01
+    pacific: true
+    role: frigate
+    type: Adelaide
+    year_in: 1980
+  - atlantic: true
+    box: allies
+    cost: 8
+    name: HMAS Torrens DE53
+    pacific: true
+    role: frigate
+    type: River
+    year_in: 1971
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: SH-60
+    name: HMAS Canberra FFG02
+    pacific: true
+    role: frigate
+    type: Adelaide
+    year_in: 1981
+  - atlantic: true
+    box: allies
+    cost: 12
+    helicopter: CH-124
+    name: HMCS Huron DDG281
+    pacific: true
+    role: destroyer
+    type: Iroquois
+    year_in: 1972
+  - atlantic: true
+    box: allies
+    cost: 8
+    helicopter: CH-124
+    name: HMCS Nipigon F266
+    pacific: true
+    role: frigate
+    type: Annapolis
+    year_in: 1964
+  - atlantic: true
+    box: allies
+    cost: 8
+    name: HMCS Yukon DDG263
+    pacific: true
+    role: frigate
+    type: Mackenzie
+    year_in: 1963
+  - atlantic: true
+    box: allies
+    cost: 14
+    helicopter: SA 321G
+    name: FMS Colbert C611
+    pacific: true
+    role: cruiser
+    type: Colbert
+    year_in: 1959
+  - atlantic: true
+    box: allies
+    cost: 12
+    helicopter: Mk.2
+    name: FMS Dupleix D641
+    pacific: true
+    role: frigate
+    type: Type C70
+    year_in: 1981
+  - atlantic: true
+    box: allies
+    cost: 12
+    helicopter: Mk.2
+    name: FMS Jean De Vienne D643
+    pacific: true
+    role: frigate
+    type: Type C70
+    year_in: 1984
+  - atlantic: true
+    box: allies
+    cost: 8
+    name: FMS Drogou F783
+    pacific: true
+    role: frigate
+    type: Type A69
+    year_in: 1976
+  - atlantic: true
+    box: allies
+    cost: 12
+    name: Rommel D187
+    pacific: true
+    role: destroyer
+    type: Lutjens
+    year_in: 1970
+  - atlantic: true
+    box: allies
+    cost: 12
+    name: Hamburg D181
+    pacific: true
+    role: destroyer
+    type: Type 101A
+    year_in: 1982
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: WG 13
+    name: Bremen F207
+    pacific: true
+    role: frigate
+    type: Type 122
+    year_in: 1982
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: WG 13
+    name: Karlsruhe F212
+    pacific: true
+    role: frigate
+    type: Type 122
+    year_in: 1984
+  - atlantic: true
+    box: allies
+    cost: 14
+    helicopter: AB-212
+    name: Andrea Doria C553
+    pacific: true
+    role: cruiser
+    type: Andrea Doria
+    year_in: 1964
+  - atlantic: true
+    box: allies
+    cost: 12
+    helicopter: AB-212
+    name: Aliseo F574
+    pacific: true
+    role: frigate
+    type: Maestrale
+    year_in: 1983
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: AB-212
+    name: Lupo F564
+    pacific: true
+    role: frigate
+    type: Lupo
+    year_in: 1977
+  - atlantic: true
+    box: allies
+    cost: 14
+    name: Hatakaze DD171
+    pacific: true
+    role: destroyer
+    type: Hatakaze
+    year_in: 1986
+  - atlantic: true
+    box: allies
+    cost: 12
+    name: Asagiri DD151
+    pacific: true
+    role: destroyer
+    type: Asagiri
+    year_in: 1988
+  - atlantic: true
+    box: allies
+    cost: 10
+    name: Yubari DE227
+    pacific: true
+    role: frigate
+    type: Yubari
+    year_in: 1983
+  - atlantic: true
+    box: allies
+    cost: 8
+    name: Chitose DE220
+    pacific: true
+    role: frigate
+    type: Chikugo
+    year_in: 1973
+  - atlantic: true
+    box: allies
+    cost: 10
+    helicopter: S-70B
+    name: Santa Maria F81
+    pacific: true
+    role: frigate
+    type: Santa Maria
+    year_in: 1986
+  - atlantic: true
+    box: allies
+    cost: 40
+    name: Trafalgar S107 SSN
+    pacific: true
+    role: submarine
+    type: Trafalgar
+    year_in: 1983
+  - atlantic: true
+    box: allies
+    cost: 36
+    name: HMAS Otama S62 SSK
+    pacific: true
+    role: submarine
+    type: Oberon
+    year_in: 1978
+  - atlantic: true
+    box: allies
+    cost: 36
+    name: JDS Mochishio SS574 SSK
+    pacific: true
+    role: submarine
+    type: Yuushio
+    year_in: 1981
+  - atlantic: true
+    box: carriers
+    cost: 32
+    country: Italy
+    helicopters: SH-3
+    name: Giuseppe Garibaldi C551
+    pacific: true
+    role: carrier
+    type: Giuseppe Garibaldi
+    year_in: 1985
+  - atlantic: true
+    box: carriers
+    cost: 34
+    country: France
+    helicopters: SA 321G
+    name: Foch R99
+    pacific: true
+    role: carrier
+    type: Clemenceau
+    year_in: 1963
+  - atlantic: true
+    box: carriers
+    cost: 32
+    country: UK
+    helicopters: HAS.3
+    name: HMS Invincible R05
+    pacific: true
+    role: carrier
+    type: Invincible
+    year_in: 1980
+  - atlantic: true
+    box: carriers
+    cost: 32
+    country: UK
+    helicopters: HAS.3
+    name: HMS Hermes R12
+    pacific: true
+    role: carrier
+    type: Centaur
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 32
+    country: US
+    name: USS Forrestal CV-59
+    role: carrier
+    type: Forrestal
+    year_in: 1957
+  - atlantic: true
+    pacific: false
+    box: carriers
+    cost: 32
+    country: US
+    name: USS Saratoga CV-60
+    role: carrier
+    type: Forrestal
+    year_in: 1956
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 32
+    country: US
+    name: USS Ranger CV-61
+    role: carrier
+    type: Forrestal
+    year_in: 1957
+  - atlantic: true
+    pacific: false
+    box: carriers
+    cost: 32
+    country: US
+    name: USS Independance CV-62
+    role: carrier
+    type: Forrestal
+    year_in: 1957
+  - atlantic: true
+    pacific: false
+    box: carriers
+    cost: 36
+    country: US
+    name: USS Kennedy CV-67
+    role: carrier
+    type: Kennedy
+    year_in: 1968
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 36
+    country: US
+    name: USS Constellation CV-61
+    role: carrier
+    type: Kitty Hawk
+    year_in: 1961
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 36
+    country: US
+    name: USS Kitty Hawk CV-63
+    role: carrier
+    type: Kitty Hawk
+    year_in: 1961
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Lincoln CVN-72
+    role: carrier
+    type: Nimitz
+    year_in: 1989
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Roosevelt CVN-71
+    role: carrier
+    type: Nimitz
+    year_in: 1986
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Carl Vinson CVN-70
+    role: carrier
+    type: Nimitz
+    year_in: 1982
+  - atlantic: true
+    pacific: false
+    box: carriers
+    cost: 40
+    country: US
+    name: USS America CV-66
+    role: carrier
+    type: Kitty Hawk
+    year_in: 1965
+  - atlantic: true
+    pacific: false
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Eisenhower CVN-69
+    role: carrier
+    type: Nimitz
+    year_in: 1977
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Enterprise CVN-65
+    role: carrier
+    type: Enterprise
+    year_in: 1961
+  - atlantic: false
+    pacific: true
+    box: carriers
+    cost: 40
+    country: US
+    name: USS Nimitz CVN-68
+    role: carrier
+    type: Nimitz
+    year_in: 1975
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 36
+    country: US
+    name: USS Archerfish SSN-678
+    role: submarine
+    type: Sturgeon
+    year_in: 1971
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 40
+    country: US
+    name: USS Baton Rouge SSN-689
+    role: submarine
+    type: Los Angeles
+    year_in: 1977
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 40
+    country: US
+    name: USS Bremerton SSN-698
+    role: submarine
+    type: Los Angeles
+    year_in: 1981
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 44
+    country: US
+    name: USS Buffalo SSN-715
+    role: submarine
+    type: Los Angeles Type II
+    year_in: 1983
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 44
+    country: US
+    name: USS Chicago SSN-721
+    role: submarine
+    type: Los Angeles Type II
+    year_in: 1986
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 34
+    country: US
+    name: USS Dace SSN-607
+    role: submarine
+    type: Permit
+    year_in: 1964
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 40
+    country: US
+    name: USS Dallas SSN-700
+    role: submarine
+    type: Los Angeles
+    year_in: 1981
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 34
+    country: US
+    name: USS Flasher SSN-613
+    role: submarine
+    type: Permit
+    year_in: 1966
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 34
+    country: US
+    name: USS Gato SSN-615
+    role: submarine
+    type: Permit
+    year_in: 1968
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 34
+    country: US
+    name: USS Haddock SSN-621
+    role: submarine
+    type: Permit
+    year_in: 1967
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 40
+    country: US
+    name: USS La Jolla SSN-701
+    role: submarine
+    type: Los Angeles
+    year_in: 1981
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 40
+    country: US
+    name: USS Los Angeles SSN-688
+    role: submarine
+    type: Los Angeles
+    year_in: 1976
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 44
+    country: US
+    name: USS Louisville SSN-724
+    role: submarine
+    type: Los Angeles Type II
+    year_in: 1986
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 40
+    country: US
+    name: USS Memphis SSN-691
+    role: submarine
+    type: Los Angeles
+    year_in: 1977
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 40
+    country: US
+    name: USS Omaha SSN-692
+    role: submarine
+    type: Los Angeles
+    year_in: 1978
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 40
+    country: US
+    name: USS Phoenix SSN-702
+    role: submarine
+    type: Los Angeles
+    year_in: 1981
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 44
+    country: US
+    name: USS Providence SSN-719
+    role: submarine
+    type: Los Angeles Type II
+    year_in: 1985
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 40
+    country: US
+    name: USS Salt Lake City SSN-716
+    role: submarine
+    type: Los Angeles
+    year_in: 1984
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 48
+    country: US
+    name: USS San Juan SSN-751
+    role: submarine
+    type: Los Angeles Improved
+    year_in: 1988
+  - atlantic: true
+    pacific: false
+    box: subs
+    cost: 36
+    country: US
+    name: USS Sturgeon SSN-637
+    role: submarine
+    type: Sturgeon
+    year_in: 1967
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 36
+    country: US
+    name: USS Tautog SSN-639
+    role: submarine
+    type: Sturgeon
+    year_in: 1968
+  - atlantic: false
+    pacific: true
+    box: subs
+    cost: 36
+    country: US
+    name: USS William H. Bates SSN-680
+    role: submarine
+    type: Sturgeon
+    year_in: 1973
+missions:
+  - name: North Atlantic Skirmishes - Cold War
+    box: core
+    year: 1988
+    difficulty: easy
+    theater: atlantic
+    targets: [15, 16, 28, 13, 14, 17, 29, 12, 22]
+    skills: [1, 2, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 80
+        mission_so: 20
+      - length: medium
+        nb_targets: 6
+        starting_so: 90
+        mission_so: 22
+    forbidden_types: [carriers]
+  - name: North Atlantic Sea Lanes - Cold War
+    box: core
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [17, 28, 11, 29, 15, 18, 1, 2, 3, 4, 6, 7, 12, 16, 10]
+    skills: [1, 2, 2, 2, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 6
+        starting_so: 90
+        mission_so: 20
+      - length: long
+        nb_targets: 10
+        starting_so: 100
+        mission_so: 20
+    allowed_roles: [destroyer, frigate]
+  - name: Invasion of Hokkaido - Cold War
+    box: core
+    year: 1988
+    difficulty: average
+    theater: pacific
+    targets: [15, 16, 21, 24, 1, 7, 12, 14, 17, 18, 19, 30, 13, 8, 9, 11, 23]
+    skills: [2, 2, 1, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 100
+        mission_so: 24
+      - length: medium
+        nb_targets: 7
+        starting_so: 120
+        mission_so: 26
+      - length: long
+        nb_targets: 10
+        starting_so: 140
+        mission_so: 28
+  - name: Hold the Line - Cold War
+    box: core
+    year: 1983
+    difficulty: average
+    theater: atlantic
+    targets: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 28, 29, 24]
+    skills: [1, 2, 2, 2, 0, 0]
+    default_skill: green
+    duration:
+      - length: short
+        nb_targets: 2
+        starting_so: 80
+        mission_so: 35
+      - length: medium
+        nb_targets: 4
+        starting_so: 80
+        mission_so: 35
+  - name: Med/Black Sea Assault - Cold War
+    box: core
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [15, 16, 17, 33, 13, 14, 25, 24, 12, 35, 11, 19, 21, 22]
+    skills: [1, 2, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 6
+        starting_so: 120
+        mission_so: 26
+      - length: long
+        nb_targets: 10
+        starting_so: 120
+        mission_so: 30
+  - name: Atlantic War - Cold War
+    box: core
+    year: 1988
+    difficulty: difficult
+    theater: atlantic
+    targets: [12, 17, 11, 15, 13, 32, 18, 10, 24, 16, 14, 21, 26, 35, 37]
+    skills: [1, 2, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 6
+        starting_so: 90
+        mission_so: 24
+      - length: long
+        nb_targets: 10
+        starting_so: 100
+        mission_so: 26
+  - name: Indonesian Soviet Influence - Cold War
+    box: core
+    year: 1983
+    difficulty: easy
+    theater: pacific
+    targets: [22, 12, 15, 18, 16, 33, 17, 28, 29, 21, 23, 19, 30]
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 70
+        mission_so: 26
+      - length: long
+        nb_targets: 7
+        starting_so: 80
+        mission_so: 28
+    allowed_roles: [frigate, destroyer]
+  - name: Destroy the Kirov - Cold War
+    box: core
+    year: 1988
+    difficulty: medium
+    theater: pacific
+    targets: []
+    skills: [1, 1, 2, 2, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 1
+        starting_so: 100
+        mission_so: 0
+    allowed_roles: [frigate]
+  - name: Escape and Evade - Cold War
+    box: core
+    year: 1988
+    difficulty: medium
+    theater: pacific
+    targets: []
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 1
+        starting_so: 0
+        mission_so: 30
+    forced_ships:
+      - USS Paul Foster DD-964
+      - USS Mobile Bay CG-53
+      - USS Brewton FF-1086
+      - USS Reuben James FFG-57
+      - USS Knox FF-1052
+  - name: Falkland Islands War - Cold War
+    box: core
+    year: 1982
+    difficulty: medium
+    theater: atlantic
+    targets: [1, 2, 3, 4, 5]
+    skills: [1, 1, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 5
+        starting_so: 80
+        mission_so: 26
+    allowed_ships:
+      - HMS Sheffield D80
+      - HMS Exeter D89
+      - HMS Minerva F45
+      - HMS Argonaut F56
+      - HMS Avenger F185
+      - HMS Broadsword F88
+      - HMS Glamorgan D19
+  - name: North Atlantic Skirmishes - Cold War
+    box: subs
+    year: 1988
+    difficulty: hard
+    theater: atlantic
+    targets: [19, 15, 16, 12, 24, 7, 5, 60, 57, 58, 59, 62, 34, 35]
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 90
+        mission_so: 20
+      - length: medium
+        nb_targets: 6
+        starting_so: 100
+        mission_so: 22
+      - length: long
+        nb_targets: 10
+        starting_so: 110
+        mission_so: 24
+  - name: Protect the Atlantic - Cold War
+    box: subs
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [11, 12, 13, 14, 15, 16, 17, 19, 20, 24, 28, 29]
+    skills: [0, 0, 2, 0, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 2
+        starting_so: 80
+        mission_so: 35
+      - length: medium
+        nb_targets: 4
+        starting_so: 80
+        mission_so: 35
+  - name: Hunt for Red November - Cold War
+    box: subs
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [14, 12, 16, 13]
+    skills: [0, 0, 1, 0, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 1
+        starting_so: 0
+        mission_so: 0
+    forced_ships:
+      - Red October
+  - name: Preparing for the Naval Assault - Cold War
+    box: subs
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [15, 16, 17, 18, 13, 14, 62, 59, 36, 61, 63]
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: medium
+        nb_targets: 6
+        starting_so: 90
+        mission_so: 22
+      - length: long
+        nb_targets: 10
+        starting_so: 100
+        mission_so: 24
+  - name: North Korea Agitation - Cold War
+    box: subs
+    year: 1985
+    difficulty: average
+    theater: pacific
+    targets: [35, 14, 15, 13, 16, 17, 10, 21, 12, 22, 27]
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 75
+        mission_so: 20
+      - length: medium
+        nb_targets: 6
+        starting_so: 85
+        mission_so: 22
+      - length: long
+        nb_targets: 10
+        starting_so: 95
+        mission_so: 24
+  - name: Indonesian Soviet Influence - Cold War
+    box: subs
+    year: 1983
+    difficulty: easy
+    theater: pacific
+    targets: [13, 22, 19, 18, 20, 14, 21, 12, 15]
+    skills: [0, 2, 2, 0, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 75
+        mission_so: 24
+      - length: long
+        nb_targets: 7
+        starting_so: 85
+        mission_so: 26
+  - name: Plowing the Road - Med. Cold War
+    box: carriers
+    year: 1983
+    difficulty: easy
+    theater: atlantic
+    targets: [15, 20, 12, 16, 10, 17, 13, 32, 26, 36, 35]
+    skills: [1, 2, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: short
+        nb_targets: 5
+        starting_so: 200
+        mission_so: 26
+      - length: long
+        nb_targets: 8
+        starting_so: 215
+        mission_so: 28
+    minimum_ships:
+      carrier: 1
+      any: 4
+  - name: Med/Black Sea Deterence Cold War
+    box: carriers
+    year: 1988
+    difficulty: hard
+    theater: atlantic
+    targets: [18, 41, 49, 46, 43, 19, 7, 10, 54, 55, 52, 53, 11, 42, 51, 44, 36, 35]
+    skills: [1, 2, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 6
+        starting_so: 190
+        mission_so: 30
+      - length: long
+        nb_targets: 10
+        starting_so: 200
+        mission_so: 32
+  - name: Falkland Islands War
+    box: carriers
+    year: 1982
+    difficulty: hard
+    theater: atlantic
+    targets: [1, 2, 3, 4, 5]
+    skills: [1, r21, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: medium
+        nb_targets: 5
+        starting_so: 0
+        mission_so: 30
+    forced_ships:
+      - HMS Sheffield D80
+      - HMS Exeter D89
+      - HMS Minerva F45
+      - HMS Argonaut F56
+      - HMS Avenger F185
+      - HMS Broadsword F88
+      - HMS Glamorgan D19
+      - HMS Hermes R12
+      - HMS Invincible R05
+  - name: Stem the Tide - Cold War
+    box: carriers
+    year: 1988
+    difficulty: average
+    theater: atlantic
+    targets: [17, 12, 18, 19, 20, 13, 24, 25, 10, 46, 44, 42, 48, 49, 47, 39, 53, 23, 31, 35]
+    skills: [1, 1, 2, 1, 0, 0]
+    default_skill: green
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 160
+        mission_so: 24
+      - length: medium
+        nb_targets: 6
+        starting_so: 170
+        mission_so: 26
+      - length: long
+        nb_targets: 8
+        starting_so: 190
+        mission_so: 28
+  - name: Pacific Carrier War - Cold War
+    box: carriers
+    year: 1988
+    difficulty: difficult
+    theater: pacific
+    targets: [19, 32, 54, 46, 50, 39, 11, 24, 18, 35, 12, 25, 21, 56, 55, 10]
+    skills: [2, 2, 1, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: long
+        nb_targets: 10
+        starting_so: 100
+        mission_so: 26
+    forced_ships:
+      - carrier: green
+      - carrier: green
+  - name: Sino-Russian War - Cold War
+    box: carriers
+    year: 1982
+    difficulty: difficult
+    theater: pacific
+    targets: [13, 15, 17, 24, 25, 16, 26, 32, 20, 12, 14, 36, 52, 46, 49, 35, 31]
+    skills: [2, 2, 1, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: long
+        nb_targets: 10
+        starting_so: 100
+        mission_so: 26
+    forced_ships:
+      - carrier: green
+      - carrier: green
+  - name: Indonesian Soviet Influence - Cold War
+    box: carriers
+    year: 1983
+    difficulty: easy
+    theater: pacific
+    targets: [16, 21, 10, 23, 12, 14, 15, 22, 13, 52, 36, 53, 33]
+    skills: [0, 1, 2, 1, 0, 0]
+    default_skill: average
+    duration:
+      - length: short
+        nb_targets: 4
+        starting_so: 90
+        mission_so: 28
+      - length: medium
+        nb_targets: 7
+        starting_so: 100
+        mission_so: 30
+    forced_ships:
+      - USS Enterprise CVN-65
+    allowed_types:
+      - destroyer:Kidd
+      - destroyer:Farragut
+      - destroyer:Charles F. Adams
+      - frigate:Knox
+      - frigate:Garcia
+
