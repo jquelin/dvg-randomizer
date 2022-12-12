@@ -231,5 +231,5 @@ class Data:
 #        curfpath = Path(__file__).parent()
 #        wanted = Path(curfpath, 'csv', file)
 #        log.debug(f'looking file: {wanted}')
-        return Path(Path(__file__).parent, 'csv', file).as_posix()
+        return Path(Path(__file__).parent, 'data', file).as_posix()
 
