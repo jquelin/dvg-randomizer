@@ -1,6 +1,6 @@
 name: Corsair Leader
 alias: CL
-services: ['USMC', 'USAAF', 'Pearl Harbor', 'UK-FAA', 'USN']
+services: ['Pearl Harbor', 'UK-FAA', 'USAAF', 'USMC', 'USN']
 aircrafts:
   - name: A-6 Intruder
     box: core

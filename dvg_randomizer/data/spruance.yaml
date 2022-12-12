@@ -1,3 +1,6 @@
+name: Spruance Leader
+alias: SpL
+boxes: [core, allies, subs, carriers]
 commanders:
   - box: core
     name: Bouchard
