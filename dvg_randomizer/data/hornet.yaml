@@ -1,0 +1,1147 @@
+name: Hornet Leader: Carrier Air Operation
+alias: HLCAO
+services: ['USMC', 'USN']
+aircrafts:
+  - name: A-6 Intruder
+    box: core
+    service: ['USN']
+    year_in: 1963
+    year_out: 1997
+    cost: 0
+    role: attack
+  - name: A-7 Corsair II
+    box: core
+    service: ['USN']
+    year_in: 1967
+    year_out: 1993
+    cost: -4
+    role: attack
+  - name: AV-8B Harrier II
+    box: core
+    service: ['USMC']
+    year_in: 1985
+    year_out: 9999
+    cost: -4
+    role: attack
+  - name: E-2C Hawkeye
+    box: core
+    service: ['USN']
+    year_in: 1964
+    year_out: 9999
+    cost: 0
+    role: AWACS
+  - name: EA-18G Hornet
+    box: core
+    service: ['USN']
+    year_in: 2011
+    year_out: 9999
+    cost: 2
+    role: electronic warfare
+  - name: EA-6B Prowler
+    box: core
+    service: ['USN']
+    year_in: 1972
+    year_out: 2011
+    cost: 0
+    role: electronic warfare
+  - name: F-14 Tomcat
+    box: core
+    service: ['USN']
+    year_in: 1972
+    year_out: 2006
+    cost: 0
+    role: fighter
+  - name: F-35B/C Lightning II
+    box: core
+    service: ['USMC', 'USN']
+    year_in: 2014
+    year_out: 9999
+    cost: 3
+    role: fighter
+  - name: F/A-18C Hornet
+    box: core
+    service: ['USN']
+    year_in: 1983
+    year_out: 9999
+    cost: 0
+    role: fighter-bomber
+  - name: F/A-18E Hornet
+    box: core
+    service: ['USN']
+    year_in: 2000
+    year_out: 9999
+    cost: 2
+    role: fighter-bomber
+  - name: F/A-18F Hornet
+    box: core
+    service: ['USN']
+    year_in: 2001
+    year_out: 9999
+    cost: 3
+    role: fighter-bomber
+  - name: MQ-47a
+    box: Cthulhu
+    service: ['USN']
+    year_in: 2015
+    year_out: 9999
+    cost: 0
+    role: UAV
+  - name: KC-130 Hercules
+    box: exp1
+    service: ['USN']
+    year_in: 1962
+    year_out: 2007
+    cost: 4
+    role: transport
+  - name: M9-4C Triton
+    box: exp1
+    service: ['USN']
+    year_in: 2018
+    year_out: 9999
+    cost: 2
+    role: AWACS
+  - name: OV-10 Aronco
+    box: exp1
+    service: ['USN']
+    year_in: 1969
+    year_out: 1995
+    cost: -2
+    role: observation
+pilots:
+  - name: Alien
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Alpo
+    box: core
+    service: ['USN']
+    aircraft: EA-18G Hornet
+  - name: Animal
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Bacon
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Banzai
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Bear
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Beast
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Big Time
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Bigfoot
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Bison
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Blackhawk
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Boston
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Brick
+    box: core
+    service: ['USN']
+    aircraft: E-2C Hawkeye
+  - name: Bug
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Burger
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Buzz
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Camel
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Caveman
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Chaos
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Chili
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Cowboy
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Cracken
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Crispy
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Crunch
+    box: core
+    service: ['USN']
+    aircraft: EA-6B Prowler
+  - name: Dingo
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Dino
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Doc
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Dodger
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Duke
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Extra
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Eyes
+    box: core
+    service: ['USN']
+    aircraft: E-2C Hawkeye
+  - name: Farmboy
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Gizmo
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Griffin
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Hammer
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Hoss
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Hunter
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Kermit
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Kong
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Lightning
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Maverick
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Meatball
+    box: core
+    service: ['USMC', 'USN']
+    aircraft: F-35B/C Lightning II
+  - name: Merlin
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Moon
+    box: core
+    service: ['USN']
+    aircraft: EA-6B Prowler
+  - name: Mullet
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Mustang
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Mystic
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Ogre
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Panther
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Pluto
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Psycho
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Pyro
+    box: core
+    service: ['USMC', 'USN']
+    aircraft: F-35B/C Lightning II
+  - name: Raider
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Ranger
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Raven
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Rudder
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Salsa
+    box: core
+    service: ['USMC', 'USN']
+    aircraft: F-35B/C Lightning II
+  - name: Saw
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Scotty
+    box: core
+    service: ['USN']
+    aircraft: EA-18G Hornet
+  - name: Scout
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Shepherd
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Shifty
+    box: core
+    service: ['USN']
+    aircraft: A-6 Intruder
+  - name: Slick
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Sniper
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Sparky
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Spike
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Talon
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Tango
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Teflon
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Tex
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Thor
+    box: core
+    service: ['USMC', 'USN']
+    aircraft: F-35B/C Lightning II
+  - name: Tigger
+    box: core
+    service: ['USN']
+    aircraft: F/A-18E Hornet
+  - name: Tonto
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Toon
+    box: core
+    service: ['USN']
+    aircraft: F/A-18F Hornet
+  - name: Tuna
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Turnip
+    box: core
+    service: ['USMC']
+    aircraft: AV-8B Harrier II
+  - name: Waldo
+    box: core
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Wash
+    box: core
+    service: ['USN']
+    aircraft: A-7 Corsair II
+  - name: Wedge
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Wolf
+    box: core
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Artoo
+    box: Cthulhu
+    service: ['USN']
+    aircraft: MQ-47a
+  - name: Nomad
+    box: Cthulhu
+    service: ['USN']
+    aircraft: MQ-47a
+  - name: Augen
+    box: exp1
+    service: ['USN']
+    aircraft: M9-4C Triton
+  - name: Axe
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+    elite: [0, 5]
+  - name: Bat
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+    elite: [0, 6]
+  - name: Bell
+    box: exp1
+    service: ['USN']
+    aircraft: OV-10 Aronco
+  - name: Benzin
+    box: exp1
+    service: ['USN']
+    aircraft: KC-130 Hercules
+  - name: Coffee
+    box: exp1
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Harp
+    box: exp1
+    service: ['USN']
+    aircraft: OV-10 Aronco
+  - name: L’Huile
+    box: exp1
+    service: ['USN']
+    aircraft: KC-130 Hercules
+  - name: Lizgar
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+    elite: [0, 3]
+  - name: Maestro
+    box: exp1
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Nerve
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Oculaire
+    box: exp1
+    service: ['USN']
+    aircraft: M9-4C Triton
+  - name: Spy
+    box: exp1
+    service: ['USN']
+    aircraft: OV-10 Aronco
+  - name: Sticky
+    box: exp1
+    service: ['USN']
+    aircraft: F-14 Tomcat
+  - name: Taco
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Thumper
+    box: exp1
+    service: ['USN']
+    aircraft: F-14 Tomcat
+    elite: [0, 4]
+  - name: Tooth
+    box: exp1
+    service: ['USN']
+    aircraft: F/A-18C Hornet
+  - name: Trident
+    box: exp1
+    service: ['USN']
+    aircraft: A-6 Intruder
+    elite: [0, 2]
+campaigns:
+  - name: Iraq
+    box: core
+    year: 1991
+    service: USN
+    level: 1
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 6
+        starting_so: 45
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 68
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Iraq
+    box: core
+    year: 1991
+    service: USMC
+    level: 1
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 6
+        starting_so: 45
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 68
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Iran
+    box: core
+    year: 2014
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 36
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 52
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 70
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Iran
+    box: core
+    year: 2014
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 36
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 52
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 70
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Lybia
+    box: core
+    year: 1984
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 20
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 6
+        starting_so: 30
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 8
+        starting_so: 40
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Syria
+    box: core
+    year: 2004
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 42
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 10
+        starting_so: 60
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Syria
+    box: core
+    year: 2004
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 42
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 10
+        starting_so: 60
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Taiwan Defense
+    box: core
+    year: 2008
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 21
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 49
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 11
+        starting_so: 77
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Taiwan Defense
+    box: core
+    year: 2008
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 21
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 49
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 11
+        starting_so: 77
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Israel Defense
+    box: core
+    year: 2001
+    service: USN
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 20
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 40
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 60
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Israel Defense
+    box: core
+    year: 2001
+    service: USMC
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 20
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 40
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 60
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: North Korea
+    box: core
+    year: 2011
+    service: USN
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 40
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 10
+        starting_so: 58
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: North Korea
+    box: core
+    year: 2011
+    service: USMC
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 7
+        starting_so: 40
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 10
+        starting_so: 58
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: WW3 North Atlantic
+    box: core
+    year: 1986
+    service: USN
+    level: 4
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 36
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 54
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: WW3 North Atlantic
+    box: core
+    year: 1986
+    service: USMC
+    level: 4
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 22
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 36
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 54
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Hawaiian Islands
+    box: Cthulhu
+    year: 2015
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 2
+        starting_so: 12
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 6
+        starting_so: 36
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Hawaiian Islands
+    box: Cthulhu
+    year: 2015
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 2
+        starting_so: 12
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 6
+        starting_so: 36
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: R’lyeh
+    box: Cthulhu
+    year: 2015
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 21
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 6
+        starting_so: 42
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 63
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: R’lyeh
+    box: Cthulhu
+    year: 2015
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 21
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 6
+        starting_so: 42
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 9
+        starting_so: 63
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Mediterranean
+    box: Cthulhu
+    year: 2015
+    service: USN
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 50
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 76
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Mediterranean
+    box: Cthulhu
+    year: 2015
+    service: USMC
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 24
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 50
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 76
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: East Coast
+    box: Cthulhu
+    year: 2016
+    service: USN
+    level: 4
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 30
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 10
+        starting_so: 60
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 15
+        starting_so: 90
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: East Coast
+    box: Cthulhu
+    year: 2016
+    service: USMC
+    level: 4
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 30
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 10
+        starting_so: 60
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 15
+        starting_so: 90
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Yugoslavia
+    box: exp1
+    year: 1999
+    service: USN
+    level: 1
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 12
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 5
+        starting_so: 23
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 8
+        starting_so: 39
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Yugoslavia
+    box: exp1
+    year: 1999
+    service: USMC
+    level: 1
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 12
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 5
+        starting_so: 23
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 8
+        starting_so: 39
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Lebanon
+    box: exp1
+    year: 1983
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 4
+        starting_so: 15
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 8
+        starting_so: 30
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 12
+        starting_so: 45
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Silent Aurora Antartica
+    box: exp1
+    year: 1999
+    service: USN
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 1
+        starting_so: 5
+        pilots: [1, 2, 4, 1, 0, 0]
+  - name: Silent Aurora Antartica
+    box: exp1
+    year: 1999
+    service: USMC
+    level: 2
+    duration:
+      - label: short
+        level: 1
+        length: 1
+        starting_so: 5
+        pilots: [1, 2, 4, 1, 0, 0]
+  - name: Syria: Operation Nightfall
+    box: exp1
+    year: 2013
+    service: USN
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 28
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 5
+        starting_so: 44
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 7
+        starting_so: 56
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: Syria: Operation Nightfall
+    box: exp1
+    year: 2013
+    service: USMC
+    level: 3
+    duration:
+      - label: short
+        level: 1
+        length: 3
+        starting_so: 28
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 5
+        starting_so: 44
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 7
+        starting_so: 56
+        pilots: [1, 2, 6, 2, 1, 0]
+  - name: WW3 North Atlantic
+    box: exp1
+    year: 1980
+    service: USN
+    level: 4
+    duration:
+      - label: short
+        level: 1
+        length: 5
+        starting_so: 9
+        pilots: [1, 2, 4, 1, 0, 0]
+      - label: medium
+        level: 2
+        length: 10
+        starting_so: 18
+        pilots: [1, 2, 5, 1, 1, 0]
+      - label: long
+        level: 3
+        length: 15
+        starting_so: 27
+        pilots: [1, 2, 6, 2, 1, 0]
