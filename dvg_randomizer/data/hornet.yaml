@@ -1,4 +1,4 @@
-name: Hornet Leader: Carrier Air Operation
+name: 'Hornet Leader: Carrier Air Operation'
 alias: HLCAO
 services: ['USMC', 'USN']
 aircrafts:

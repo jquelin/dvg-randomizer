@@ -35,7 +35,10 @@ for bg in data.boardgames:
             for s in a.services:
                 services.add(s)
 #        fh.write(f'--- {bg.name}\n')
-        fh.write(f'name: {bg.name}\n')
+        if ':' in bg.name:
+            fh.write(f"name: '{bg.name}'\n")
+        else:
+            fh.write(f'name: {bg.name}\n')
         fh.write(f'alias: {bg.alias}\n')
         fh.write(f'services: {sorted([s for s in services])}\n')
         fh.write('aircrafts:\n')
