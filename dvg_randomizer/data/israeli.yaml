@@ -696,7 +696,7 @@ campaigns:
       - Mirage IIIC: -3.0
       - Nesher: -3.0
       - Super Mystere: -3.0
-  - name: The Suez crisis: first phase
+  - name: 'The Suez crisis: first phase'
     box: exp1
     year: 1956
     service: Israel
@@ -717,7 +717,7 @@ campaigns:
         length: 15
         starting_so: 67
         pilots: [1, 2, 6, 2, 1, 0]
-  - name: The 6 day war: West Bank
+  - name: 'The 6 day war: West Bank'
     box: exp1
     year: 1967
     service: Israel
@@ -732,7 +732,7 @@ campaigns:
       - Magister: -2.0
       - Mystere MK.IV: -1.5
       - Ouragan: -1.0
-  - name: War of Independence: second phase Galilee
+  - name: 'War of Independence: second phase Galilee'
     box: exp1
     year: 1948
     service: Israel
@@ -753,7 +753,7 @@ campaigns:
         length: 6
         starting_so: 30
         pilots: [1, 2, 6, 2, 1, 0]
-  - name: Yom Kippur war: Battles of Mount Hermon
+  - name: 'Yom Kippur war: Battles of Mount Hermon'
     box: exp1
     year: 1973
     service: Israel

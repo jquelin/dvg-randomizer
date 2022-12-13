@@ -60,7 +60,10 @@ for bg in data.boardgames:
                 fh.write(f'    elite: {p.elite}\n')
         fh.write('campaigns:\n')
         for c in bg.campaigns:
-            fh.write(f'  - name: {c.name}\n')
+            if ':' in c.name:
+                fh.write(f"  - name: '{c.name}'\n")
+            else:
+                fh.write(f'  - name: {c.name}\n')
             fh.write(f'    box: {c.box}\n')
             fh.write(f'    year: {c.year}\n')
             fh.write(f'    service: {c.service}\n')

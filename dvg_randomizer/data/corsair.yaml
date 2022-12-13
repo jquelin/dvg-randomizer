@@ -842,7 +842,7 @@ campaigns:
         starting_so: 35
         pilots: [0, 2, 7, 2, 1, 0]
     allowed: ['F4F Wildcat', 'F4U Corsair', 'SBD Dauntless', 'TBF Avenger']
-  - name: Pearl Harbor: Enterprise coming into range
+  - name: 'Pearl Harbor: Enterprise coming into range'
     box: core
     year: 1941
     service: USAAF+USN
@@ -854,7 +854,7 @@ campaigns:
         starting_so: 10
         pilots: [1, 2, 6, 2, 1, 0]
     allowed: ['F4F Wildcat', 'P-40 Warhawk', 'SBD Dauntless', 'TBD Devastator']
-  - name: Pearl Harbor: P-40 defense
+  - name: 'Pearl Harbor: P-40 defense'
     box: core
     year: 1941
     service: USAAF
@@ -866,7 +866,7 @@ campaigns:
         starting_so: 25
         pilots: [0, 2, 0, 0, 0, 0]
     allowed: ['P-40 Warhawk']
-  - name: Pearl Harbor: Time travel
+  - name: 'Pearl Harbor: Time travel'
     box: core
     year: 1941
     service: Pearl Harbor

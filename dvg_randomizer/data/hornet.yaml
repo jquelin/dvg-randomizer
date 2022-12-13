@@ -1082,7 +1082,7 @@ campaigns:
         length: 1
         starting_so: 5
         pilots: [1, 2, 4, 1, 0, 0]
-  - name: Syria: Operation Nightfall
+  - name: 'Syria: Operation Nightfall'
     box: exp1
     year: 2013
     service: USN
@@ -1103,7 +1103,7 @@ campaigns:
         length: 7
         starting_so: 56
         pilots: [1, 2, 6, 2, 1, 0]
-  - name: Syria: Operation Nightfall
+  - name: 'Syria: Operation Nightfall'
     box: exp1
     year: 2013
     service: USMC
