@@ -40,6 +40,7 @@ for bg in data.boardgames:
         else:
             fh.write(f'name: {bg.name}\n')
         fh.write(f'alias: {bg.alias}\n')
+        fh.write(f'random: full\n')
         fh.write(f'services: {sorted([s for s in services])}\n')
         fh.write('aircrafts:\n')
         for a in bg.aircrafts:
