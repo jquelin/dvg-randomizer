@@ -143,11 +143,11 @@ aircrafts:
     cost: 0
     role: torpedo bomber
 pilots:
-  - name: "Tiny" Cherry
+  - name: '"Tiny" Cherry'
     box: core
     service: ['USMC', 'USN']
     aircraft: SB2C Helldiver
-  - name: 1st Lt. Derek "12 Pack" Case
+  - name: '1st Lt. Derek "12 Pack" Case'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
@@ -163,7 +163,7 @@ pilots:
     box: core
     service: ['UK-FAA']
     aircraft: F4U Corsair
-  - name: Aje "Ronin" Sakamoto
+  - name: 'Aje "Ronin" Sakamoto'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
@@ -179,7 +179,7 @@ pilots:
     box: core
     service: ['Pearl Harbor']
     aircraft: A-7 Corsair II
-  - name: Benjamin "Maestro" Weitze
+  - name: 'Benjamin "Maestro" Weitze'
     box: core
     service: ['USMC', 'USN']
     aircraft: F6F Hellcat
@@ -207,11 +207,11 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: SBD Dauntless
-  - name: Bob "Eyeballs" Alexander
+  - name: 'Bob "Eyeballs" Alexander'
     box: core
     service: ['UK-FAA']
     aircraft: F4U Corsair
-  - name: Brett "Bear" Grimmond
+  - name: 'Brett "Bear" Grimmond'
     box: core
     service: ['USMC', 'USN']
     aircraft: TBF Avenger
@@ -251,7 +251,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
-  - name: Chris "Crougar" Hueltenschlidt
+  - name: 'Chris "Crougar" Hueltenschlidt'
     box: core
     service: ['USMC', 'USN']
     aircraft: TBF Avenger
@@ -263,11 +263,11 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Chuck "Greycap" Seegert
+  - name: 'Chuck "Greycap" Seegert'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
-  - name: Chuck "Homer" Turner
+  - name: 'Chuck "Homer" Turner'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
@@ -299,7 +299,7 @@ pilots:
     box: core
     service: ['USAAF']
     aircraft: P-38 Lightning
-  - name: DK "Buster" Wiggins
+  - name: 'DK "Buster" Wiggins'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
@@ -363,7 +363,7 @@ pilots:
     box: core
     service: ['USAAF']
     aircraft: P-38 Lightning
-  - name: Gil "Pepe" Ocampo
+  - name: 'Gil "Pepe" Ocampo'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
@@ -411,7 +411,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Jason "Bones" Allibone
+  - name: 'Jason "Bones" Allibone'
     box: core
     service: ['UK-FAA']
     aircraft: F4U Corsair
@@ -423,7 +423,7 @@ pilots:
     box: core
     service: ['USAAF']
     aircraft: P-40 Warhawk
-  - name: Joe "Mangz" Manglardi
+  - name: 'Joe "Mangz" Manglardi'
     box: core
     service: ['USMC', 'USN']
     aircraft: F6F Hellcat
@@ -431,7 +431,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: John "Showbiz" Starman
+  - name: 'John "Showbiz" Starman'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
@@ -443,7 +443,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: JT "Buckeye" Reece
+  - name: 'JT "Buckeye" Reece'
     box: core
     service: ['USMC', 'USN']
     aircraft: F6F Hellcat
@@ -467,7 +467,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F6F Hellcat
-  - name: Kurt "Weasel" Wasserman
+  - name: 'Kurt "Weasel" Wasserman'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
@@ -479,15 +479,15 @@ pilots:
     box: core
     service: ['USAAF']
     aircraft: P-38 Lightning
-  - name: Lee "MadCartographer" Smith
+  - name: 'Lee "MadCartographer" Smith'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Leland "Top" Gilton
+  - name: 'Leland "Top" Gilton'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Leo "Banzai" Bonser
+  - name: 'Leo "Banzai" Bonser'
     box: core
     service: ['USAAF']
     aircraft: P-38 Lightning
@@ -515,7 +515,7 @@ pilots:
     box: core
     service: ['USAAF']
     aircraft: P-38 Lightning
-  - name: Mark "Bacon" Willmarth
+  - name: 'Mark "Bacon" Willmarth'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
@@ -539,7 +539,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: B-25 Mitchell
-  - name: Paul "Jericho" Baker
+  - name: 'Paul "Jericho" Baker'
     box: core
     service: ['USMC', 'USN']
     aircraft: TBF Avenger
@@ -587,7 +587,7 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Scott "Sticks" Rowland
+  - name: 'Scott "Sticks" Rowland'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
@@ -615,15 +615,15 @@ pilots:
     box: core
     service: ['USMC', 'USN']
     aircraft: B-25 Mitchell
-  - name: Tom "Killer" Konczal
+  - name: 'Tom "Killer" Konczal'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4F Wildcat
-  - name: Tom "Madman" Manley
+  - name: 'Tom "Madman" Manley'
     box: core
     service: ['USMC', 'USN']
     aircraft: F4U Corsair
-  - name: Tom "Tumba" Snäll
+  - name: 'Tom "Tumba" Snäll'
     box: core
     service: ['USMC', 'USN']
     aircraft: F6F Hellcat

@@ -49,7 +49,10 @@ for bg in data.boardgames:
             fh.write(f'    role: {a.role}\n')
         fh.write('pilots:\n')
         for p in bg.pilots:
-            fh.write(f'  - name: {p.name}\n')
+            if '"' in p.name:
+                fh.write(f"  - name: '{p.name}'\n")
+            else:
+                fh.write(f'  - name: {p.name}\n')
             fh.write(f'    box: {p.box}\n')
             fh.write(f'    service: {p.services}\n')
             fh.write(f'    aircraft: {p.aircraft.name}\n')
