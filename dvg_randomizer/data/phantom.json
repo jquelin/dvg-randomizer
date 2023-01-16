@@ -1,0 +1,1229 @@
+{
+    "name": "Phantom Leader",
+    "alias": "PL",
+    "random": "full",
+    "services": ["USAF", "USN"],
+    "aircrafts": [
+        {
+            "name": "A-3 Skywarrior",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1956,
+            "year_out": 1991,
+            "cost": -3,
+            "role": "bomber"
+        },
+        {
+            "name": "A-4 Skyhawk",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1956,
+            "year_out": 2003,
+            "cost": -3,
+            "role": "attack"
+        },
+        {
+            "name": "A-6 Intruder",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1963,
+            "year_out": 1997,
+            "cost": 0,
+            "role": "attack"
+        },
+        {
+            "name": "A-7 Corsair II",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1972,
+            "year_out": 1991,
+            "cost": 0,
+            "role": "attack"
+        },
+        {
+            "name": "A-7 Corsair II",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1967,
+            "year_out": 1993,
+            "cost": 0,
+            "role": "attack"
+        },
+        {
+            "name": "E-1 Tracer",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1956,
+            "year_out": 1977,
+            "cost": 0,
+            "role": "AWACS"
+        },
+        {
+            "name": "E-2 Hawkeye",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1961,
+            "year_out": 1986,
+            "cost": 2,
+            "role": "AWACS"
+        },
+        {
+            "name": "EA-6A Electric Intruder",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1966,
+            "year_out": 1972,
+            "cost": 0,
+            "role": "electronic warfare"
+        },
+        {
+            "name": "EB-66 Destroyer",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1956,
+            "year_out": 1973,
+            "cost": 0,
+            "role": "electronic warfare"
+        },
+        {
+            "name": "F-100 Super Sabre",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1954,
+            "year_out": 1979,
+            "cost": -3,
+            "role": "fighter"
+        },
+        {
+            "name": "F-101 Voodoo",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1957,
+            "year_out": 1966,
+            "cost": -5,
+            "role": "fighter"
+        },
+        {
+            "name": "F-102 Delta Dagger",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1956,
+            "year_out": 1976,
+            "cost": -4,
+            "role": "fighter"
+        },
+        {
+            "name": "F-104 Starfighter",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1954,
+            "year_out": 1975,
+            "cost": -4,
+            "role": "fighter"
+        },
+        {
+            "name": "F-105 Thunderchief",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1958,
+            "year_out": 1984,
+            "cost": -2,
+            "role": "fighter"
+        },
+        {
+            "name": "F-105 Wild Weasel",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1966,
+            "year_out": 1973,
+            "cost": -2,
+            "role": "strike"
+        },
+        {
+            "name": "F-4 Phantom II",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1962,
+            "year_out": 1990,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-4 Phantom II",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1961,
+            "year_out": 1986,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-5 Freedom Fighter",
+            "box": "core",
+            "service": ["USAF"],
+            "year_in": 1962,
+            "year_out": 1990,
+            "cost": -3,
+            "role": "fighter"
+        },
+        {
+            "name": "F-8 Crusader",
+            "box": "core",
+            "service": ["USN"],
+            "year_in": 1957,
+            "year_out": 1976,
+            "cost": -3,
+            "role": "fighter"
+        },
+        {
+            "name": "A-1 Skyraider",
+            "box": "exp1",
+            "service": ["USAF"],
+            "year_in": 1945,
+            "year_out": 1985,
+            "cost": -3,
+            "role": "attack"
+        },
+        {
+            "name": "A-37 Dragonfly",
+            "box": "exp1",
+            "service": ["USAF"],
+            "year_in": 1962,
+            "year_out": 1990,
+            "cost": -4,
+            "role": "attack"
+        },
+        {
+            "name": "A-5 Vigilante",
+            "box": "exp1",
+            "service": ["USN"],
+            "year_in": 1961,
+            "year_out": 1979,
+            "cost": -1,
+            "role": "bomber"
+        },
+        {
+            "name": "F-106 Delta Dart",
+            "box": "exp1",
+            "service": ["USAF"],
+            "year_in": 1959,
+            "year_out": 1988,
+            "cost": -6,
+            "role": "fighter"
+        }
+    ],
+    "pilots": [
+        {
+            "name": "Back Fire",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Barbarian",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Barley",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Bat",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "EB-66 Destroyer"
+        },
+        {
+            "name": "Batdog",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Blade",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-102 Delta Dagger"
+        },
+        {
+            "name": "Blowhole",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Boomer",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Buck",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Buick",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Buzzard",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Cajun",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Chiller",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Crater",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Crowbar",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Crusty",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Dagger",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Dapper",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Digger",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Driver",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Duke",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Dutch",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Easy Money",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "EA-6A Electric Intruder"
+        },
+        {
+            "name": "Echo",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Ferret",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Firefly",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Fizzbee",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-5 Freedom Fighter"
+        },
+        {
+            "name": "Freight Train",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Frisco",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "EA-6A Electric Intruder"
+        },
+        {
+            "name": "G.O.",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Gato",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Ghost",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-3 Skywarrior"
+        },
+        {
+            "name": "Grease",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Gringo",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Griz",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Guardian",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "E-2 Hawkeye"
+        },
+        {
+            "name": "Gusher",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-104 Starfighter"
+        },
+        {
+            "name": "Honker",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Houston",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Irish",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Jackpot",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "EB-66 Destroyer"
+        },
+        {
+            "name": "Jagger",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Jenkins",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-5 Freedom Fighter"
+        },
+        {
+            "name": "Judge",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Junior",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Kirin",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Knife",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-8 Crusader"
+        },
+        {
+            "name": "Lefty",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Mad Dog",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Wild Weasel"
+        },
+        {
+            "name": "Magic",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-102 Delta Dagger"
+        },
+        {
+            "name": "Martimer",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Midas",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Misty",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Mobster",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-101 Voodoo"
+        },
+        {
+            "name": "Monger",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Montana",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-5 Freedom Fighter"
+        },
+        {
+            "name": "Moose",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-8 Crusader"
+        },
+        {
+            "name": "Noah",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Papa",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Peewee",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Pigeon",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Plunger",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Pluto",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Poco",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Preacher",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Rabbit",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-8 Crusader"
+        },
+        {
+            "name": "Razor",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-6 Intruder"
+        },
+        {
+            "name": "Rebel",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-104 Starfighter"
+        },
+        {
+            "name": "Robin",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Ruff",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-101 Voodoo"
+        },
+        {
+            "name": "Scar",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-8 Crusader"
+        },
+        {
+            "name": "Scorpio",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Seaweed",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-3 Skywarrior"
+        },
+        {
+            "name": "Shadow",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Showtime",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Smokes",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Splashdog",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Stargazer",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Stash",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Thunderchief"
+        },
+        {
+            "name": "Steam",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Surfer",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "T-Bone",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Taxi",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Taz",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Too Tall",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-104 Starfighter"
+        },
+        {
+            "name": "Tracker",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "A-7 Corsair II"
+        },
+        {
+            "name": "Trigger",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Wild Weasel"
+        },
+        {
+            "name": "Vapor",
+            "box": "core",
+            "service": ["USAF"],
+            "aircraft": "F-105 Wild Weasel"
+        },
+        {
+            "name": "Vulture",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "E-1 Tracer"
+        },
+        {
+            "name": "Whiplash",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Wise Guy",
+            "box": "core",
+            "service": ["USN"],
+            "aircraft": "F-8 Crusader"
+        },
+        {
+            "name": "Ace",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-1 Skyraider"
+        },
+        {
+            "name": "Arrow",
+            "box": "exp1",
+            "service": ["USAF"],
+            "elite": [0, 3],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Beeper",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Chief",
+            "box": "exp1",
+            "service": ["USAF"],
+            "elite": [0, 4],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Diamond",
+            "box": "exp1",
+            "service": ["USAF"],
+            "elite": [2, 3],
+            "aircraft": "F-100 Super Sabre"
+        },
+        {
+            "name": "Dice",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-106 Delta Dart"
+        },
+        {
+            "name": "Firefly",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-37 Dragonfly"
+        },
+        {
+            "name": "Gadget",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Kaboose",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-37 Dragonfly"
+        },
+        {
+            "name": "Lefty",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Nails",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-37 Dragonfly"
+        },
+        {
+            "name": "Nomad",
+            "box": "exp1",
+            "service": ["USAF"],
+            "elite": [0, 4],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Pointer",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-106 Delta Dart"
+        },
+        {
+            "name": "Q-Tip",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-1 Skyraider"
+        },
+        {
+            "name": "Redeye",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "F-106 Delta Dart"
+        },
+        {
+            "name": "Santa",
+            "box": "exp1",
+            "service": ["USN"],
+            "aircraft": "A-5 Vigilante"
+        },
+        {
+            "name": "Scarecrow",
+            "box": "exp1",
+            "service": ["USAF"],
+            "aircraft": "A-1 Skyraider"
+        },
+        {
+            "name": "Titan",
+            "box": "exp1",
+            "service": ["USAF"],
+            "elite": [0, 0],
+            "aircraft": "F-101 Voodoo"
+        }
+    ],
+    "campaigns": [
+        {
+            "name": "Cuban Missile Crisis",
+            "box": "core",
+            "year": 1962,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 9,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 19,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 29,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Cuban Missile Crisis",
+            "box": "core",
+            "year": 1962,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 5,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 11,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 17,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Linebacker",
+            "box": "core",
+            "year": 1972,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 16,
+                    "pilots": [0, 2, 4, 2, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 8,
+                    "starting_so": 32,
+                    "pilots": [0, 2, 5, 2, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 12,
+                    "starting_so": 48,
+                    "pilots": [0, 2, 6, 3, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Linebacker",
+            "box": "core",
+            "year": 1972,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 16,
+                    "pilots": [0, 2, 4, 2, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 8,
+                    "starting_so": 32,
+                    "pilots": [0, 2, 5, 2, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 12,
+                    "starting_so": 48,
+                    "pilots": [0, 2, 6, 3, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Rolling Thunder",
+            "box": "core",
+            "year": 1967,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 16,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 7,
+                    "starting_so": 28,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 11,
+                    "starting_so": 54,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Rolling Thunder",
+            "box": "core",
+            "year": 1967,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 16,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 7,
+                    "starting_so": 28,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 11,
+                    "starting_so": 54,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "War in the south",
+            "box": "core",
+            "year": 1965,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 2,
+                    "starting_so": 3,
+                    "pilots": [1, 2, 1, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 4,
+                    "starting_so": 6,
+                    "pilots": [1, 2, 2, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 7,
+                    "starting_so": 13,
+                    "pilots": [1, 2, 3, 2, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-6 Intruder": 2.0
+            },
+            "level": 2
+        },
+        {
+            "name": "War in the south",
+            "box": "core",
+            "year": 1965,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 2,
+                    "starting_so": 4,
+                    "pilots": [1, 2, 1, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 4,
+                    "starting_so": 8,
+                    "pilots": [1, 2, 2, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 7,
+                    "starting_so": 12,
+                    "pilots": [1, 2, 3, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "Hunting weasels",
+            "box": "exp1",
+            "year": 1972,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 19,
+                    "pilots": [0, 3, 4, 2, 1, 0]
+                }
+            ],
+            "forced": {
+                "F-105 Thunderchief": 7,
+                "F-105 Wild Weasel": 3
+            },
+            "special_costs": {
+                "F-105 Thunderchief": 0.0,
+                "F-105 Wild Weasel": 0.0
+            },
+            "level": 2
+        },
+        {
+            "name": "Marine operations",
+            "box": "exp1",
+            "year": 1966,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 3,
+                    "pilots": [1, 2, 2, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 12,
+                    "pilots": [1, 2, 3, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 18,
+                    "pilots": [1, 2, 4, 2, 1, 0]
+                }
+            ],
+            "allowed": ["A-4 Skyhawk", "F-4 Phantom II"],
+            "level": 2
+        },
+        {
+            "name": "Milk run 66",
+            "box": "exp1",
+            "year": 1966,
+            "service": "USN",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 7,
+                    "starting_so": 40,
+                    "pilots": [1, 2, 6, 1, 0, 0]
+                }
+            ],
+            "forced": {
+                "A-4 Skyhawk": 8,
+                "F-4 Phantom II": 2
+            },
+            "special_costs": {
+                "A-4 Skyhawk": 0.0
+            },
+            "level": 2
+        },
+        {
+            "name": "Going downtown",
+            "box": "exp1",
+            "year": 1965,
+            "service": "USAF",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 4,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 8,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 12,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 3
+        }
+    ]
+}

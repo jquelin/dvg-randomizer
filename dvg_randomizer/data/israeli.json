@@ -1,0 +1,1106 @@
+{
+    "name": "Israeli Air Force Leader",
+    "alias": "IAFL",
+    "random": "full",
+    "services": ["Israel"],
+    "aircrafts": [
+        {
+            "name": "A-4 Skyhawk",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1966,
+            "year_out": 2008,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Avia S.199",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1948,
+            "year_out": 1949,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "B-17 Flying Fortress",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1948,
+            "year_out": 1958,
+            "cost": 0,
+            "role": "bomber"
+        },
+        {
+            "name": "C.2 KFIR",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1976,
+            "year_out": 1996,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-15A Eagle",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1976,
+            "year_out": 9999,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-16 Fighting Falcon",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1980,
+            "year_out": 9999,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-35 Lightning II",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 2017,
+            "year_out": 9999,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "F-4 Phantom II",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1969,
+            "year_out": 2004,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Magister",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1967,
+            "year_out": 1967,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Meteor MK.XIII",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1956,
+            "year_out": 1956,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Mirage IIIC",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1962,
+            "year_out": 1973,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "MK.IX Spitfire",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1948,
+            "year_out": 1949,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Mosquito MK.VI",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1956,
+            "year_out": 1956,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Mystere MK.IV",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1956,
+            "year_out": 1967,
+            "cost": 0,
+            "role": "fighter-bomber"
+        },
+        {
+            "name": "Nesher",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1972,
+            "year_out": 1977,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Ouragan",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1956,
+            "year_out": 1967,
+            "cost": 0,
+            "role": "fighter-bomber"
+        },
+        {
+            "name": "P-51D Mustang",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1948,
+            "year_out": 1956,
+            "cost": 0,
+            "role": "fighter"
+        },
+        {
+            "name": "Super Mystere",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1958,
+            "year_out": 1973,
+            "cost": 0,
+            "role": "fighter-bomber"
+        },
+        {
+            "name": "Vautour",
+            "box": "core",
+            "service": ["Israel"],
+            "year_in": 1958,
+            "year_out": 1972,
+            "cost": 0,
+            "role": "fighter-bomber"
+        },
+        {
+            "name": "F-15I Strike Eagle",
+            "box": "exp1",
+            "service": ["Israel"],
+            "year_in": 1994,
+            "year_out": 9999,
+            "cost": 0,
+            "role": "fighter-bomber"
+        }
+    ],
+    "pilots": [
+        {
+            "name": "Abyss",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Acrobat",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Angel",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-35 Lightning II"
+        },
+        {
+            "name": "Angry",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Nesher"
+        },
+        {
+            "name": "Arrow",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-35 Lightning II"
+        },
+        {
+            "name": "Blade",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-16 Fighting Falcon"
+        },
+        {
+            "name": "Boar",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Bread",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mosquito MK.VI"
+        },
+        {
+            "name": "Brick",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Bucket",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Magister"
+        },
+        {
+            "name": "Bugsy",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-35 Lightning II"
+        },
+        {
+            "name": "Cat",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "P-51D Mustang"
+        },
+        {
+            "name": "Cook",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mirage IIIC"
+        },
+        {
+            "name": "Courage",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Nesher"
+        },
+        {
+            "name": "Cow",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mirage IIIC"
+        },
+        {
+            "name": "Cowboy",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mirage IIIC"
+        },
+        {
+            "name": "Crusader",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Daisy",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-35 Lightning II"
+        },
+        {
+            "name": "Decoy",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Demon",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Dog",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mystere MK.IV"
+        },
+        {
+            "name": "Dragon",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Super Mystere"
+        },
+        {
+            "name": "Eagle",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Magister"
+        },
+        {
+            "name": "Eyes",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Ouragan"
+        },
+        {
+            "name": "Farmer",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Ouragan"
+        },
+        {
+            "name": "Fearless",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Magister"
+        },
+        {
+            "name": "Fig",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Fixer",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-16 Fighting Falcon"
+        },
+        {
+            "name": "Giant",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mystere MK.IV"
+        },
+        {
+            "name": "Goat",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Meteor MK.XIII"
+        },
+        {
+            "name": "Gun",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Vautour"
+        },
+        {
+            "name": "Handsome",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mirage IIIC"
+        },
+        {
+            "name": "Healer",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mosquito MK.VI"
+        },
+        {
+            "name": "Horror",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Ouragan"
+        },
+        {
+            "name": "Hot Sauce",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Hungry",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "P-51D Mustang"
+        },
+        {
+            "name": "Hyena",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Super Mystere"
+        },
+        {
+            "name": "Iron",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "MK.IX Spitfire"
+        },
+        {
+            "name": "Kid",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Super Mystere"
+        },
+        {
+            "name": "King",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "MK.IX Spitfire"
+        },
+        {
+            "name": "Knife",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Ouragan"
+        },
+        {
+            "name": "Knight",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Lightning",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "MK.IX Spitfire"
+        },
+        {
+            "name": "Little",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Lizard",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "P-51D Mustang"
+        },
+        {
+            "name": "Max",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Monster",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Magister"
+        },
+        {
+            "name": "Mouse",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "A-4 Skyhawk"
+        },
+        {
+            "name": "Ocean",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Avia S.199"
+        },
+        {
+            "name": "Painter",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "P-51D Mustang"
+        },
+        {
+            "name": "Prince",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "MK.IX Spitfire"
+        },
+        {
+            "name": "Rebel",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-35 Lightning II"
+        },
+        {
+            "name": "Rock",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mystere MK.IV"
+        },
+        {
+            "name": "Rocket",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-16 Fighting Falcon"
+        },
+        {
+            "name": "Ruby",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Sand",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Vautour"
+        },
+        {
+            "name": "Scorpion",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Nesher"
+        },
+        {
+            "name": "Shark",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "B-17 Flying Fortress"
+        },
+        {
+            "name": "Sky",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Vautour"
+        },
+        {
+            "name": "Snake",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Meteor MK.XIII"
+        },
+        {
+            "name": "Spider",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Avia S.199"
+        },
+        {
+            "name": "Star",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Steel",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "MK.IX Spitfire"
+        },
+        {
+            "name": "Storm",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "String",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Avia S.199"
+        },
+        {
+            "name": "Tank",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Vautour"
+        },
+        {
+            "name": "Teacher",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Super Mystere"
+        },
+        {
+            "name": "Terror",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Ouragan"
+        },
+        {
+            "name": "Thief",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Nesher"
+        },
+        {
+            "name": "Thunder",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "B-17 Flying Fortress"
+        },
+        {
+            "name": "Truck",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Meteor MK.XIII"
+        },
+        {
+            "name": "Vampire",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mystere MK.IV"
+        },
+        {
+            "name": "Warrior",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-4 Phantom II"
+        },
+        {
+            "name": "Wasp",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Web",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Avia S.199"
+        },
+        {
+            "name": "Wild",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-16 Fighting Falcon"
+        },
+        {
+            "name": "Wind",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mosquito MK.VI"
+        },
+        {
+            "name": "Wine",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "Mosquito MK.VI"
+        },
+        {
+            "name": "Wolf",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "P-51D Mustang"
+        },
+        {
+            "name": "Zoom",
+            "box": "core",
+            "service": ["Israel"],
+            "aircraft": "F-16 Fighting Falcon"
+        },
+        {
+            "name": "Boxer",
+            "box": "exp1",
+            "service": ["Israel"],
+            "elite": [0, 4],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Coyote",
+            "box": "exp1",
+            "service": ["Israel"],
+            "elite": [0, 1],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Dragon",
+            "box": "exp1",
+            "service": ["Israel"],
+            "elite": [0, 2],
+            "aircraft": "F-15I Strike Eagle"
+        },
+        {
+            "name": "Fire",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "F-15I Strike Eagle"
+        },
+        {
+            "name": "Protector",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Scissors",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Scratch",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Spice",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "F-15I Strike Eagle"
+        },
+        {
+            "name": "Stone",
+            "box": "exp1",
+            "service": ["Israel"],
+            "elite": [0, 3],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Wing",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        },
+        {
+            "name": "Winter",
+            "box": "exp1",
+            "service": ["Israel"],
+            "elite": [0, 2],
+            "aircraft": "C.2 KFIR"
+        },
+        {
+            "name": "Wired",
+            "box": "exp1",
+            "service": ["Israel"],
+            "aircraft": "F-15A Eagle"
+        }
+    ],
+    "campaigns": [
+        {
+            "name": "Desert Storm",
+            "box": "core",
+            "year": 1991,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 22,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 44,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 66,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-4 Skyhawk": -1.0
+            },
+            "level": 1
+        },
+        {
+            "name": "The 6 day war",
+            "box": "core",
+            "year": 1967,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 24,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "Magister": -2.0,
+                "Mystere MK.IV": -1.5,
+                "Ouragan": -1.0
+            },
+            "level": 1
+        },
+        {
+            "name": "Lebanon I",
+            "box": "core",
+            "year": 1982,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 15,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 8,
+                    "starting_so": 29,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 12,
+                    "starting_so": 42,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-4 Skyhawk": -1.0
+            },
+            "level": 2
+        },
+        {
+            "name": "The Suez crisis",
+            "box": "core",
+            "year": 1956,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 5,
+                    "starting_so": 23,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 10,
+                    "starting_so": 45,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 15,
+                    "starting_so": 67,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "P-51D Mustang": -2.0
+            },
+            "level": 2
+        },
+        {
+            "name": "Lebanon II",
+            "box": "core",
+            "year": 2006,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 15,
+                    "pilots": [0, 1, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 30,
+                    "pilots": [0, 0, 5, 1, 1, 0]
+                }
+            ],
+            "forbidden": ["F-15A Eagle"],
+            "special_costs": {
+                "A-4 Skyhawk": -1.0
+            },
+            "level": 3
+        },
+        {
+            "name": "Operation Babylon",
+            "box": "core",
+            "year": 1981,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 7,
+                    "starting_so": 30,
+                    "pilots": [0, 0, 8, 1, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-4 Skyhawk": -4.0,
+                "C.2 KFIR": -4.0,
+                "F-4 Phantom II": -2.0
+            },
+            "level": 3
+        },
+        {
+            "name": "War of Independence",
+            "box": "core",
+            "year": 1948,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 4,
+                    "starting_so": 13,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 8,
+                    "starting_so": 26,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 12,
+                    "starting_so": 39,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 3
+        },
+        {
+            "name": "Armaggedon",
+            "box": "core",
+            "year": 2022,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 7,
+                    "starting_so": 45,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "F-15A Eagle": -2.0,
+                "F-16 Fighting Falcon": -2.0
+            },
+            "level": 4
+        },
+        {
+            "name": "Yom Kippur war",
+            "box": "core",
+            "year": 1973,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 3,
+                    "starting_so": 5,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 6,
+                    "starting_so": 10,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 9,
+                    "starting_so": 16,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-4 Skyhawk": -1.0,
+                "Mirage IIIC": -3.0,
+                "Nesher": -3.0,
+                "Super Mystere": -3.0
+            },
+            "level": 4
+        },
+        {
+            "name": "The Suez crisis: first phase",
+            "box": "exp1",
+            "year": 1956,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 5,
+                    "starting_so": 23,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 10,
+                    "starting_so": 45,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 15,
+                    "starting_so": 67,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 2
+        },
+        {
+            "name": "The 6 day war: West Bank",
+            "box": "exp1",
+            "year": 1967,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 3,
+                    "starting_so": 20,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "Magister": -2.0,
+                "Mystere MK.IV": -1.5,
+                "Ouragan": -1.0
+            },
+            "level": 3
+        },
+        {
+            "name": "War of Independence: second phase Galilee",
+            "box": "exp1",
+            "year": 1948,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "short",
+                    "level": 1,
+                    "length": 2,
+                    "starting_so": 10,
+                    "pilots": [1, 2, 4, 1, 0, 0]
+                },
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 4,
+                    "starting_so": 20,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                },
+                {
+                    "label": "long",
+                    "level": 3,
+                    "length": 6,
+                    "starting_so": 30,
+                    "pilots": [1, 2, 6, 2, 1, 0]
+                }
+            ],
+            "level": 3
+        },
+        {
+            "name": "Yom Kippur war: Battles of Mount Hermon",
+            "box": "exp1",
+            "year": 1973,
+            "service": "Israel",
+            "duration": [
+                {
+                    "label": "medium",
+                    "level": 2,
+                    "length": 5,
+                    "starting_so": 20,
+                    "pilots": [1, 2, 5, 1, 1, 0]
+                }
+            ],
+            "special_costs": {
+                "A-4 Skyhawk": -1.0,
+                "Mirage IIIC": -3.0,
+                "Nesher": -3.0,
+                "Super Mystere": -3.0
+            },
+            "level": 4
+        }
+    ]
+}
