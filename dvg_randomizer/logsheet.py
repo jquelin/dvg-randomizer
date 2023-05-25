@@ -35,7 +35,7 @@ def generate_pdf(game):
     campaign = game.campaign
     clength  = game.clength
 
-    has_aces = bg.alias in {'CL', 'ZL'}
+    has_aces = bg.alias in {'CL', 'StL', 'ZL'}
 
     margin = 10
     width  = 4  # default cell width
