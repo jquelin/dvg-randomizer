@@ -55,7 +55,12 @@ class Pilot:
         if self.is_elite:
             so_cost = self.elite[0] + self.elite[1]*cl_level
         else:
-            so_cost = self.aircraft.cost * cl_level
+            if cl_level == 1:
+                so_cost = self.aircraft.cost_s
+            elif cl_level == 2:
+                so_cost = self.aircraft.cost_m
+            else:
+                so_cost = self.aircraft.cost_l
             if special:
                 for aircraft, cost in special:
                     if self.aircraft.name == aircraft:

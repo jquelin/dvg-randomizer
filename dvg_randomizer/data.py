@@ -59,13 +59,13 @@ class Data:
         with open(filepath) as fp:
             reader = csv.reader(fp)
             next(reader, None)  # skip the headers
-            for bgname, box, service, name, year_in, year_out, cost, role in reader:
+            for bgname, box, service, name, year_in, year_out, cost_s, cost_m, cost_l, role in reader:
                 bg = self.boardgame(bgname)
                 if bg is None:
                     log.error(f'boardgame {bgname} not found')
                 else:
                     aircraft = Aircraft(bg, box, service, name, year_in,
-                                        year_out, cost, role)
+                                        year_out, cost_s, cost_m, cost_l, role)
                     log.debug(f'- found aircraft {aircraft}')
                     bg.add_aircraft(aircraft)
 

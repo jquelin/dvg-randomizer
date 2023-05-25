@@ -21,7 +21,7 @@ from dvg_randomizer.logger import log
 
 class Aircraft:
     def __init__(self, bg, box, service, name, year_in:int,
-                 year_out:int, cost, role):
+                 year_out:int, cost_s, cost_m, cost_l, role):
         self.boardgame = bg
         self.box       = box
         self.service   = service
@@ -29,7 +29,9 @@ class Aircraft:
         self.name      = name
         self.year_in   = int(year_in)
         self.year_out  = int(year_out) if year_out else 9999
-        self.cost      = int(cost)
+        self.cost_s    = int(cost_s)
+        self.cost_m    = int(cost_m)
+        self.cost_l    = int(cost_l)
         self.role      = role
 
     def __lt__(self, a):
