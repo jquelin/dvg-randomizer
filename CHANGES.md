@@ -1,8 +1,10 @@
+1.4.2 2023-05-26
+- minor cleanups
+
 1.4.1 2023-05-26
 - forgot to provide ods file
 
 1.4.0 2023-05-26
-
 - loading data directly from ODS
 - adding Stuka Leader data
 - allow non linear aircraft costs
