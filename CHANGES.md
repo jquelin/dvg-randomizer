@@ -1,4 +1,5 @@
 1.4.0 2023-05-26
+1.4.0 2023-05-26
 
 - loading data directly from ODS
 - adding Stuka Leader data
