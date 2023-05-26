@@ -5,9 +5,11 @@ dvg-randomizer - gui to randomize your squadron for DVG Air Leader games
 
 # DESCRIPTION
 
-Dan Verssen Games (DVG) publishes awesome boardgames putting you in
-command of a squadron for a given campaign. One of the modes is to have
-a random squadron, and this app just does that: it randomizes 
+Dan Verssen Games (DVG) publishes awesome boardgames putting you in command of
+a squadron for a given campaign. One of the modes is to have a random squadron,
+and this app just does that: it provides a way to easily randomize your
+squadron according to available planes & pilots. It can also generate a
+logsheet to use for the game.
 
 
 As of today, the soft supports:
