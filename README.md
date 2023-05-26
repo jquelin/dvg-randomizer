@@ -17,7 +17,8 @@ As of today, the soft supports:
 - Israeli Air Force Leader, with its expansion #1
 - Corsair Leader
 - Zero Leader, with its China expansion
-
+- Stuka Leader, with all expansions (East Front 1&2, Mediterranean 1&2,
+  Spanish Civil War, What if)
 
 
 # INSTALL
