@@ -1,4 +1,6 @@
-1.4.0 2023-05-26
+1.4.1 2023-05-26
+- forgot to provide ods file
+
 1.4.0 2023-05-26
 
 - loading data directly from ODS
