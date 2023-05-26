@@ -16,7 +16,7 @@
 # <https://www.gnu.org/licenses/>.
 #
 
-import csv
+import pyexcel_ods
 from pathlib import Path
 
 #
@@ -31,7 +31,8 @@ from dvg_randomizer.logger    import log
 
 class Data:
     def __init__(self):
-        # load csv files
+        # load data from ODS file
+        self.load_ods_data()
         self.load_boardgames()
         self.load_aircrafts()
         self.load_pilots()
@@ -54,141 +55,162 @@ class Data:
 
     def load_aircrafts(self):
         log.info("loading aircrafts") 
-        filepath = self.get_csv_path('aircrafts.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, service, name, year_in, year_out, cost_s, cost_m, cost_l, role in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
-                else:
-                    aircraft = Aircraft(bg, box, service, name, year_in,
-                                        year_out, cost_s, cost_m, cost_l, role)
-                    log.debug(f'- found aircraft {aircraft}')
-                    bg.add_aircraft(aircraft)
+        data = self.ods_data["aircrafts"]
+        for i in range(1, len(data)):
+            if len(data[i]) != 10:
+                continue
 
-            for bg in self.boardgames:
-                log.info(f"{bg}: found {len(bg.aircrafts)} aircrafts")
+            (bgalias, box, service, name, year_in, year_out, cost_s,
+                cost_m, cost_l, role) = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                aircraft = Aircraft(bg, box, service, name, year_in,
+                                    year_out, cost_s, cost_m, cost_l, role)
+                log.debug(f'- found aircraft {aircraft}')
+                bg.add_aircraft(aircraft)
+
+        for bg in self.boardgames:
+            log.info(f"{bg}: found {len(bg.aircrafts)} aircrafts")
 
     def load_allowed(self):
         log.info("loading allowed aircrafts")
-        filepath = self.get_csv_path('allowed.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, campaign_name, year, service, aircraft, nb in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
+        data = self.ods_data["allowed"]
+        for i in range(1, len(data)):
+            if len(data[i]) == 0:
+                continue
+
+            # no mandatory number of aircrafts: pad with None
+            if len(data[i]) == 6:
+                data[i].append(None)
+
+            (bgalias, box, campaign_name, year, service, aircraft, nb) = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                campaign = bg.campaign(campaign_name, int(year), service)
+                if campaign is None:
+                    log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
                 else:
-                    campaign = bg.campaign(campaign_name, int(year), service)
-                    if campaign is None:
-                        log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
-                    else:
-                        campaign.allowed.append([aircraft, nb])
+                    campaign.allowed.append([aircraft, nb])
 
     def load_boardgames(self):
         log.info("loading boardgames") 
-        filepath = self.get_csv_path('boardgames.csv')
-        log.info(f"reading {filepath}")
+        data = self.ods_data["boardgames"]
         self.boardgames = []
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for alias, name in reader:
+        for i in range(1, len(data)):
+            alias, name = data[i]
+            if alias != '':
                 boardgame = Boardgame(name, alias)
                 log.debug(f"- found boardgame {boardgame}")
                 self.boardgames.append(boardgame)
-            log.info(f"found {len(self.boardgames)} boardgames")
+        log.info(f"found {len(self.boardgames)} boardgames")
 
     def load_campaigns(self):
         log.info("loading campaigns")
-        filepath = self.get_csv_path('campaigns.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, name, year, service, level, \
-                    sdays, sso, ssquad, mdays, mso, msquad, ldays, lso, lsquad in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
-                else:
-                    for single_service in service.split('|'):
-                        campaign = Campaign(bg, box, name, year, single_service, level,
-                                            sdays, sso, ssquad,
-                                            mdays, mso, msquad,
-                                            ldays, lso, lsquad)
-                        # FIXME: check if campaign has at least one length
-                        # FIXME: check if campaign is a duplicate
-                        log.debug(f"- found campaign {campaign}")
-                        bg.add_campaign(campaign)
+        data = self.ods_data["campaigns"]
+        for i in range(1, len(data)):
+            if len(data[i]) == 0:
+                continue
 
-            for bg in self.boardgames:
-                log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
+            # only short campaign: padd medium
+            if len(data[i]) == 9:
+                data[i].extend(['']*3)
+            # no long: padd long
+            if len(data[i]) == 12:
+                data[i].extend(['']*3)
+
+            (bgalias, box, name, year, service, level, sdays, sso,
+                ssquad, mdays, mso, msquad, ldays, lso, lsquad) = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                for single_service in service.split('|'):
+                    campaign = Campaign(bg, box, name, year, single_service, level,
+                                        sdays, sso, ssquad,
+                                        mdays, mso, msquad,
+                                        ldays, lso, lsquad)
+                    # FIXME: check if campaign has at least one length
+                    # FIXME: check if campaign is a duplicate
+                    log.debug(f"- found campaign {campaign}")
+                    bg.add_campaign(campaign)
+
+        for bg in self.boardgames:
+            log.info(f"{bg}: found {len(bg.campaigns)} campaigns")
 
     def load_campaign_costs(self):
         log.info("loading campaign costs")
-        filepath = self.get_csv_path('campaign_costs.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, name, year, service, aircraft, cost in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
+        data = self.ods_data["campaign costs"]
+        for i in range(1, len(data)):
+            if len(data[i]) == 0:
+                continue
+
+            bgalias, box, name, year, service, aircraft, cost = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                campaign = bg.campaign(name, int(year), service)
+                if campaign is None:
+                    log.error(f'boardgame {bgalias} has no campaign {name}-{year}-{service}')
                 else:
-                    campaign = bg.campaign(name, int(year), service)
-                    if campaign is None:
-                        log.error(f'boardgame {bgname} has no campaign {name}-{year}-{service}')
-                    else:
-                        log.debug(f"- found campaign {campaign}")
-                        campaign.special_costs.append([aircraft, float(cost)])
+                    log.debug(f"- found campaign {campaign}")
+                    campaign.special_costs.append([aircraft, float(cost)])
 
     def load_forbidden(self):
         log.info("loading forbidden aircrafts")
-        filepath = self.get_csv_path('forbidden.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, campaign_name, year, service, aircraft in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
+        data = self.ods_data["forbidden"]
+        for i in range(1, len(data)):
+            if len(data[i]) == 0:
+                continue
+
+            (bgalias, box, campaign_name, year, service, aircraft) = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                campaign = bg.campaign(campaign_name, int(year), service)
+                if campaign is None:
+                    log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
                 else:
-                    campaign = bg.campaign(campaign_name, int(year), service)
-                    if campaign is None:
-                        log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
-                    else:
-                        campaign.forbidden.append(aircraft)
+                    campaign.forbidden.append(aircraft)
+
+    def load_ods_data(self):
+        ods_file = Path(Path(__file__).parent, 'dvg.ods').as_posix()
+        log.info(f"loading ODS data from {ods_file}")
+        self.ods_data = pyexcel_ods.get_data(ods_file)
+
 
     def load_pilots(self):
         log.info("loading pilots")
-        filepath = self.get_csv_path('pilots.csv')
-        log.info(f"reading {filepath}")
-        with open(filepath) as fp:
-            reader = csv.reader(fp)
-            next(reader, None)  # skip the headers
-            for bgname, box, service, name, aircraft_name, elite in reader:
-                bg = self.boardgame(bgname)
-                if bg is None:
-                    log.error(f'boardgame {bgname} not found')
-                else:
-                    aircraft = bg.aircraft(service, aircraft_name)
-                    if aircraft is None:
-                        log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
-                    else:
-                        pilot = Pilot(bg, box, service, name, aircraft, elite)
-                        log.debug(f'- found pilot {pilot}')
-                        bg.add_pilot(pilot)
+        data = self.ods_data["pilots"]
+        for i in range(1, len(data)):
+            if len(data[i]) == 0:
+                continue
 
-            for bg in self.boardgames:
-                log.info(f"{bg}: found {len(bg.pilots)} pilots")
+            # default no elite
+            if len(data[i]) == 5:
+                data[i].extend([None]*3)
+            (bgalias, box, service, name, aircraft_name, elite_s,
+                elite_m, elite_l) = data[i]
+            bg = self.boardgame(bgalias)
+            if bg is None:
+                log.error(f'boardgame {bgalias} not found')
+            else:
+                aircraft = bg.aircraft(service, aircraft_name)
+                if aircraft is None:
+                    log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
+                else:
+                    pilot = Pilot(bg, box, service, name, aircraft,
+                                    elite_s, elite_m, elite_l)
+                    log.debug(f'- found pilot {pilot}')
+                    bg.add_pilot(pilot)
+
+        for bg in self.boardgames:
+            log.info(f"{bg}: found {len(bg.pilots)} pilots")
 
 
     # -- finder methods
@@ -226,10 +248,4 @@ class Data:
             self.longest[k] = max(v, key=len)
             log.debug(f'longest string for {k}: {self.longest[k]}')
 
-
-    def get_csv_path(self, file:str):
-#        curfpath = Path(__file__).parent()
-#        wanted = Path(curfpath, 'csv', file)
-#        log.debug(f'looking file: {wanted}')
-        return Path(Path(__file__).parent, 'data', file).as_posix()
 

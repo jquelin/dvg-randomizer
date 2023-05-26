@@ -20,20 +20,18 @@
 from dvg_randomizer.logger import log
 
 class Pilot:
-    def __init__(self, bg, box, service, name, aircraft, elite):
+    def __init__(self, bg, box, service, name, aircraft, elite_s,
+                 elite_m, elite_l):
         self.boardgame = bg
         self.box       = box
         self.service   = service
         self.services  = service.split('+')
         self.name      = name
         self.aircraft  = aircraft
-        if elite != '':
+        if elite_s is not None:
             self.is_elite    = True
             self.elite_name  = f'\u2606 {name} \u2606'
-            if '+' in elite:
-                self.elite   = [int(s) for s in elite.split('+')]
-            else:
-                self.elite   = [0, int(elite)]
+            self.elite = [elite_s, elite_m, elite_l]
         else:
             self.is_elite    = False
             self.elite       = None
@@ -53,7 +51,7 @@ class Pilot:
         special = game.campaign.special_costs
         cl_level = game.clength.level
         if self.is_elite:
-            so_cost = self.elite[0] + self.elite[1]*cl_level
+            so_cost = self.elite[cl_level-1]
         else:
             if cl_level == 1:
                 so_cost = self.aircraft.cost_s

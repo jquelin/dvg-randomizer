@@ -1,5 +1,8 @@
+- loading data directly from ODS
 - adding Stuka Leader data
 - allow non linear aircraft costs
+
+---
 
 1.3.3 2022-12-10
 - fix wrong include for MANIFEST.in
