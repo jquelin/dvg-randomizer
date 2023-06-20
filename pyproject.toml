@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dvg-randomizer"
-version = '1.4.2'
+version = '1.4.3'
 authors = [
   { name="Jerome Quelin", email="jquelin@gmail.com" },
 ]
@@ -21,6 +21,8 @@ dependencies = [
     "colorlog",
     "fpdf",
     "pyexcel_ods",
+    "pyyaml",
+    "cmd2",
 ]
 
 [project.scripts]
