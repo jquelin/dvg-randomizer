@@ -19,7 +19,7 @@
 import logging
 import colorlog
 
-from dvg_randomizer import config
+from dvg_randomizer.common import config
 
 colors = colorlog.default_log_colors
 colors['DEBUG'] = 'blue'
