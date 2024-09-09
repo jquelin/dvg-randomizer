@@ -31,7 +31,7 @@ import cmd2
 import random
 
 from dvg_randomizer.data   import Data
-from dvg_randomizer.logger import log
+from dvg_randomizer.common import log
 
 class Game(cmd2.Cmd):
     def __init__(self, *args, **kwargs):

@@ -22,7 +22,7 @@ from datetime import datetime
 from fpdf import FPDF 
 from pathlib import Path
 
-from dvg_randomizer.logger import log
+from dvg_randomizer.common import log
 
 WHITE  = 255
 GREYL1 = 240

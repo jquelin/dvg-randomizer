@@ -26,7 +26,7 @@ from tkinter import font
 import types
 
 
-from dvg_randomizer.logger   import log
+from dvg_randomizer.common   import log
 from dvg_randomizer.game     import Game
 from dvg_randomizer.logsheet import generate_pdf
 

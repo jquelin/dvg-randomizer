@@ -25,7 +25,7 @@ from dvg_randomizer.aircraft  import Aircraft
 from dvg_randomizer.boardgame import Boardgame
 from dvg_randomizer.campaign  import Campaign
 from dvg_randomizer.pilot     import Pilot
-from dvg_randomizer.logger    import log
+from dvg_randomizer.common    import log
 
 #  ----
 
