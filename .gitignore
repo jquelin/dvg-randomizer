@@ -19,4 +19,4 @@ logsheet.pdf
 
 dist
 dvg_randomizer.egg-info
-env_dvgr
+.venv
