@@ -6,6 +6,6 @@ import sys
 bindir = os.path.dirname(__file__)
 sys.path.append(bindir)
 
-from dvg_randomizer.gui.main import GUI
-gui = GUI()
-gui.mainloop()
+from dvg_randomizer.ui.graphical import GUI
+ui = GUI()
+ui.mainloop()
