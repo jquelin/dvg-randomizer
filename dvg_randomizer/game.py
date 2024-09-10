@@ -1,4 +1,3 @@
-#!/bin/python
 #
 # This file is part of dvg-randomizer.
 #
@@ -27,57 +26,14 @@ if __name__ == '__main__':
     if basename(sys.path[0]) == 'dvg':
         del sys.path[0]
 
-import cmd2
 import random
 
 from dvg_randomizer.data   import Data
 from dvg_randomizer.common import log
 
-class Game(cmd2.Cmd):
-    def __init__(self, *args, **kwargs):
-        # remove unwanted shortcuts *before* calling parent __init__
-        shortcuts = dict(cmd2.DEFAULT_SHORTCUTS)
-        for shortcut in ['!', '@', '@@']:
-            del shortcuts[shortcut]
-        cmd2.Cmd.__init__(self, shortcuts=shortcuts)
-
-        # remove unwanted commands
-        for cmd in ['do_edit', 'do_macro', 'do_run_pyscript',
-                'do_run_script', 'do_shell']:
-            delattr(cmd2.Cmd, cmd)
-
-        # remove unwanted settings
-        for setting in ['allow_style', 'always_show_hint', 'debug',
-                'echo', 'editor', 'feedback_to_output',
-                'max_completion_items', 'quiet', 'timing']:
-            self.remove_settable(setting)
-
-        # customizing cmd2
-        self.prompt = 'dvg: '
-        self.runcmds_plus_hooks(['alias create bg boardgame >/dev/null'])
-
-
-    def do_list(self, stmt):
-        """List available choices"""
-        # depending on the app status, command will list different
-        # things.
-        if len(stmt.argv) == 1:
-            what = 'boardgames'
-        else:
-            what = stmt.argv[1]
-
-        # check aliases
-        aliases = {
-            'bg': 'boardgames',
-        }
-        if what in aliases:
-            what = aliases[what]
-
-        print(what)
-
+class Game:
     def do_load(self, *stmt):
         self.data = Data()
-
 
     def do_boardgame(self, bg):
         self.boardgame = bg
@@ -178,8 +134,4 @@ class Game(cmd2.Cmd):
         self.clength     = clength
         self.composition = []
 
-
-if __name__ == '__main__':
-    game = Game()
-    sys.exit(game.cmdloop())
 
