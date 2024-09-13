@@ -53,7 +53,7 @@ class ConsoleUI(cmd2.Cmd, UI):
         self.prompt = 'dvg: '
 #        self.runcmds_plus_hooks(['alias create bg boardgame >/dev/null'])
 
-
+        UI.__init__(self)
 
 #        self.game = Game()
 #        self.game.do_load()

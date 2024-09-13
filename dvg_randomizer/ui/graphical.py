@@ -29,6 +29,7 @@ import types
 from dvg_randomizer.common   import log
 from dvg_randomizer.game     import Game
 from dvg_randomizer.logsheet import generate_pdf
+from dvg_randomizer.ui.base  import UI
 
 
 class SquadComposition(Toplevel):
@@ -167,8 +168,10 @@ class SquadComposition(Toplevel):
 
 
 
-class GraphicalUI(Tk):
+class GraphicalUI(Tk, UI):
     def __init__(self):
+        UI.__init__(self)
+
         self.game = Game()
         self.game.do_load()
 

@@ -23,6 +23,8 @@ from dvg_randomizer.logsheet import generate_pdf
 
 
 class UI:
-    pass
+    def __init__(self):
+        pass
+#        log.debug("init UI")
 
 
