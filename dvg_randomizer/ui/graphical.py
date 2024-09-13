@@ -172,9 +172,6 @@ class GraphicalUI(Tk, UI):
     def __init__(self):
         UI.__init__(self)
 
-        self.game = Game()
-        self.game.do_load()
-
         # a convenient way to store our vars
         self.vars    = types.SimpleNamespace() # gui vars (StringVar)
         self.widgets = types.SimpleNamespace() # widgets

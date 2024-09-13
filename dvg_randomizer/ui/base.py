@@ -24,7 +24,5 @@ from dvg_randomizer.logsheet import generate_pdf
 
 class UI:
     def __init__(self):
-        pass
-#        log.debug("init UI")
-
-
+        self.game = Game()
+        self.game.do_load()
