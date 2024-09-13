@@ -15,11 +15,26 @@
 # along with dvg-randomizer. If not, see <https://www.gnu.org/licenses/>.
 #
 
-from dvg_randomizer.gui import main
+import argparse
 
 def run():
-    mw = main.GUI()
-    mw.mainloop()
+    parser = argparse.ArgumentParser(
+        prog='dvg-randomizer',
+        description='What the program does',
+        epilog='---')
+    parser.add_argument('-c', '--console', action='store_true')
+    args = parser.parse_args()
+
+    if args.console:
+        from dvg_randomizer.ui.console import ConsoleUI
+        ui = ConsoleUI()
+        ui.cmdloop()
+
+    else:
+        from dvg_randomizer.ui.graphical import GraphicalUI
+        ui = GraphicalUI()
+        ui.mainloop()
+
 
 if __name__ == '__main__':
     run()

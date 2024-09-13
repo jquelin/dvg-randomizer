@@ -167,7 +167,7 @@ class SquadComposition(Toplevel):
 
 
 
-class GUI(Tk):
+class GraphicalUI(Tk):
     def __init__(self):
         self.game = Game()
         self.game.do_load()

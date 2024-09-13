@@ -26,9 +26,10 @@ import types
 from dvg_randomizer.common   import log
 from dvg_randomizer.game     import Game
 from dvg_randomizer.logsheet import generate_pdf
+from dvg_randomizer.ui.base  import UI
 
 
-class UI(cmd2.Cmd):
+class ConsoleUI(cmd2.Cmd, UI):
     def __init__(self, *args, **kwargs):
         # remove unwanted shortcuts *before* calling parent __init__
         shortcuts = dict(cmd2.DEFAULT_SHORTCUTS)
