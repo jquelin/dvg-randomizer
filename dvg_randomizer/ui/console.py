@@ -51,13 +51,8 @@ class ConsoleUI(cmd2.Cmd, UI):
 
         # customizing cmd2
         self.prompt = 'dvg: '
-#        self.runcmds_plus_hooks(['alias create bg boardgame >/dev/null'])
 
         UI.__init__(self)
-
-#        self.game = Game()
-#        self.game.do_load()
-
 
         # initialize gui with the first boardgame, and update gui
         # accordingly
@@ -65,3 +60,19 @@ class ConsoleUI(cmd2.Cmd, UI):
 #        self.select_boardgame()
 
 
+    def do_boardgame(self, *args):
+        if len(args) == 0:
+            print("List of supported boardgames: ")
+            print()
+            # no argument, just print existing boardgames
+            for bg in self.game.data.boardgames:
+                print(f"{bg.name} ({bg.alias})")
+            print()
+
+        else:
+            # argument passed, try to select specified boardgame
+            wanted = args[0]
+            log.debug(f'looking for >{wanted}<')
+            bg = next(bg for bg in self.game.data.boardgames
+                      if (bg.name == wanted or bg.alias == wanted))
+            print(f"found {bg.name} ({bg.alias})")
