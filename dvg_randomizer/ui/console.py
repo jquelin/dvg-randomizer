@@ -56,8 +56,7 @@ class ConsoleUI(cmd2.Cmd, UI):
 
         # initialize gui with the first boardgame, and update gui
         # accordingly
-#        self.vars.boardgame.set(self.game.data.boardgames[0].name)
-#        self.select_boardgame()
+        self._select_boardgame(self.game.data.boardgames[0])
 
 
     def do_boardgame(self, statement):
