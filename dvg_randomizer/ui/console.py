@@ -49,14 +49,12 @@ class ConsoleUI(cmd2.Cmd, UI):
                 'max_completion_items', 'quiet', 'timing']:
             self.remove_settable(setting)
 
-        # customizing cmd2
-        self.prompt = 'dvg: '
-
         UI.__init__(self)
 
         # initialize gui with the first boardgame, and update gui
         # accordingly
         self._select_boardgame(self.game.data.boardgames[0])
+        self._set_prompt()
 
 
     def do_boardgame(self, statement):
@@ -89,5 +87,13 @@ class ConsoleUI(cmd2.Cmd, UI):
 
     def _select_boardgame(self, bg):
         self.game.do_boardgame(bg)
-        self.prompt = f'dvg:{bg.name}: '
+        self._set_prompt()
 
+    def _set_prompt(self):
+        prompt = ''
+        if self.game.boardgame is not None:
+            prompt = f'[{self.game.boardgame.name}]'
+
+        prompt +=  'dvg: '
+        self.prompt = cmd2.ansi.style(prompt,
+                fg=cmd2.Fg.LIGHT_GREEN)
