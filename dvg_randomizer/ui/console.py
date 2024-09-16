@@ -81,9 +81,14 @@ class ConsoleUI(cmd2.Cmd, UI):
                 self.perror(f"Boardgame {wanted} not found.")
             else:
                 self.poutput(f"Found {bg.name} ({bg.alias}).")
+                self._select_boardgame(bg)
 
     def complete_boardgame(self, text, line, begidx, endidx):
         all_bg_names = [bg.name for bg in self.game.data.boardgames]
         return self.basic_complete(text, line, begidx, endidx,
                 sorted(all_bg_names))
+
+    def _select_boardgame(self, bg):
+        self.game.do_boardgame(bg)
+        self.prompt = f'dvg:{bg.name}: '
 
