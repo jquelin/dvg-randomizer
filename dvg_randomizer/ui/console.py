@@ -60,19 +60,47 @@ class ConsoleUI(cmd2.Cmd, UI):
 #        self.select_boardgame()
 
 
-    def do_boardgame(self, *args):
-        if len(args) == 0:
-            print("List of supported boardgames: ")
-            print()
+    def do_boardgame(self, statement):
+#        fg_choices = [c.name.lower() for c in cmd2.Fg]
+#        bg_choices = [c.name.lower() for c in cmd2.Bg]
+#        self.poutput(fg_choices)
+#        self.poutput(bg_choices)
+        if len(statement.argv) == 1:
+            all_outputs = [f"{bg.name} ({bg.alias})" for bg in self.game.data.boardgames]
+            max_width = max([len(s) for s in all_outputs])
+#            self.poutput('Supported boardgames')
+#            self.poutput('-' * max_width)
+            title = 'Supported boardgames' + ' ' * max_width
+            title = title[0:max_width]
+            self.poutput(cmd2.ansi.style(title,
+                                         underline=True))
+            for output in all_outputs:
+                self.poutput(output)
+            self.poutput()
+
+#            bg_color = cmd2.ansi.RgbBg(174,161,200)
+#            fg_color = cmd2.ansi.RgbFg(97,48,101)
+#            output_str = cmd2.ansi.style(
+#                    "Supported boardgames",
+#                    bold=True)
+#            self.poutput(output_str)
+#            self.poutput("List of supported boardgames: ")
+#            self.poutput()
             # no argument, just print existing boardgames
-            for bg in self.game.data.boardgames:
-                print(f"{bg.name} ({bg.alias})")
-            print()
+#            for bg in self.game.data.boardgames:
+#                self.poutput(f"{bg.name} ({bg.alias})")
+#            self.poutput()
 
         else:
             # argument passed, try to select specified boardgame
-            wanted = args[0]
+            wanted = statement.argv[1]
             log.debug(f'looking for >{wanted}<')
             bg = next(bg for bg in self.game.data.boardgames
                       if (bg.name == wanted or bg.alias == wanted))
-            print(f"found {bg.name} ({bg.alias})")
+            self.poutput(f"found {bg.name} ({bg.alias})")
+
+    def complete_boardgame(self, text, line, begidx, endidx):
+        all_bg_names = [bg.name for bg in self.game.data.boardgames]
+        return self.basic_complete(text, line, begidx, endidx,
+                sorted(all_bg_names))
+
