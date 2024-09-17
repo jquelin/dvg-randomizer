@@ -18,6 +18,7 @@
 
 
 import cmd2
+from cmd2.table_creator import HorizontalAlignment
 import random
 #import tkinter.font as tkFont
 import types
@@ -30,6 +31,9 @@ from dvg_randomizer.ui.base  import UI
 
 
 class ConsoleUI(cmd2.Cmd, UI):
+
+    # --- constructor
+
     def __init__(self, *args, **kwargs):
         # remove unwanted shortcuts *before* calling parent __init__
         shortcuts = dict(cmd2.DEFAULT_SHORTCUTS)
@@ -57,17 +61,16 @@ class ConsoleUI(cmd2.Cmd, UI):
         self._set_prompt()
 
 
+    # --- cmd2 actions
+
     def do_boardgame(self, statement):
         if len(statement.argv) == 1:
             # no argument passed, just list supported boardgames
-            all_outputs = [f"{bg.name} ({bg.alias})"
-                           for bg in self.game.data.boardgames]
-            max_width = max([len(s) for s in all_outputs])
-            title = 'Supported boardgames' + ' ' * max_width
-            self.poutput(cmd2.ansi.style(title[0:max_width],
-                                         underline=True))
-            for output in all_outputs:
-                self.poutput(output)
+            self._display_table(
+                ('Name', 'Alias'),
+                [(bg.name, bg.alias) for bg in self.game.data.boardgames],
+                (HorizontalAlignment.LEFT, HorizontalAlignment.CENTER)
+            )
 
         else:
             # argument passed, try to select specified boardgame
@@ -85,9 +88,30 @@ class ConsoleUI(cmd2.Cmd, UI):
         return self.basic_complete(text, line, begidx, endidx,
                 sorted(all_bg_names))
 
+    # --- helper methods
+
+    def _display_table(self, headers, data, alignment=None):
+        columns = []
+        for i in range(0, len(headers)):
+            widths = [len(el[i]) for el in data]
+            widths.append(len(headers[i]))
+            align = HorizontalAlignment.LEFT if alignment is None else alignment[i]
+            newcol = cmd2.table_creator.Column(
+                headers[i],
+                width=max(widths),
+                header_horiz_align=align,
+                data_horiz_align=align
+            )
+            columns.append(newcol)
+        table = cmd2.table_creator.AlternatingTable(columns,
+                                                    column_borders=False)
+        self.poutput(table.generate_table(data))
+
+
     def _select_boardgame(self, bg):
         self.game.do_boardgame(bg)
         self._set_prompt()
+
 
     def _set_prompt(self):
         prompt = ''
