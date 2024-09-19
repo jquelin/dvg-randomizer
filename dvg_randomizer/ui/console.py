@@ -107,10 +107,21 @@ class ConsoleUI(cmd2.Cmd, UI):
                                                     column_borders=False)
         self.poutput(table.generate_table(data))
 
+    def _display_campaigns(self):
+        left   = HorizontalAlignment.LEFT
+        right  = HorizontalAlignment.RIGHT
+        center = HorizontalAlignment.CENTER
+        self._display_table(
+            ('Box', 'Name', 'Service', 'Year', 'Difficulty'),
+            [(c.box, c.name, c.service, str(c.year), '*'*c.level) for c in
+             self.game.campaigns()],
+            (center, left, left, center, left)
+        )
 
     def _select_boardgame(self, bg):
         self.game.do_boardgame(bg)
         self._set_prompt()
+        self._display_campaigns()
 
 
     def _set_prompt(self):
