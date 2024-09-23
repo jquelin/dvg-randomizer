@@ -88,6 +88,46 @@ class ConsoleUI(cmd2.Cmd, UI):
         return self.basic_complete(text, line, begidx, endidx,
                 sorted(all_bg_names))
 
+    def provider_boxes(self):
+        all_boxes = set([c.box for c in self.game.campaigns()])
+        return sorted(all_boxes)
+    def provider_services(self):
+        all_services = set([s for c in self.game.campaigns() for s in c.services])
+        return sorted(all_services)
+    def provider_years(self):
+        all_years = set([str(c.year) for c in self.game.campaigns()])
+        return sorted(all_years)
+
+    campaign_parser = cmd2.Cmd2ArgumentParser()
+    campaign_parser.add_argument('-b', '--box', type=str,
+            choices_provider=provider_boxes,
+            help='filter on campaign box')
+    campaign_parser.add_argument('-d', '--difficulty', type=int,
+            help='filter on campaign difficulty')
+    campaign_parser.add_argument('-s', '--service', type=str,
+            choices_provider=provider_services,
+            help='filter on campaign service')
+    campaign_parser.add_argument('-y', '--year', type=int,
+            choices_provider=provider_years,
+            help='filter on campaign year')
+    campaign_parser.add_argument('words', nargs='*', help='words to filter on')
+    @cmd2.with_argparser(campaign_parser)
+    def do_campaign(self, args):
+        campaigns = self.game.campaigns()
+        if args.box is not None:
+            campaigns = [c for c in campaigns if c.box == args.box]
+        if args.year is not None:
+            campaigns = [c for c in campaigns if c.year == args.year]
+        if args.service is not None:
+            campaigns = [c for c in campaigns if args.service in c.services]
+        if args.difficulty is not None:
+            campaigns = [c for c in campaigns if c.level == args.difficulty]
+        for w in args.words:
+            campaigns = [c for c in campaigns if w.lower() in c.name.lower()]
+
+        self._display_campaigns(campaigns)
+
+
     # --- helper methods
 
     def _display_table(self, headers, data, alignment=None):
@@ -107,16 +147,22 @@ class ConsoleUI(cmd2.Cmd, UI):
                                                     column_borders=False)
         self.poutput(table.generate_table(data))
 
-    def _display_campaigns(self):
+    def _display_campaigns(self, campaigns=None):
+        if campaigns is None:
+            campaigns = self.game.campaigns()
+
         left   = HorizontalAlignment.LEFT
         right  = HorizontalAlignment.RIGHT
         center = HorizontalAlignment.CENTER
-        self._display_table(
-            ('Box', 'Name', 'Service', 'Year', 'Difficulty'),
-            [(c.box, c.name, c.service, str(c.year), '*'*c.level) for c in
-             self.game.campaigns()],
-            (center, left, left, center, left)
-        )
+        if len(campaigns)==0:
+            self.perror('No matching campaign found.')
+        else:
+            self._display_table(
+                ('Box', 'Name', 'Service', 'Year', 'Difficulty'),
+                [(c.box, c.name, c.service, str(c.year), '*'*c.level) for c in
+                campaigns],
+                (center, left, left, center, left)
+            )
 
     def _select_boardgame(self, bg):
         self.game.do_boardgame(bg)
