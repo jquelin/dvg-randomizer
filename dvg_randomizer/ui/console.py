@@ -18,11 +18,10 @@
 
 
 import cmd2
-from cmd2.table_creator import HorizontalAlignment
 import random
-#import tkinter.font as tkFont
 import types
 
+HA = cmd2.table_creator.HorizontalAlignment
 
 from dvg_randomizer.common   import log
 from dvg_randomizer.game     import Game
@@ -53,6 +52,7 @@ class ConsoleUI(cmd2.Cmd, UI):
                 'max_completion_items', 'quiet', 'timing']:
             self.remove_settable(setting)
 
+        # base UI initialization
         UI.__init__(self)
 
         # initialize gui with the first boardgame, and update gui
@@ -69,7 +69,7 @@ class ConsoleUI(cmd2.Cmd, UI):
             self._display_table(
                 ('Name', 'Alias'),
                 [(bg.name, bg.alias) for bg in self.game.data.boardgames],
-                (HorizontalAlignment.LEFT, HorizontalAlignment.CENTER)
+                (HA.LEFT, HA.CENTER)
             )
 
         else:
@@ -113,6 +113,7 @@ class ConsoleUI(cmd2.Cmd, UI):
     campaign_parser.add_argument('words', nargs='*', help='words to filter on')
     @cmd2.with_argparser(campaign_parser)
     def do_campaign(self, args):
+        # filter out campaigns according to command flags
         campaigns = self.game.campaigns()
         if args.box is not None:
             campaigns = [c for c in campaigns if c.box == args.box]
@@ -135,7 +136,7 @@ class ConsoleUI(cmd2.Cmd, UI):
         for i in range(0, len(headers)):
             widths = [len(el[i]) for el in data]
             widths.append(len(headers[i]))
-            align = HorizontalAlignment.LEFT if alignment is None else alignment[i]
+            align = HA.LEFT if alignment is None else alignment[i]
             newcol = cmd2.table_creator.Column(
                 headers[i],
                 width=max(widths),
@@ -151,17 +152,15 @@ class ConsoleUI(cmd2.Cmd, UI):
         if campaigns is None:
             campaigns = self.game.campaigns()
 
-        left   = HorizontalAlignment.LEFT
-        right  = HorizontalAlignment.RIGHT
-        center = HorizontalAlignment.CENTER
         if len(campaigns)==0:
             self.perror('No matching campaign found.')
         else:
             self._display_table(
-                ('Box', 'Name', 'Service', 'Year', 'Difficulty'),
-                [(c.box, c.name, c.service, str(c.year), '*'*c.level) for c in
-                campaigns],
-                (center, left, left, center, left)
+                ('Box', 'Name', 'Service', 'Year', 'Difficulty', 'Lengths'),
+                [(c.box, c.name, c.service, str(c.year), '*'*c.level,
+                ','.join([l.label for l in c.lengths]))
+                    for c in campaigns],
+                (HA.CENTER, HA.LEFT, HA.LEFT, HA.CENTER, HA.LEFT, HA.CENTER)
             )
 
     def _select_boardgame(self, bg):
