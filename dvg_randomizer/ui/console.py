@@ -126,8 +126,43 @@ class ConsoleUI(cmd2.Cmd, UI):
         for w in args.words:
             campaigns = [c for c in campaigns if w.lower() in c.name.lower()]
 
+        # display matching campaigns
         self._display_campaigns(campaigns)
 
+        # select campaign if only one remaining
+        if len(campaigns) == 1:
+            campaign = campaigns.pop()
+            self.poutput(f'selecting campaign {campaign.id()}')
+            self.poutput('choose campaign length with "length" command')
+            self.game.campaign = campaign
+
+
+    length_parser = cmd2.Cmd2ArgumentParser()
+    length_parser.add_argument('length',
+                               choices=['short', 'medium', 'long'],
+                               help='campaign length')
+    @cmd2.with_argparser(length_parser)
+    def do_length(self, args):
+        # check if a campaign is already selected
+        if self.game.campaign is None:
+            self.perror('select a campaign first (see command campaign)')
+            return
+
+        # check if campaign is valid
+        existing_lengths = [cl.label for cl in self.game.campaign.lengths]
+        if args.length not in existing_lengths:
+            self.perror(f'Unknown length {args.length}.')
+            self.poutput(f'Existing lengths: {", ".join(existing_lengths)}')
+            return
+
+        campaign = self.game.campaign
+        clength  = getattr(campaign, args.length)
+        print(clength)
+
+    def complete_length(self, text, line, begidx, endidx):
+        if self.game.campaign is None: return []
+        return self.basic_complete(text, line, begidx, endidx,
+            [cl.label for cl in self.game.campaign.lengths])
 
     # --- helper methods
 
@@ -162,6 +197,9 @@ class ConsoleUI(cmd2.Cmd, UI):
                     for c in campaigns],
                 (HA.CENTER, HA.LEFT, HA.LEFT, HA.CENTER, HA.LEFT, HA.CENTER)
             )
+
+    def _display_roaster(self):
+        pass
 
     def _select_boardgame(self, bg):
         self.game.do_boardgame(bg)
