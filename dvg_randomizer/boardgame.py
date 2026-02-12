@@ -47,9 +47,13 @@ class Boardgame:
     # -- finders
 
     def aircraft(self, service, name):
-        id = "-".join([self.alias, service, name])
         return next(
-            filter(lambda a: a.id() == id, self.aircrafts),
+            filter(
+                lambda a: (
+                    (service in a.services or service == a.service)
+                    and name == a.name
+                ), self.aircrafts
+            ),
             None
         )
 
