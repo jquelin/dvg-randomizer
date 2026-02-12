@@ -18,6 +18,8 @@
 import colorlog
 import logging
 
+from dvg_randomizer.common import config
+
 class Logger:
     def __init__(self):
         # create our logger
@@ -46,9 +48,11 @@ class Logger:
             datefmt='%Y-%m-%d %H:%M:%S',
             log_colors=colors
         )
+        loglevel = config.get('log.level', 'INFO')
+        logging.getLevelNamesMapping()[loglevel]
         handler = colorlog.StreamHandler()
         handler.setFormatter(formatter)
-        handler.setLevel(logging.INFO)
+        handler.setLevel(loglevel)
         self.console_handler = handler
         self.log.addHandler(handler)
 
@@ -63,7 +67,8 @@ class Logger:
             datefmt='%Y-%m-%d %H:%M:%S',
         )
 
-        logfile = '/tmp/dvg_randomizer.log'
+        logfile = config.dir / 'debug.log'
+        self.log.info(f'Logging to file {logfile}')
         self.file_handler = logging.FileHandler(logfile, mode='w')
         self.file_handler.setFormatter(formatter)
         self.file_handler.setLevel(logging.DEBUG)  # always DEBUG
@@ -81,6 +86,7 @@ class Logger:
 
     def increase_verbosity(self):
         """Increase the verbosity level (lower the log level)."""
+
         current_level = self.console_handler.level
         if current_level > logging.DEBUG:
             new_level = current_level - 10
@@ -89,6 +95,7 @@ class Logger:
 
     def decrease_verbosity(self):
         """Decrease the verbosity level (raise the log level)."""
+
         current_level = self.console_handler.level
         if current_level < logging.CRITICAL:
             new_level = current_level + 10

@@ -28,7 +28,7 @@ class DVGConfig:
         self.dir.mkdir(parents=True, exist_ok=True)
 
         # read & parse config file
-        self.file = Path(self.dir, 'dvg-randomizer.yaml')
+        self.file = Path(self.dir, 'config.yaml')
         try:
             with self.file.open() as ystream:
                 try:
@@ -37,7 +37,6 @@ class DVGConfig:
                     print('error loading {yfile.as_posix()}: {e}')
         except FileNotFoundError:
             self.config = {}
-
 
     def get(self, key, default=None):
         if key in self.config:
