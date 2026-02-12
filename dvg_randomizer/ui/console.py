@@ -23,7 +23,7 @@ import types
 
 HA = cmd2.table_creator.HorizontalAlignment
 
-from dvg_randomizer.common   import log
+from dvg_randomizer.logger   import log
 from dvg_randomizer.game     import Game
 from dvg_randomizer.logsheet import generate_pdf
 from dvg_randomizer.ui.base  import UI

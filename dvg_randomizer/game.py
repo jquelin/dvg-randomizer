@@ -29,7 +29,7 @@ if __name__ == '__main__':
 import random
 
 from dvg_randomizer.data   import Data
-from dvg_randomizer.common import log
+from dvg_randomizer.logger import log
 
 class Game:
     def do_load(self, *stmt):

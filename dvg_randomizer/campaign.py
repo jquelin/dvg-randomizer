@@ -1,6 +1,6 @@
 #
 # This file is part of dvg-randomizer.
- 
+#
 # dvg-randomizer is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or (at
@@ -17,7 +17,7 @@
 #
 
 
-from dvg_randomizer.common import log
+from dvg_randomizer.logger import log
 
 class CampaignLength:
     def __init__(self, level, days, so, squad):

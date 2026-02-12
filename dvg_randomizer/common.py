@@ -17,9 +17,7 @@
 
 from pathlib import Path
 import appdirs
-import colorlog
 import contextlib
-import logging
 import yaml
 
 
@@ -54,23 +52,4 @@ class DVGConfig:
             yaml.dump(self.config, outfile)
 
 config = DVGConfig()
-
-def get_logger():
-    colors = colorlog.default_log_colors
-    colors['DEBUG'] = 'blue'
-    colors['INFO']  = 'white'
-    formatter = colorlog.ColoredFormatter(
-        '%(log_color)s%(asctime)s %(levelname)s %(message)s',
-        datefmt='%H:%M:%S',
-        log_colors=colors
-    )
-    handler = colorlog.StreamHandler()
-    handler.setFormatter(formatter)
-    log = colorlog.getLogger('dvg_randomizer')
-    log.addHandler(handler)
-    log_level = config.get('logging.level', logging.DEBUG)
-    log.setLevel(log_level)
-    return log
-
-log = get_logger()
 

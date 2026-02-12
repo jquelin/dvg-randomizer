@@ -17,7 +17,7 @@
 #
 
 
-from dvg_randomizer.common import log
+from dvg_randomizer.logger import log
 
 
 class Boardgame:
