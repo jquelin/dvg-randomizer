@@ -18,7 +18,7 @@
 import colorlog
 import logging
 
-from dvg_randomizer.common import config
+from dvg_randomizer.config import config
 
 class Logger:
     def __init__(self):
