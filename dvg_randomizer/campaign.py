@@ -42,8 +42,13 @@ class Campaign:
         self.box       = box
         self.name      = name
         self.year      = int(year)
-        self.service   = service
-        self.services  = service.split('+')
+        if service == '*':
+            self.service = '*'
+            self.services = { service for aircraft in bg.aircrafts for
+                             service in aircraft.services }
+        else:
+            self.service   = service
+            self.services  = service.split('+')
         self.level     = int(level)
 
         # campaign lengths
