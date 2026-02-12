@@ -20,3 +20,5 @@ logsheet.pdf
 dist
 dvg_randomizer.egg-info
 .venv
+uv.lock
+.python-version
