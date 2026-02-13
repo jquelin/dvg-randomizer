@@ -68,7 +68,7 @@ class SquadComposition(Toplevel):
         # is readonly, so the user can only use the arrows or mouse
         # wheel to changethe value, which allows us to control the value
         # and update the unassigned slots in real time.
-        row = 2
+        row = 1
         ipad = 2
         self.spinboxes   = {}
         self.label_range = {}
@@ -478,7 +478,9 @@ class GraphicalUI(Tk, UI):
 
         fexp = self.widgets.frames.expansions
         for c in fexp.winfo_children(): c.destroy()
-        Label(fexp, text='Expansions:', font='TkHeadingFont').pack(side=LEFT)
+        row, col = 0, 1
+        Label(fexp, text='Expansions:',
+              font='TkHeadingFont').grid(row=0, column=0, sticky=W)
         cbvars = {}
         for box in self.cur_boardgame.boxes():
             cbvar = BooleanVar(value=True)
@@ -488,7 +490,11 @@ class GraphicalUI(Tk, UI):
                 command=lambda b=box: self.check_expansion(b)
             )
 #            if box == 'core': cb.configure(state=DISABLED)
-            cb.pack(side=LEFT)
+            cb.grid(row=row, column=col, sticky=W)
+            col += 1
+            if col > 4:
+                col = 1
+                row += 1
         self.vars.cbvars = cbvars
 
         self.refresh_campaigns()
