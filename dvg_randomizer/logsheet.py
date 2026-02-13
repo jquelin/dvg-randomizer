@@ -225,20 +225,14 @@ def generate_pdf(game):
     wdtitle = 15
     xdays = wfull - margin - wdays - wdtitle
 
-    tracks = ['Recon', 'Intel']
-    if bg.alias == 'HLCAO':
-        tracks.append('Infra')
-    elif bg.alias == 'IAFL':
-        tracks.extend(['Infra', 'Invasion'])
-    elif bg.alias == 'PL':
-        tracks.append('Politics')
+    tracks = bg.tracks
     rows = [
         'Day', ['Primary', 'Secondary', 'End of day'], 'Mission #', 'Day/Night',
         'Target #', 'Target status', 'Victory Points', 'Total VP', '', *tracks, '',
         'Starting SO', 'Ordnance', 'SO lost', 'SO gained', '',
         'WP modifier', 'XP', 'Stress'
 
-    ] 
+    ]
 
     cury = (
         hfull - margin - (nb_pilots+1) * height - height -

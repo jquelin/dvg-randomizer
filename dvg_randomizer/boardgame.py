@@ -21,9 +21,10 @@ from dvg_randomizer.logger import log
 
 
 class Boardgame:
-    def __init__(self, name:str, alias:str):
+    def __init__(self, name:str, alias:str, tracks: list[str]):
         self.name  = name
         self.alias = alias
+        self.tracks    = tracks
         self.aircrafts = []
         self.campaigns = []
         self.pilots    = []

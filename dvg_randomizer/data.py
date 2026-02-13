@@ -101,9 +101,12 @@ class Data:
         data = self.ods_data["boardgames"]
         self.boardgames = []
         for i in range(1, len(data)):
-            alias, name = data[i]
+            while len(data[i]) < 3:
+                data[i].append('')
+            alias, name, tracks = data[i]
             if alias != '':
-                boardgame = Boardgame(name, alias)
+                tracks = tracks.split(',')
+                boardgame = Boardgame(name, alias, tracks)
                 log.debug(f"- found boardgame {boardgame}")
                 self.boardgames.append(boardgame)
         log.info(f"found {len(self.boardgames)} boardgames")
