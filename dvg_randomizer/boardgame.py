@@ -75,7 +75,8 @@ class Boardgame:
 
     def boxes(self):
         boxes = set()
-        for campaign in self.campaigns: boxes.add(campaign.box)
+        for c in self.campaigns: boxes.add(c.box)
+        for a in self.aircrafts: boxes.add(a.box)
         boxes.remove('core')
         return ['core', *sorted(boxes)]
 
