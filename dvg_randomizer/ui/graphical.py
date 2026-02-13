@@ -30,6 +30,7 @@ from dvg_randomizer.logger   import log
 from dvg_randomizer.game     import Game
 from dvg_randomizer.logsheet import generate_pdf
 from dvg_randomizer.ui.base  import UI
+from dvg_randomizer.ui.scroll_frame import ScrolledFrame
 
 
 class SquadComposition(Toplevel):
@@ -49,9 +50,24 @@ class SquadComposition(Toplevel):
             self, font='TkHeadingFont',
             text=f'Choose your squad composition (max {self.game.get_squad_size()}):'
         )
-        l.grid(row=0, column=0, columnspan=5, sticky=E+W)
-        Label(self).grid(row=1)
+        l.pack(padx=10, pady=10)
 
+        # Depending on the number of aircrafts, we use a scrolled frame
+        # or not. Wecould use a scrolled frame in all cases, but it
+        # looks better withoutwhen there are few aircrafts.
+        if len(aircrafts) > 8:
+            sf = ScrolledFrame(self)
+            sf.pack()
+            inner = sf.inner
+        else:
+            inner = Frame(self)
+            inner.pack()
+
+        # - create a line for each aircraft, with a spinbox to choose
+        # the number of aircrafts of this type in the squad. The spinbox
+        # is readonly, so the user can only use the arrows or mouse
+        # wheel to changethe value, which allows us to control the value
+        # and update the unassigned slots in real time.
         row = 2
         ipad = 2
         self.spinboxes   = {}
@@ -59,15 +75,15 @@ class SquadComposition(Toplevel):
         for aircraft, nbmin, nbmax in aircrafts:
             spinvar = IntVar()
             self.vars[aircraft] = spinvar
-            ls = Label(self, text=aircraft.service)
-            ln = Label(self, text=aircraft.name, anchor=W)
-            lr = Label(self, text=aircraft.role)
+            ls = Label(inner, text=aircraft.service)
+            ln = Label(inner, text=aircraft.name, anchor=W)
+            lr = Label(inner, text=aircraft.role)
             ls.grid(row=row, column=0)
             ln.grid(row=row, column=1, sticky=E+W)
             lr.grid(row=row, column=2)
             spinvar.set(nbmin)
             command = lambda a=aircraft: self.var_changed(a)
-            sb = Spinbox(self, from_=nbmin, to=nbmax, width=3,
+            sb = Spinbox(inner, from_=nbmin, to=nbmax, width=3,
                         justify=CENTER, textvariable=spinvar,
                          state='readonly', command=command)
             self.spinboxes[aircraft] = sb
@@ -78,26 +94,28 @@ class SquadComposition(Toplevel):
             sb.bind("<Button-4>",   callback)       # linux
             sb.bind("<Button-5>",   callback)       # linux
 
-            lrange = Label(self, text=f'[{nbmin}-{nbmax}]', state=DISABLED) # DISABLED for the look :-)
+            lrange = Label(inner, text=f'[{nbmin}-{nbmax}]', state=DISABLED) # DISABLED for the look :-)
             sb.grid(column=3, row=row, sticky=E+W, padx=ipad, pady=ipad)
             lrange.grid(column=4, row=row, sticky=E+W, padx=ipad, pady=ipad)
             self.label_range[aircraft] = lrange
             row += 1
 
 
-        Label(self).grid(row=row)
-
+        # Label to show the number of unassigned slots, which is updated
+        # inreal time when the user changes the composition. If the user
+        # triesto assign more aircrafts than the squad size, or to
+        # assign a numberof aircrafts outside the allowed range, the
+        # label flashes to warn the user.
         self.var_random = StringVar()
         l = Label(self, textvariable=self.var_random)
-        l.grid(row=row+1, column=0, columnspan=5, sticky=E+W)
+        l.pack()
         self.label_random = l
         self.update_random_label()
 
         l = Label(self, text='Unassigned slots will be filled randomly')
-        l.grid(row=row+2, column=0, columnspan=5, sticky=E+W)
-        Label(self).grid(row=row+3)
+        l.pack()
         butval = Button(self, text='Validate', command=self.but_validate)
-        butval.grid(row=row+4, columnspan=5, sticky=W+E)
+        butval.pack(fill=X)
 
         self.resizable(height=False, width=False)
         self.bind('<Return>', self.but_validate)
