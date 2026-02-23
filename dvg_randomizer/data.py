@@ -82,10 +82,11 @@ class Data:
                 continue
 
             # no mandatory number of aircrafts: pad with None
-            if len(data[i]) == 6:
+            while len(data[i]) < 8:
                 data[i].append(None)
 
-            (bgalias, box, campaign_name, year, service, aircraft, nb) = data[i]
+            (bgalias, box, campaign_name, year, service, aircraft,
+             nb, nbmax) = data[i]
             bg = self.boardgame(bgalias)
             if bg is None:
                 log.error(f'boardgame {bgalias} not found')
@@ -205,7 +206,10 @@ class Data:
             else:
                 aircraft = bg.aircraft(service, aircraft_name)
                 if aircraft is None:
-                    log.error(f"could not find an aircraft matching {bg.alias}-{service}-{aircraft_name}")
+                    log.error(
+                        f"pilot {name} ({i+1}): could not find an "
+                        "aircraft matching "
+                        f"{bg.alias}-{service}-{aircraft_name} ")
                 else:
                     pilot = Pilot(bg, box, service, name, aircraft,
                                     elite_s, elite_m, elite_l)
