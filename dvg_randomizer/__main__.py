@@ -17,13 +17,23 @@
 
 import argparse
 
+from dvg_randomizer.logger import log
+
 def run():
     parser = argparse.ArgumentParser(
         prog='dvg-randomizer',
         description='What the program does',
         epilog='---')
     parser.add_argument('-c', '--console', action='store_true')
+    parser.add_argument('-v', '--verbose', action='count', default=0,
+                            help='Increase verbosity level')
+    parser.add_argument('-q', '--quiet', action='count', default=0,
+                            help='Decrease verbosity level')
     args = parser.parse_args()
+    for _ in range(args.quiet):
+        log.decrease_verbosity()
+    for _ in range(args.verbose):
+        log.increase_verbosity()
 
     if args.console:
         from dvg_randomizer.ui.console import ConsoleUI
