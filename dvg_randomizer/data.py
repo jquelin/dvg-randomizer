@@ -57,17 +57,21 @@ class Data:
         log.info("loading aircrafts")
         data = self.ods_data["aircrafts"]
         for i in range(1, len(data)):
-            if len(data[i]) != 10:
-                continue
+            while len(data[i]) < 11:
+                data[i].append(None)
 
             (bgalias, box, service, name, year_in, year_out, cost_s,
-                cost_m, cost_l, role) = data[i]
+                cost_m, cost_l, role, bonus) = data[i]
+            if bgalias is None:
+                continue
             bg = self.boardgame(bgalias)
             if bg is None:
                 log.error(f'boardgame {bgalias} not found')
             else:
+                bonus = bonus == 'x' if bonus else False
                 aircraft = Aircraft(bg, box, service, name, year_in,
-                                    year_out, cost_s, cost_m, cost_l, role)
+                                    year_out, cost_s, cost_m, cost_l,
+                                    role, bonus)
                 log.debug(f'- found aircraft {aircraft}')
                 bg.add_aircraft(aircraft)
 
@@ -103,12 +107,13 @@ class Data:
         data = self.ods_data["boardgames"]
         self.boardgames = []
         for i in range(1, len(data)):
-            while len(data[i]) < 3:
+            while len(data[i]) < 4:
                 data[i].append('')
-            alias, name, tracks = data[i]
+            alias, name, tracks, bonus = data[i]
             if alias != '':
                 tracks = tracks.split(',')
-                boardgame = Boardgame(name, alias, tracks)
+                bonus = 0 if bonus == '' else int(bonus)
+                boardgame = Boardgame(name, alias, tracks, bonus)
                 log.debug(f"- found boardgame {boardgame}")
                 self.boardgames.append(boardgame)
         log.info(f"found {len(self.boardgames)} boardgames")

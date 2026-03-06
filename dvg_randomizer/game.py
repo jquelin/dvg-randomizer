@@ -16,8 +16,6 @@
 # <https://www.gnu.org/licenses/>.
 #
 
-
-
 if __name__ == '__main__':
     from os.path import basename, dirname
     import sys
@@ -130,6 +128,14 @@ class Game:
                 log.info(f'assigning rank {rank} to {p}')
                 self.pilots.append(p)
                 i -= 1
+
+        # finally, add bonus pilots
+        if self.boardgame.bonus > 0:
+            bonus = random.choice(campaign.bonuses)
+            bonus.rank = 'average'
+            log.info(f'adding bonus pilot {bonus}')
+            self.pilots.append(bonus)
+
 
     def set_campaign(self, campaign, clength):
         self.campaign    = campaign

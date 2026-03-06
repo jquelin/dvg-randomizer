@@ -33,7 +33,8 @@ class Aircraft:
 
     def __init__(self, bg, box:str, service:str, name:str,
                  year_in:int, year_out:int,
-                 cost_s:int, cost_m:int, cost_l:int, role):
+                 cost_s:int, cost_m:int, cost_l:int,
+                 role: str, bonus: bool):
         self.boardgame = bg
         self.box       = box
         self.service   = service
@@ -45,6 +46,7 @@ class Aircraft:
         self.cost_m    = int(cost_m)
         self.cost_l    = int(cost_l)
         self.role      = role
+        self.bonus     = bonus
 
     def __lt__(self, a):
         return self.name < a.name

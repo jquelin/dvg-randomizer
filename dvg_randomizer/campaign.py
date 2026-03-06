@@ -82,7 +82,11 @@ class Campaign:
             - forbidden aircrafts
 
         Once computed, the list of matching pilots is stored in
-        self.pilots. No return value.
+        self.pilots. Bonus pilots (those with bonus aircraft) are stored
+        in self.bonuses. Those bonus pilots cannot be selected in the
+        random squadron, but one will be added for free to the roaster.
+
+        No return value.
         """
         # first, find all pilots whose aircraft match the campaign year
         pilots = list( filter(
@@ -100,6 +104,13 @@ class Campaign:
             matching.extend(list(filter(lambda p: srv in p.services, pilots)))
         pilots = matching
         log.debug(f'{self.id()}: found {len(pilots)} pilots matching service')
+
+        # split pilots into regular and bonus.
+        bonuses = list(filter(lambda p: p.aircraft.bonus, pilots))
+        pilots  = list(filter(lambda p: not p.aircraft.bonus, pilots))
+        log.debug(f'{self.id()}: found {len(pilots)} pilots')
+        log.debug(f'{self.id()}: found {len(bonuses)} bonuses')
+        self.bonuses = bonuses
 
         # then, check if aircraft is allowed
         if len(self.allowed) > 0:
@@ -120,4 +131,6 @@ class Campaign:
             pilots = list(filter(lambda p: p.aircraft.name not in self.forbidden, pilots))
         log.debug(f'{self.id()}: found {len(pilots)} pilots after checking forbidden')
 
+        # store the result
         self.pilots = pilots
+
