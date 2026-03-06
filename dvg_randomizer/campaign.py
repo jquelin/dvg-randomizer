@@ -16,6 +16,7 @@
 # <https://www.gnu.org/licenses/>.
 #
 
+import re
 
 from dvg_randomizer.logger import log
 
@@ -73,6 +74,16 @@ class Campaign:
         return f'{self.id()} level={self.level} {out}'
 
     def compute_pilots(self):
+        """Compute the list of pilots matching the campaign criteria.
+        The criteria are:
+            - aircraft year in/out
+            - campaign service
+            - allowed aircrafts
+            - forbidden aircrafts
+
+        Once computed, the list of matching pilots is stored in
+        self.pilots. No return value.
+        """
         # first, find all pilots whose aircraft match the campaign year
         pilots = list( filter(
             lambda p: (
@@ -93,8 +104,14 @@ class Campaign:
         # then, check if aircraft is allowed
         if len(self.allowed) > 0:
             allowed = [x[0] for x in self.allowed]
+            allowed_regex = '|'.join(allowed)
             log.debug(f'pruning all but {allowed}')
-            pilots = list(filter(lambda p: p.aircraft.name in allowed, pilots))
+            pilots = list(
+                filter(
+                    lambda p: p.aircraft.name in allowed or
+                        re.match(allowed_regex, p.aircraft.name, re.I),
+                    pilots)
+            )
         log.debug(f'{self.id()}: found {len(pilots)} pilots after checking allowed')
 
         # finally, check if aircraft is forbidden
