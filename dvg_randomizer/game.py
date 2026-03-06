@@ -32,6 +32,8 @@ from dvg_randomizer.data   import Data
 from dvg_randomizer.logger import log
 
 class Game:
+    """ Game class, main entry point for the randomizer. """
+
     def do_load(self, *stmt):
         self.data = Data()
 

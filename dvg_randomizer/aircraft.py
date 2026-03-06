@@ -20,8 +20,20 @@
 from dvg_randomizer.logger import log
 
 class Aircraft:
-    def __init__(self, bg, box, service, name, year_in:int,
-                 year_out:int, cost_s, cost_m, cost_l, role):
+    """The Aircraft class represents a single aircraft, which can be
+    used by pilots in campaigns. It is defined by its name, the service
+    it belongs to, the years it was in service, and its cost for each
+    campaign length. It also has a role, which can be used to categorize
+    it (e.g. fighter, bomber, etc.). The Aircraft class also has a
+    method to generate a unique id for the aircraft, which is based on
+    the boardgame it belongs to, its service, and its name. The __repr__
+    method provides a string representation of the aircraft, which
+    includes its id, role, and years of service.
+    """
+
+    def __init__(self, bg, box:str, service:str, name:str,
+                 year_in:int, year_out:int,
+                 cost_s:int, cost_m:int, cost_l:int, role):
         self.boardgame = bg
         self.box       = box
         self.service   = service
@@ -37,7 +49,15 @@ class Aircraft:
     def __lt__(self, a):
         return self.name < a.name
 
-    def id(self):
+    def id(self) -> str:
+        """Generate a unique id for the aircraft, which is based on the
+        boardgame it belongs to, its service, and its name. The box is
+        not included in the id, since a core aircraft can be reused from
+        other expansions.
+
+        Returns:
+            str: A unique id for the aircraft.
+        """
         # box should not be part of id, since a core aircraft can be
         # reused from other expansions.
         id = self.boardgame.alias

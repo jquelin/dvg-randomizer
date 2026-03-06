@@ -54,7 +54,7 @@ class Data:
     # -- data loading
 
     def load_aircrafts(self):
-        log.info("loading aircrafts") 
+        log.info("loading aircrafts")
         data = self.ods_data["aircrafts"]
         for i in range(1, len(data)):
             if len(data[i]) != 10:
@@ -85,6 +85,7 @@ class Data:
             while len(data[i]) < 8:
                 data[i].append(None)
 
+            # unpack data
             (bgalias, box, campaign_name, year, service, aircraft,
              nb, nbmax) = data[i]
             bg = self.boardgame(bgalias)
@@ -98,7 +99,7 @@ class Data:
                     campaign.allowed.append([aircraft, nb])
 
     def load_boardgames(self):
-        log.info("loading boardgames") 
+        log.info("loading boardgames")
         data = self.ods_data["boardgames"]
         self.boardgames = []
         for i in range(1, len(data)):

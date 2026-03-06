@@ -60,6 +60,17 @@ class Boardgame:
 
 
     def campaign(self, name, year, service):
+        """Find a campaign by name, year and service. Service can be
+        either a lone service or a combined string of services such as
+        'USN+USMC'. In the latter case, the campaign is returned if any
+        of the services in the combined string matches the campaign's
+        service.
+
+        Args:
+
+        Returns:
+
+        """
         # service can be either a lone service or a combined string of
         # services such as 'USN+USMC'
         return next(
