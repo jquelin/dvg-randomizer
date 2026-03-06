@@ -91,7 +91,7 @@ class Data:
 
             # unpack data
             (bgalias, box, campaign_name, year, service, aircraft,
-             nb, nbmax) = data[i]
+             nbfixed, nbmax) = data[i]
             bg = self.boardgame(bgalias)
             if bg is None:
                 log.error(f'boardgame {bgalias} not found')
@@ -100,7 +100,14 @@ class Data:
                 if campaign is None:
                     log.error(f'campaign [{campaign_name}][{year}][{service}] not found for {bg}')
                 else:
-                    campaign.allowed.append([aircraft, nb])
+                    nbfixed = None if nbfixed in (None, '') else int(nbfixed)
+                    nbmax   = None if nbmax   in (None, '') else int(nbmax)
+                    if nbfixed is not None and nbmax is not None:
+                        log.error(f'campaign {campaign} cannot have both {nbfixed} fixed and {nbmax} max aircraft for {aircraft}')
+                    else:
+                        log.debug(f'campaign {campaign}: allowing {aircraft} (fixed={nbfixed}, max={nbmax})')
+                        campaign.allowed.append([aircraft, nbfixed, nbmax])
+
 
     def load_boardgames(self):
         log.info("loading boardgames")

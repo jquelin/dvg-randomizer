@@ -58,19 +58,28 @@ class Game:
                 nb_aircrafts[aircraft] = 0
 
         nb_mandatory = {t[0]:t[1] for t in self.campaign.allowed if t[1]}
+        nb_maximum   = {t[0]:t[2] for t in self.campaign.allowed if t[2]}
         aircrafts = []
         nb_random = nbtotal
         for aircraft in sorted(nb_aircrafts):
             nb_available = len([p for p in pilots if p.aircraft == aircraft])
             if aircraft.name in nb_mandatory:
-                nb_fixed = int(nb_mandatory[aircraft.name])
+                nbfixed = nb_mandatory[aircraft.name]
                 log.debug(
                     f'aircraft {aircraft} available: ' +
-                    f'wanting {nb_fixed} pilots ' +
+                    f'wanting {nbfixed} pilots ' +
                     f'({nb_available} available)'
                 )
-                aircrafts.append([aircraft, nb_fixed, nb_fixed])
-                nb_random -= nb_fixed
+                aircrafts.append([aircraft, nbfixed, nbfixed])
+                nb_random -= nbfixed
+            elif aircraft.name in nb_maximum:
+                nb_max = nb_maximum[aircraft.name]
+                log.debug(
+                    f'aircraft {aircraft} available: ' +
+                    f'wanting [0-{nb_max}] pilots ' +
+                    f'({nb_available} available)'
+                )
+                aircrafts.append([aircraft, 0, nb_max])
             else:
                 nb_max = min(nb_available, nbtotal)
                 log.debug(f'aircraft {aircraft} available: [0-{nb_max}]({nb_available} available)')
@@ -86,50 +95,78 @@ class Game:
         campaign = self.campaign
         clength  = self.clength
         squad    = self.clength.pilots
-        log.debug(f'generating squad for {clength.label}: {squad}')
+        log.info(f'generating squad for {clength.label}: {squad}')
 
-        # draw new set of pilots
+        # Draw new set of pilots
         available = [p for p in campaign.pilots if p.box in self.boxes]
         selected  = []
         self.pilots = []
         log.debug(f'{len(available)} pilots available in pool')
 
+        # Then, compute the possibilities for each aircraft.
+        possibilities = { pos[0].name : pos[2] for pos in
+                          self.get_aircraft_possibilities() }
+
+        # Now comes the part where we pick pilots for the squadron.
+        # First, pick pilots for mandatory aircrafts.
         for aircraft, nb in self.composition:
+            if nb == 0:
+                # no pilot with this aircraft is mandatory, so we can
+                # skip it during this step.
+                continue
+
+            # pick pilots for this aircraft, and add them to the
+            # selected list.
             subset = [a for a in available if a.aircraft == aircraft]
-            random.shuffle(subset)
             log.debug(f'wanting {nb} {aircraft} - {len(subset)} available')
+            random.shuffle(subset)
             picked = subset[:nb]
             selected.extend(picked)
-            for p in picked: log.info(f'adding pilot {p}')
+            for p in picked: log.debug(f'adding pilot {p}')
+            # and remove this aircraft from the possibilities, since we
+            # already picked the mandatory pilots for it.
+            possibilities[aircraft.name] = 0
 
+        # Now, remove the selected pilots from the available pool, and
+        # shuffle the remaining pilots, so that we can pick random
+        # pilots for the remaining slots.
         remaining = [p for p in available if p not in selected]
+        random.shuffle(remaining)
 
         # complete with other airplanes
         nbtotal    = sum(squad)
         nbselected = len(selected)
-        log.debug(f'wanting {nbtotal}, already having {nbselected} - {len(remaining)} available')
-        random.shuffle(remaining)
-        nb = nbtotal-nbselected
-        picked = remaining[:nb]
-        others = remaining[nb:]
-        selected.extend(picked)
-        for p in picked: log.info(f'adding pilot {p}')
+        while nbselected < nbtotal:
+            log.debug(f'wanting {nbtotal}, already having {nbselected} - {len(remaining)} available')
+            pilot    = remaining.pop(0)
+            aircraft = pilot.aircraft
+            if possibilities[aircraft.name] > 0:
+                selected.append(pilot)
+                possibilities[aircraft.name] -= 1
+                nbselected += 1
+                log.debug(f'adding pilot {pilot}')
+            else:
+                log.debug(f'skipping pilot {pilot} - no more {aircraft} allowed')
+
+        # randomize the order of selected pilots, so that ranks are not
+        # assigned to pilots in a deterministic way.
         random.shuffle(selected)
-        self.remaining_pilots = others
+        random.shuffle(remaining)
+        self.remaining_pilots = remaining
 
         # assign ranks
-        log.debug('assigning ranks')
+        log.info('assigning ranks')
         ranks = ['newbie', 'green', 'average', 'skilled', 'veteran', 'legendary']
         for rank, nb in zip(ranks, squad):
             i = nb
             while i>0:
                 p = selected.pop(0)
                 p.rank = rank
-                log.info(f'assigning rank {rank} to {p}')
+                log.debug(f'assigning rank {rank} to {p}')
                 self.pilots.append(p)
                 i -= 1
 
-        # finally, add bonus pilots
+        # finally, add bonus pilots if boardgame supports it.
         if self.boardgame.bonus > 0:
             bonus = random.choice(campaign.bonuses)
             bonus.rank = 'average'
