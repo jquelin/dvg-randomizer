@@ -284,7 +284,7 @@ def generate_pdf(game):
                     pdf.set_fill_color(GREYL2)
                     pdf.cell(width, height, 'D', 1, 0, 'C', 1)
 
-                elif row == 'Stress':
+                elif row in ['Starting SO', 'SO lost', 'Stress']:
                     pdf.cell(width, height, '', 1, 0, 'C')
                     pdf.cell(width, height, '', 1)
                     pdf.cell(width, height, '', 1, 0, 'C', 1)
