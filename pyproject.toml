@@ -1,6 +1,6 @@
 [project]
 name = "dvg-randomizer"
-version = "1.5.0"
+version = "1.5.1"
 authors = [
   { name="Jerome Quelin", email="jquelin@gmail.com" },
 ]

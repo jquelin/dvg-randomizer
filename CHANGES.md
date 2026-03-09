@@ -1,3 +1,6 @@
+1.5.1 2026-03-09
+- Update README with new supported games
+
 1.5.0 2026-03-09
 - Support for Eagle Leader
 - Support for Fulcrum Leader

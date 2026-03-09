@@ -21,6 +21,8 @@ As of today, the soft supports:
 - Zero Leader, with its China expansion
 - Stuka Leader, with all expansions (East Front 1&2, Mediterranean 1&2,
   Spanish Civil War, What if)
+- Eagle Leader, with all expansions
+- Fulcrum Leader, with all expansions
 
 
 # INSTALL
