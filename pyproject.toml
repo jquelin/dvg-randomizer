@@ -1,16 +1,20 @@
 [project]
 name = "dvg-randomizer"
-version = '1.4.3'
+version = "1.5.0"
 authors = [
   { name="Jerome Quelin", email="jquelin@gmail.com" },
 ]
 description = "Randomizer app for DVG Leader boardgames"
 readme = "README.md"
 requires-python = ">=3.7"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE", "COPYING"]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment :: Board Games",
 ]
 dependencies = [
     "appdirs",

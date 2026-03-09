@@ -1,3 +1,12 @@
+1.5.0 2026-03-09
+- Support for Eagle Leader
+- Support for Fulcrum Leader
+- New icon
+- Tracks (recon, infra, etc) now part of boardgame data
+- Storing selected boardgame
+
+---
+
 1.4.3 2023-06-20
 1.4.2 2023-05-26
 - minor cleanups
