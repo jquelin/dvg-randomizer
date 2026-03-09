@@ -17,6 +17,7 @@
 #
 
 
+from pathlib import Path
 import random
 from tkinter.ttk import *
 from tkinter import *
@@ -216,6 +217,10 @@ class GraphicalUI(Tk, UI):
         f.top.pack(side=TOP)
         f.left.pack(side=LEFT,  fill=Y)
         f.right.pack(side=LEFT, expand=True, fill=BOTH)
+
+        curdir = Path(__file__).parent
+        icon = PhotoImage(file=curdir / "icon.png")
+        self.iconphoto(True, icon)
 
         # set minimum window size
         self.update()
