@@ -27,11 +27,15 @@ from tkinter import font
 import types
 
 
-from dvg_randomizer.logger   import log
+from dvg_randomizer.config   import config
 from dvg_randomizer.game     import Game
+from dvg_randomizer.logger   import log
 from dvg_randomizer.logsheet import generate_pdf
 from dvg_randomizer.ui.base  import UI
 from dvg_randomizer.ui.scroll_frame import ScrolledFrame
+
+
+CURRENT_BOARDGAME = 'current.boardgame'
 
 
 class SquadComposition(Toplevel):
@@ -226,9 +230,11 @@ class GraphicalUI(Tk, UI):
         self.update()
         self.minsize(self.winfo_width(), self.winfo_height())
 
-        # initialize gui with the first boardgame, and update gui
-        # accordingly
-        self.vars.boardgame.set(self.game.data.boardgames[0].name)
+        # Retrieve previously selected boardgame, otherwise initialize
+        # gui with the first boardgame. Update gui accordingly.
+        curbg = config.get(CURRENT_BOARDGAME,
+                        self.game.data.boardgames[0].name)
+        self.vars.boardgame.set(curbg)
         self.select_boardgame()
 
 
@@ -474,7 +480,17 @@ class GraphicalUI(Tk, UI):
         self.destroy()
 
     def select_boardgame(self):
+        """Event handler for boardgame selection. It updates the current
+        boardgame in the game, and refreshes the list of campaigns.
+        """
+        # retrieve selected boardgame name from the corresponding
+        # variable
         bg_name = self.vars.boardgame.get()
+
+        # store selected boardgame
+        config.set(CURRENT_BOARDGAME, bg_name)
+
+
         log.debug(f"new boardgame selected: {bg_name}")
         bg = next(bg for bg in self.game.data.boardgames if bg.name == self.vars.boardgame.get())
         self.cur_boardgame = bg
