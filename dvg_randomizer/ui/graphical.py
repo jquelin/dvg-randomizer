@@ -22,6 +22,7 @@ import random
 from tkinter.ttk import *
 from tkinter import *
 from tkinter import ttk
+from tkinter import filedialog
 from tkinter import font
 #import tkinter.font as tkFont
 import types
@@ -264,18 +265,50 @@ class GraphicalUI(Tk, UI):
         f = self.widgets.f_right
 
         # create button to generate logsheet
-        fb = Frame(f, bg='yellow')
-        b = Button(fb, text='Generate campaign log sheet',
+        fbot = Frame(f)
+        fbot.pack(side=TOP, fill=X)
+
+        # first the location to choose the logsheet file. We use an
+        # entry to show the chosen file, and a button to open the file
+        # dialog to choose the file.
+        fpath = Frame(fbot)
+        fpath.pack(side=TOP, fill=X)
+        label = Label(fpath, text='Logsheet file:')
+        label.pack(side=LEFT)
+        self.vars.logsheet_path = StringVar()
+        entry = Entry(fpath, textvariable=self.vars.logsheet_path)
+        self.widgets.entry_logsheet_path = entry
+        entry.pack(side=LEFT, fill=X, expand=True)
+        but = Button(fpath, text='...', command=self.click_choose_logsheet_path)
+        but.pack(side=LEFT)
+
+        # set default logsheet path to the current directory, with a
+        # name of 'logsheet.pdf'. If a logsheet path is already stored
+        # in the config, use it instead.
+        default_path = Path('logsheet.pdf').absolute().as_posix()
+        logsheet_path = config.get('logsheet.path', default_path)
+        self.vars.logsheet_path.set(logsheet_path)
+        self.vars.logsheet_path.trace_add(
+            "write", self.logsheet_path_change_detect)
+        # initialize the variable to store the after id for logsheet
+        # path change detection. This allows us to cancel the previous
+        # after call if the user changes the logsheet path again before
+        # the delay is over.
+        self.after_logsheet = None
+
+        # then the buttons
+        fbut = Frame(fbot)
+        b = Button(fbut, text='Generate campaign log sheet',
                    command=self.click_generate_logsheet,
                    state=DISABLED)
         b.pack(side=LEFT, fill=X, expand=True)
         self.widgets.but_generate = b
-        b = Button(fb, text='Add replacement pilot',
+        b = Button(fbut, text='Add replacement pilot',
                    command=self.click_add_replacement_pilot,
                    state=DISABLED)
         b.pack(side=LEFT, fill=X, expand=True)
         self.widgets.but_add_pilot = b
-        fb.pack(side=TOP, fill=X)
+        fbut.pack(side=TOP, fill=X)
 
 
     def _create_campaign_length(self):
@@ -454,6 +487,26 @@ class GraphicalUI(Tk, UI):
         self.refresh_campaigns()
 
 
+    def click_choose_logsheet_path(self):
+        """Open a file dialog to choose the logsheet file, and update
+        the corresponding entry with the chosen file.
+        """
+        path = Path(self.vars.logsheet_path.get())
+        curdir  = path.parent if path.parent.exists() else Path('.')
+        curfile = path.name if path.name else 'logsheet.pdf'
+
+        path = filedialog.asksaveasfilename(
+            title            = "Choose logsheet file",
+            initialdir       = curdir,
+            initialfile      = curfile,
+            defaultextension = ".pdf",
+            filetypes        = [("PDF files", "*.pdf"), ("All files", "*.*")],
+            confirmoverwrite = False,
+        )
+        if path:
+            self.vars.logsheet_path.set(path)
+
+
     def click_add_replacement_pilot(self):
         newp = self.game.remaining_pilots.pop(0)
         log.info(f'adding pilot {newp}')
@@ -487,10 +540,41 @@ class GraphicalUI(Tk, UI):
         self.refresh_roaster()
 
     def click_generate_logsheet(self):
-        generate_pdf(self.game)
+        """Event handler for the "Generate logsheet" button. It
+        generates the logsheet PDF file at the location specified in the
+        corresponding entry. The PDF generation is done in a separate
+        method.
+        """
+        generate_pdf(self.game, self.vars.logsheet_path.get())
+
 
     def close(self, event):
         self.destroy()
+
+
+    def logsheet_path_change_detect(self, *args):
+        """Detect changes in the logsheet path entry. We use a delay to
+        avoid updating the config on every keystroke, which would be too
+        much. The delay is cancelled and restarted on every change, so
+        the config is only updated when the user stops typing for a
+        short time.
+        """
+        if self.after_logsheet is not None:
+            self.after_cancel(self.after_logsheet)
+
+        self.after_logsheet = self.after(
+            300, self.logsheet_path_change_effective)
+
+
+    def logsheet_path_change_effective(self):
+        """Since the logsheet path change is detected with a delay, we
+        need a separate method to update the config when the change is
+        effective.
+        """
+        path = self.vars.logsheet_path.get()
+        config.set('logsheet.path', path)
+        log.debug(f"logsheet path changed: {path}")
+
 
     def select_boardgame(self):
         """Event handler for boardgame selection. It updates the current

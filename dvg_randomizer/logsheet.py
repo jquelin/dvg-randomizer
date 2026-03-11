@@ -30,7 +30,7 @@ GREYL2 = 230
 GREYD  = 100
 BLACK  = 0
 
-def generate_pdf(game):
+def generate_pdf(game, filename='logsheet.pdf'):
     bg = game.boardgame
     campaign = game.campaign
     clength  = game.clength
@@ -471,6 +471,10 @@ def generate_pdf(game):
         cury += height
 
 
-
-    pdf.output('logsheet.pdf', 'F')
+    # create the output directory if needed, and save the PDF
+    outdir = Path(filename).parent
+    log.info(f'creating output directory if needed: {outdir}')
+    outdir.mkdir(parents=True, exist_ok=True)
+    log.info(f'writing logsheet to {filename}')
+    pdf.output(filename, 'F')
 
