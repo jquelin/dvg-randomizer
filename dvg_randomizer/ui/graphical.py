@@ -216,6 +216,7 @@ class GraphicalUI(Tk, UI):
         self._create_campaigns()
         self._create_campaign_length()
         self._create_pilots()
+        self._create_buttons()
 
 
         f.top.pack(side=TOP)
@@ -252,6 +253,30 @@ class GraphicalUI(Tk, UI):
             )
             rb.pack(side=LEFT)
         lf.pack(padx=15, pady=15, ipadx=15, ipady=15)
+
+
+    def _create_buttons(self):
+        """Create the buttons to generate the logsheet and add
+        replacement pilots. Those are located at the bottom of the right
+        frame, and are disabled until a campaign is selected and the
+        squad composition is validated.
+        """
+        f = self.widgets.f_right
+
+        # create button to generate logsheet
+        fb = Frame(f, bg='yellow')
+        b = Button(fb, text='Generate campaign log sheet',
+                   command=self.click_generate_logsheet,
+                   state=DISABLED)
+        b.pack(side=LEFT, fill=X, expand=True)
+        self.widgets.but_generate = b
+        b = Button(fb, text='Add replacement pilot',
+                   command=self.click_add_replacement_pilot,
+                   state=DISABLED)
+        b.pack(side=LEFT, fill=X, expand=True)
+        self.widgets.but_add_pilot = b
+        fb.pack(side=TOP, fill=X)
+
 
     def _create_campaign_length(self):
         f = Frame(self.widgets.frames.right)
@@ -303,10 +328,12 @@ class GraphicalUI(Tk, UI):
         lf.pack(side=LEFT, fill=BOTH, padx=5, pady=5, ipadx=5, ipady=5)
         self.widgets.tv_campaigns = tv
 
+
     def _create_expansions(self):
         f = Frame(self.widgets.frames.left)
         f.pack(side=TOP, fill=X)
         self.widgets.frames.expansions = f
+
 
     def _create_pilots(self):
         headers = ['Rank', 'Pilot', 'Aircraft', 'Service', 'Role', 'SO']
@@ -363,20 +390,6 @@ class GraphicalUI(Tk, UI):
         self.widgets.tv_pilots = tv
         tv.pack(side=TOP, fill=BOTH, padx=5, expand=True)
 
-        # create button to generate logsheet
-        fb = Frame(f, bg='yellow')
-        b = Button(fb, text='Generate campaign log sheet',
-                   command=self.click_generate_logsheet,
-                   state=DISABLED)
-        b.pack(side=LEFT, fill=X, expand=True)
-        self.widgets.but_generate = b
-        b = Button(fb, text='Add replacement pilot',
-                   command=self.click_add_replacement_pilot,
-                   state=DISABLED)
-        b.pack(side=LEFT, fill=X, expand=True)
-        self.widgets.but_add_pilot = b
-        fb.pack(side=TOP, fill=X)
-
     # -- private methods
     
     def refresh_campaigns(self):
@@ -425,7 +438,7 @@ class GraphicalUI(Tk, UI):
                             p.aircraft.role, so_bonus]
                 )
 
-        
+
     # -- events
 
     def check_expansion(self, box):
