@@ -1,3 +1,8 @@
+1.6.0 2026-03-11
+- Possibility to select PDF output file
+
+---
+
 1.5.1 2026-03-09
 - Update README with new supported games
 
@@ -11,6 +16,8 @@
 ---
 
 1.4.3 2023-06-20
+- minor cleanups
+
 1.4.2 2023-05-26
 - minor cleanups
 
