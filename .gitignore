@@ -17,6 +17,7 @@ __pycache__
 
 logsheet.pdf
 
+build
 dist
 dvg_randomizer.egg-info
 .venv
