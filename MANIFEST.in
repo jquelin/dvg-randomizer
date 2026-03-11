@@ -1,4 +1,0 @@
-recursive-include dvg_randomizer *.ods
-recursive-include dvg_randomizer *.jpg
-recursive-include dvg_randomizer *.png
-recursive-include dvg_randomizer *.ttf

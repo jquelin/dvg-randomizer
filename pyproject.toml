@@ -25,16 +25,6 @@ dependencies = [
     "cmd2",
 ]
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[dependency-groups]
-dev = [
-    "pytest>=7.4.4",
-]
-
-
 [project.scripts]
 dvg-randomizer = "dvg_randomizer.__main__:run"
 
@@ -42,3 +32,22 @@ dvg-randomizer = "dvg_randomizer.__main__:run"
 "Homepage" = "https://github.com/jquelin/dvg-randomize"
 "Bug Tracker" = "https://github.com/jquelin/dvg-randomize/issues"
 
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pip>=24.0",
+    "pytest>=7.4.4",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["dvg_randomizer*"]
+
+[tool.setuptools.package-data]
+dvg_randomizer = ["*.ods", "misc/*.ttf", "ui/*.png"]
